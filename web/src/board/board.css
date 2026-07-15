@@ -1,0 +1,928 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #eef2f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #eef2f7;
+}
+
+button, select { font: inherit; }
+button { touch-action: manipulation; }
+
+.boardShell {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.appHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 auto 0.75rem;
+  max-width: 112rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.15rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #55627a;
+}
+
+h1 { margin: 0; font-size: clamp(1.35rem, 2.5vw, 2rem); }
+
+.stageControl {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 700;
+}
+
+.stageControl span { font-size: 0.78rem; color: #56627a; }
+.stageControl select {
+  min-height: 2.6rem;
+  border: 1px solid #aab4c5;
+  border-radius: 0.7rem;
+  padding: 0.45rem 0.7rem;
+  background: white;
+}
+
+.interruptRow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(6.5rem, 1fr));
+  gap: 0.55rem;
+  max-width: 70rem;
+  margin: 0 auto 0.75rem;
+}
+
+.interruptButton {
+  min-height: 3.3rem;
+  border: 2px solid #172033;
+  border-radius: 0.75rem;
+  background: white;
+  font-size: 1.05rem;
+  font-weight: 850;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.interruptButton:active { transform: translateY(1px); box-shadow: none; }
+.interrupt-help, .interrupt-stop { border-width: 3px; }
+.interrupt-clear { background: #edf0f5; }
+
+.sentenceBar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: 112rem;
+  margin: 0 auto 0.85rem;
+  padding: 0.75rem;
+  border: 1px solid #c4ccda;
+  border-radius: 0.9rem;
+  background: white;
+  box-shadow: 0 6px 18px rgba(39, 52, 78, 0.08);
+}
+
+.sentenceText {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 3.2rem;
+  overflow-x: auto;
+}
+
+.sentenceToken {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #a8b2c3;
+  border-radius: 0.65rem;
+  background: #f8fafc;
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.sentenceTokenPending { border-style: dashed; opacity: 0.7; }
+.sentencePlaceholder { color: #6c7688; font-weight: 650; }
+
+.sentenceActions { display: flex; gap: 0.4rem; }
+.sentenceActions button, .pagination button, .backButton {
+  min-height: 2.5rem;
+  border: 1px solid #aab4c5;
+  border-radius: 0.6rem;
+  background: #f7f9fc;
+  padding: 0.4rem 0.75rem;
+  font-weight: 750;
+}
+
+button:focus-visible, select:focus-visible {
+  outline: 4px solid #1e66d0;
+  outline-offset: 2px;
+}
+
+button:disabled { cursor: not-allowed; }
+
+.boardViewport {
+  max-width: 112rem;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+}
+
+.sixColumnGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(12.5rem, 1fr));
+  gap: 0.65rem;
+  min-width: 78rem;
+  align-items: stretch;
+}
+
+.boardColumn {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 39rem;
+  border: 2px solid #9aa6ba;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: white;
+  transition: opacity 140ms ease, filter 140ms ease, transform 140ms ease;
+}
+
+.boardColumnActive {
+  border-color: #1e66d0;
+  box-shadow: 0 10px 25px rgba(30, 102, 208, 0.18);
+  transform: translateY(-2px);
+}
+
+.boardColumnDimmed {
+  opacity: 0.28;
+  filter: grayscale(0.82);
+}
+
+.columnHeader {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 4.8rem;
+  padding: 0.55rem;
+  border-bottom: 1px solid #cbd2de;
+  background: #f5f7fa;
+}
+
+.columnNumber {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #172033;
+  color: white;
+  font-weight: 900;
+}
+
+.columnHeader strong { display: block; font-size: 1rem; }
+.columnHeader small { display: block; margin-top: 0.1rem; color: #5c687c; line-height: 1.15; }
+
+.stateBadge {
+  border-radius: 999px;
+  padding: 0.25rem 0.45rem;
+  background: #e7ebf1;
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+.stateBadgeActive { background: #d8e8ff; color: #0d4c9f; }
+
+.columnInstruction {
+  min-height: 2.2rem;
+  display: grid;
+  place-items: center;
+  padding: 0.4rem;
+  background: #f9fafc;
+  border-bottom: 1px solid #d9dee7;
+  color: #4d596d;
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.columnToolbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.9rem;
+  padding: 0.35rem;
+  border-bottom: 1px solid #d9dee7;
+  background: #f9fafc;
+}
+
+.columnToolbar strong { text-align: center; }
+.columnBody { display: flex; flex-direction: column; min-height: 0; padding: 0.45rem; }
+.grammarBody { grid-row: 2 / span 2; }
+
+.fixedSlotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(4.3rem, 1fr));
+  gap: 0.42rem;
+  flex: 1;
+}
+
+.fixedSlot, .fixedSlot > * { min-width: 0; min-height: 0; height: 100%; }
+.reservedSlot {
+  border: 1px dashed rgba(131, 143, 163, 0.25);
+  border-radius: 0.7rem;
+  background: rgba(240, 243, 248, 0.28);
+}
+
+.bucketButton, .wordButton {
+  width: 100%;
+  border: 2px solid #7f8da4;
+  border-radius: 0.72rem;
+  background: white;
+  color: #172033;
+  padding: 0.35rem;
+  font-weight: 850;
+  line-height: 1.08;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.16);
+}
+
+.bucketButton {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.25rem;
+  background: #f7f9fc;
+}
+
+.bucketSymbol { font-size: 1.45rem; }
+.wordButton { display: grid; place-items: center; align-content: center; gap: 0.18rem; }
+.wordButton small { color: #687489; font-size: 0.68rem; text-transform: uppercase; }
+.grammarButton { border-style: dashed; background: #f7fbff; }
+
+.bucketButton:active:not(:disabled), .wordButton:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.boardColumnDimmed button:not([data-always-active="true"]) { pointer-events: none; }
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.45rem;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.screenReaderStatus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .boardShell { padding: 0.55rem; }
+  .appHeader { align-items: stretch; flex-direction: column; }
+  .interruptRow { grid-template-columns: repeat(5, minmax(4.4rem, 1fr)); gap: 0.3rem; }
+  .interruptButton { min-height: 3rem; font-size: 0.88rem; }
+  .sentenceBar { grid-template-columns: 1fr; }
+  .sentenceActions { justify-content: stretch; }
+  .sentenceActions button { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Modified Fitzgerald Key role colors. Coordinates stay fixed; color communicates grammar. */
+.boardColumn[data-column="1"] { --column-accent: #e0bd2f; --column-header: #fff5bd; }
+.boardColumn[data-column="2"] { --column-accent: #4b9f47; --column-header: #dff2dc; }
+.boardColumn[data-column="3"] { --column-accent: #c85d91; --column-header: #f7dce9; }
+.boardColumn[data-column="4"] { --column-accent: #7f8792; --column-header: #e8eaed; }
+.boardColumn[data-column="5"] { --column-accent: #4d8fc3; --column-header: #dcecf8; }
+.boardColumn[data-column="6"] { --column-accent: #d67b28; --column-header: #ffe4c7; }
+
+.boardColumn {
+  border-top-color: var(--column-accent, #9aa6ba);
+  border-top-width: 0.5rem;
+}
+
+.boardColumn .columnHeader {
+  background: var(--column-header, #f5f7fa);
+}
+
+.boardColumnAvailable {
+  opacity: 1;
+  filter: none;
+}
+
+.fitzgerald-yellow { background: #fff0a3; border-color: #8a6c00; }
+.fitzgerald-green { background: #c8edc1; border-color: #397e35; }
+.fitzgerald-blue { background: #c9e3f7; border-color: #326f9e; }
+.fitzgerald-orange { background: #ffd3a8; border-color: #a85b13; }
+.fitzgerald-purple { background: #dfc8ef; border-color: #70438e; }
+.fitzgerald-pink { background: #f5c5dc; border-color: #98466c; }
+.fitzgerald-gray { background: #dfe2e6; border-color: #626b77; }
+.fitzgerald-white { background: #ffffff; border-color: #596273; }
+.fitzgerald-red { background: #f5b8b8; border-color: #9b2e2e; }
+
+.interrupt-yes { background: #c8edc1; border-color: #397e35; }
+.interrupt-no,
+.interrupt-help,
+.interrupt-stop { background: #f5b8b8; border-color: #9b2e2e; }
+.interrupt-clear { background: #dfe2e6; border-color: #626b77; }
+
+
+.boardLoading,
+.boardError {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.catalogErrorBanner {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 2px solid #b91c1c;
+  border-radius: 0.75rem;
+  background: #fee2e2;
+  color: #7f1d1d;
+  font-weight: 700;
+}
+
+.profileControls { display: flex; align-items: end; gap: 0.65rem; flex-wrap: wrap; justify-content: flex-end; }
+.profileSummary, .stageDescription { color: #56627a; font-weight: 700; }
+.profileSummary { margin: 0.3rem 0 0; font-size: 0.88rem; }
+.stageDescription { max-width: 112rem; margin: 0 auto 0.7rem; padding: 0.55rem 0.75rem; border: 1px solid #cbd2de; border-radius: 0.75rem; background: #f8fafc; font-size: 0.84rem; }
+@media (max-width: 760px) {
+  .profileControls { justify-content: stretch; }
+  .profileControls .stageControl { flex: 1 1 13rem; }
+}
+
+.wordSymbol {
+  display: block;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+
+/* Approved Early Childhood Emerging Talker photo tiles.
+   The button keeps its Fitzgerald role shading. The transparent,
+   tightly cropped image fills the tile without clipping its label. */
+.wordButtonPhotoTile {
+  padding: 0.18rem;
+  overflow: hidden;
+}
+
+.wordPhotoTile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.52rem;
+  background: transparent;
+}
+
+
+/* TalkFreeAAC 2.0.4 — compact controls and Early Childhood Stage 1
+   one-active-column visibility. */
+.boardUtilityRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  align-items: stretch;
+  width: 100%;
+  max-width: 112rem;
+  margin: 0 auto 0.55rem;
+}
+
+.boardUtilityRow .interruptRow {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
+.boardSettings {
+  display: flex;
+}
+
+.settingsButton {
+  min-width: 7.5rem;
+  min-height: 3.3rem;
+  border: 2px solid #596273;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #172033;
+  padding: 0.45rem 0.8rem;
+  font-weight: 850;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.settingsOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(23, 32, 51, 0.55);
+}
+
+.settingsPanel {
+  display: grid;
+  gap: 1rem;
+  width: min(34rem, 100%);
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 1rem;
+  border: 2px solid #596273;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(23, 32, 51, 0.3);
+}
+
+.settingsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.settingsHeader h2 {
+  margin: 0;
+}
+
+.settingsHeader button {
+  min-height: 2.5rem;
+  border: 1px solid #aab4c5;
+  border-radius: 0.6rem;
+  background: #f7f9fc;
+  padding: 0.4rem 0.75rem;
+  font-weight: 750;
+}
+
+.boardShellSingleColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.boardShellSingleColumn .sentenceBar {
+  flex: 0 0 auto;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.boardShellSingleColumn .boardUtilityRow {
+  flex: 0 0 auto;
+}
+
+.boardShellSingleColumn .boardViewport {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.singleActiveColumnGrid {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.singleActiveColumnGrid .boardColumn {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  transform: none;
+}
+
+.boardColumnSingle {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.boardColumnSingle .columnHeader {
+  min-height: 3.7rem;
+  padding: 0.4rem 0.55rem;
+}
+
+.boardColumnSingle .columnBody {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.4rem;
+}
+
+.boardColumnSingle .columnBodyBuckets .fixedSlotGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.boardColumnSingle .columnBodyWords .fixedSlotGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.boardColumnSingle .bucketButton,
+.boardColumnSingle .wordButton {
+  padding: 0.25rem;
+}
+
+@media (max-width: 760px) {
+  .boardUtilityRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem;
+  }
+
+  .settingsButton {
+    min-width: 5.8rem;
+    min-height: 3rem;
+    padding-inline: 0.45rem;
+    font-size: 0.82rem;
+  }
+
+  .boardShellSingleColumn {
+    padding: 0.35rem;
+  }
+
+  .boardShellSingleColumn .sentenceBar {
+    margin-bottom: 0.3rem;
+  }
+
+  .boardColumnSingle .columnHeader {
+    min-height: 3.2rem;
+  }
+
+  .boardColumnSingle .columnHeader small {
+    display: none;
+  }
+
+  .boardColumnSingle .fixedSlotGrid {
+    gap: 0.28rem;
+  }
+}
+
+
+/* TalkFreeAAC 2.0.5 — active word views remain fully visible.
+   Words mode has an explicit toolbar row, and trailing unused motor slots
+   no longer create unnecessary off-screen rows. */
+.boardColumnSingleBuckets {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.boardColumnSingleWords {
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.boardColumnSingleWords .columnToolbar {
+  min-height: 2.65rem;
+  padding: 0.25rem 0.35rem;
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="4"] {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="8"] {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="12"] {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="16"] {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlot,
+.boardColumnSingle .fixedSlot > *,
+.boardColumnSingle .wordButton,
+.boardColumnSingle .bucketButton,
+.boardColumnSingle .wordPhotoTile {
+  min-height: 0;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .boardColumnSingleWords .columnToolbar {
+    min-height: 2.35rem;
+  }
+
+  .boardColumnSingleWords .columnToolbar strong {
+    font-size: 0.9rem;
+  }
+
+  .boardColumnSingleWords .backButton {
+    min-height: 2.15rem;
+    padding: 0.25rem 0.55rem;
+  }
+}
+
+
+/* TalkFreeAAC 2.0.6 — the word grid measures the actual word area and
+   recalculates rows and columns whenever the screen changes size. */
+.boardColumnSingle .fixedSlotGrid[data-slot-count="4"] {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="8"] {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="12"] {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.boardColumnSingle .fixedSlotGrid[data-slot-count="16"] {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.boardColumnSingleWords .columnBodyWords {
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.boardColumnSingleWords .fixedSlotGridFitted {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  grid-template-columns:
+    repeat(var(--fit-columns), minmax(0, 1fr)) !important;
+  grid-template-rows:
+    repeat(var(--fit-rows), minmax(0, 1fr)) !important;
+}
+
+.boardColumnSingleWords .fixedSlotGridFitted .fixedSlot {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.boardColumnSingleWords .fixedSlotGridFitted .wordButton {
+  min-width: 0;
+  min-height: 0;
+  contain: size layout paint;
+  overflow: hidden;
+}
+
+.boardColumnSingleWords .fixedSlotGridFitted .wordPhotoTile {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+
+/* TalkFreeAAC 2.0.8 — photographic root buckets use the same responsive
+   containment behavior as the approved word cards. */
+.bucketButtonPhotoTile {
+  padding: 0.18rem;
+  overflow: hidden;
+}
+
+.bucketPhotoTile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.52rem;
+  background: transparent;
+}
+
+
+/* TalkFreeAAC 3.0.1 — Early Childhood Stage 1 UI/UX completion.
+   These rules are scoped to the one-active-column Stage 1 interface. */
+.boardShellSingleColumn .sentenceBarStageOne {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  min-height: 6rem;
+  margin-bottom: 0.3rem;
+  padding: 0.85rem;
+  border: 2px solid #7f8da4;
+  border-radius: 1rem;
+  box-shadow: 0 4px 0 rgba(23, 32, 51, 0.14);
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceText {
+  min-height: 4.35rem;
+  gap: 0.55rem;
+  padding-inline: 0.15rem;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceToken {
+  padding: 0.72rem 0.9rem;
+  border-width: 2px;
+  border-radius: 0.78rem;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentencePlaceholder {
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceActions {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1.25fr) minmax(5.5rem, 0.8fr) minmax(7.5rem, 1fr);
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceActionButton {
+  min-height: 4rem;
+  border: 2px solid #596273;
+  border-radius: 0.78rem;
+  padding: 0.55rem 0.8rem;
+  background: #f7f9fc;
+  color: #172033;
+  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.08;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .speakButton {
+  min-height: 4.65rem;
+  border-width: 3px;
+  border-color: #174f94;
+  background: #d8e8ff;
+  color: #0d3f7e;
+  font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceActionButton:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceActionButton:disabled {
+  opacity: 0.48;
+}
+
+.boardUtilityRowStageOne {
+  align-items: start;
+  margin-bottom: 0.3rem;
+}
+
+.boardUtilityRowStageOne .interruptRowStageOne {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.42rem;
+}
+
+.boardUtilityRowStageOne .interruptButton {
+  min-width: 0;
+  min-height: 4rem;
+  padding: 0.45rem 0.35rem;
+  border-width: 2px;
+  border-radius: 0.78rem;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.boardUtilityRowStageOne .interrupt-help,
+.boardUtilityRowStageOne .interrupt-stop {
+  border-width: 3px;
+}
+
+.boardUtilityRowStageOne .interrupt-please {
+  background: #f5c5dc;
+  border-color: #98466c;
+}
+
+.boardUtilityRowStageOne .interrupt-no-thank-you {
+  background: #f5b8b8;
+  border-color: #9b2e2e;
+}
+
+.boardColumnSingleWords .columnToolbar {
+  min-height: 4rem;
+  gap: 0.65rem;
+  padding: 0.38rem 0.48rem;
+}
+
+.boardColumnSingleWords .columnToolbar strong {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 900;
+}
+
+.boardColumnSingleWords .backButton {
+  min-width: 7rem;
+  min-height: 3.25rem;
+  border: 2px solid #596273;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  background: #f7f9fc;
+  color: #172033;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 900;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.boardColumnSingleWords .backButton:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .boardShellSingleColumn .sentenceBarStageOne {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 0.45rem;
+    padding: 0.55rem;
+  }
+
+  .boardShellSingleColumn .sentenceBarStageOne .sentenceText {
+    min-height: 3.6rem;
+  }
+
+  .boardShellSingleColumn .sentenceBarStageOne .sentenceActions {
+    grid-template-columns: 1.25fr 0.8fr 1fr;
+    gap: 0.35rem;
+  }
+
+  .boardShellSingleColumn .sentenceBarStageOne .sentenceActionButton {
+    min-width: 0;
+    min-height: 3.35rem;
+    padding: 0.4rem 0.35rem;
+    font-size: 1rem;
+  }
+
+  .boardShellSingleColumn .sentenceBarStageOne .speakButton {
+    min-height: 3.85rem;
+    font-size: 1.2rem;
+  }
+
+  .boardUtilityRowStageOne .interruptRowStageOne {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.3rem;
+  }
+
+  .boardUtilityRowStageOne .interruptButton {
+    min-height: 3.35rem;
+    padding: 0.35rem 0.22rem;
+    font-size: 0.98rem;
+  }
+
+  .boardColumnSingleWords .columnToolbar {
+    min-height: 3.35rem;
+    padding: 0.28rem 0.35rem;
+  }
+
+  .boardColumnSingleWords .backButton {
+    min-width: 5.5rem;
+    min-height: 2.8rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 1.05rem;
+  }
+
+  .boardColumnSingleWords .columnToolbar strong {
+    font-size: 1rem;
+  }
+}
