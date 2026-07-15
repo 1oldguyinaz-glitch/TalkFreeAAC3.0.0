@@ -1,0 +1,4626 @@
+{
+  "schemaVersion": "board-core-catalog-v1.3.1",
+  "metadata": {
+    "sourceSchemaVersion": "8.2.0",
+    "column": 5,
+    "title": "Describers / Emotions / Adjectives",
+    "sourceRole": "describers_emotions_adjectives",
+    "totalEntries": 1034,
+    "bucketedEntries": 1034,
+    "alwaysActiveEntries": 0,
+    "totalBuckets": 67,
+    "rootSlotsPerPage": 6,
+    "wordSlotsPerPage": 12,
+    "stagePaths": {
+      "1": [
+        1,
+        2,
+        6
+      ],
+      "2": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "3": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "4": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "earlyChildhoodPolicyVersion": "1.0"
+  },
+  "column": 5,
+  "buckets": [
+    {
+      "id": "c5_accessibility_devices_words",
+      "label": "Accessibility Devices • Words",
+      "symbol": "♿",
+      "symbolKey": "accessibility_devices",
+      "column": 5,
+      "page": 1,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "accessibility_devices",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_actions_words",
+      "label": "Actions • Words",
+      "symbol": "⚡",
+      "symbolKey": "actions",
+      "column": 5,
+      "page": 1,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 11,
+      "totalPages": 2,
+      "sourceBranch": "actions",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 11,
+          "3": 11,
+          "4": 11
+        },
+        "teen": {
+          "1": 0,
+          "2": 11,
+          "3": 11,
+          "4": 11
+        },
+        "adult": {
+          "1": 0,
+          "2": 11,
+          "3": 11,
+          "4": 11
+        }
+      }
+    },
+    {
+      "id": "c5_behavior_support_words",
+      "label": "Behavior Support • Words",
+      "symbol": "🧩",
+      "symbolKey": "behavior_support",
+      "column": 5,
+      "page": 1,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 23,
+      "totalPages": 3,
+      "sourceBranch": "behavior_support",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        }
+      }
+    },
+    {
+      "id": "c5_body_pain_words",
+      "label": "Body Pain • Words",
+      "symbol": "🙌",
+      "symbolKey": "body_pain",
+      "column": 5,
+      "page": 1,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 9,
+      "totalPages": 1,
+      "sourceBranch": "body_pain",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 2,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 4,
+          "3": 4,
+          "4": 4
+        },
+        "school_age": {
+          "1": 0,
+          "2": 9,
+          "3": 9,
+          "4": 9
+        },
+        "teen": {
+          "1": 0,
+          "2": 9,
+          "3": 9,
+          "4": 9
+        },
+        "adult": {
+          "1": 0,
+          "2": 9,
+          "3": 9,
+          "4": 9
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 4
+    },
+    {
+      "id": "c5_choice_preference_words",
+      "label": "Choice Preference • Words",
+      "symbol": "☑️",
+      "symbolKey": "choice_preference",
+      "column": 5,
+      "page": 1,
+      "slot": 5,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 6,
+      "totalPages": 1,
+      "sourceBranch": "choice_preference",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 6
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 6
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 6
+        }
+      }
+    },
+    {
+      "id": "c5_communication_repair_words",
+      "label": "Communication Repair • Words",
+      "symbol": "🛠️",
+      "symbolKey": "communication_repair",
+      "column": 5,
+      "page": 1,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "communication_repair",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c5_descriptors_words",
+      "label": "Descriptors • Words",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 5,
+      "page": 2,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 37,
+      "totalPages": 4,
+      "sourceBranch": "descriptors",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 2,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 12,
+          "3": 17,
+          "4": 17
+        },
+        "school_age": {
+          "1": 0,
+          "2": 13,
+          "3": 37,
+          "4": 37
+        },
+        "teen": {
+          "1": 0,
+          "2": 13,
+          "3": 37,
+          "4": 37
+        },
+        "adult": {
+          "1": 0,
+          "2": 13,
+          "3": 37,
+          "4": 37
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 17
+    },
+    {
+      "id": "c5_emergency_words",
+      "label": "Emergency • Words",
+      "symbol": "🚨",
+      "symbolKey": "emergency",
+      "column": 5,
+      "page": 2,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 6,
+      "totalPages": 1,
+      "sourceBranch": "emergency",
+      "entryKind": "words",
+      "requiresEmergencyMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "teen": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "adult": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        }
+      }
+    },
+    {
+      "id": "c5_emergency_deep_words",
+      "label": "Emergency Deep • Words",
+      "symbol": "🚨",
+      "symbolKey": "emergency_deep",
+      "column": 5,
+      "page": 2,
+      "slot": 3,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "emergency_deep",
+      "entryKind": "words",
+      "requiresEmergencyMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_feelings_words",
+      "label": "Feelings • Words",
+      "symbol": "🙂",
+      "symbolKey": "feelings",
+      "column": 5,
+      "page": 2,
+      "slot": 4,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 32,
+      "totalPages": 4,
+      "sourceBranch": "feelings",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 2,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 15,
+          "3": 23,
+          "4": 23
+        },
+        "school_age": {
+          "1": 0,
+          "2": 32,
+          "3": 32,
+          "4": 32
+        },
+        "teen": {
+          "1": 0,
+          "2": 32,
+          "3": 32,
+          "4": 32
+        },
+        "adult": {
+          "1": 0,
+          "2": 32,
+          "3": 32,
+          "4": 32
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 23
+    },
+    {
+      "id": "c5_food_drink_words",
+      "label": "Food Drink • Words",
+      "symbol": "🍎",
+      "symbolKey": "food_drink",
+      "column": 5,
+      "page": 2,
+      "slot": 5,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "food_drink",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 2,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 2
+        },
+        "school_age": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 2
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 2
+    },
+    {
+      "id": "c5_life_skills_words",
+      "label": "Life Skills • Words",
+      "symbol": "◆",
+      "symbolKey": "life_skills",
+      "column": 5,
+      "page": 2,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 5,
+      "totalPages": 1,
+      "sourceBranch": "life_skills",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 1,
+          "3": 5,
+          "4": 5
+        },
+        "teen": {
+          "1": 0,
+          "2": 1,
+          "3": 5,
+          "4": 5
+        },
+        "adult": {
+          "1": 0,
+          "2": 1,
+          "3": 5,
+          "4": 5
+        }
+      }
+    },
+    {
+      "id": "c5_personal_care_words",
+      "label": "Personal Care • Words",
+      "symbol": "◆",
+      "symbolKey": "personal_care",
+      "column": 5,
+      "page": 3,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "personal_care",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_questions_words",
+      "label": "Questions • Words",
+      "symbol": "❓",
+      "symbolKey": "questions",
+      "column": 5,
+      "page": 3,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 6,
+      "totalPages": 1,
+      "sourceBranch": "questions",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "teen": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "adult": {
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        }
+      }
+    },
+    {
+      "id": "c5_regulation_words",
+      "label": "Regulation • Words",
+      "symbol": "◆",
+      "symbolKey": "regulation",
+      "column": 5,
+      "page": 3,
+      "slot": 3,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 15,
+      "totalPages": 2,
+      "sourceBranch": "regulation",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 2,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 4
+        },
+        "school_age": {
+          "1": 0,
+          "2": 2,
+          "3": 15,
+          "4": 15
+        },
+        "teen": {
+          "1": 0,
+          "2": 8,
+          "3": 15,
+          "4": 15
+        },
+        "adult": {
+          "1": 0,
+          "2": 8,
+          "3": 15,
+          "4": 15
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 4
+    },
+    {
+      "id": "c5_sensory_words",
+      "label": "Sensory • Words",
+      "symbol": "◆",
+      "symbolKey": "sensory",
+      "column": 5,
+      "page": 3,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 35,
+      "totalPages": 4,
+      "sourceBranch": "sensory",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 4,
+          "3": 35,
+          "4": 35
+        },
+        "teen": {
+          "1": 0,
+          "2": 32,
+          "3": 35,
+          "4": 35
+        },
+        "adult": {
+          "1": 0,
+          "2": 32,
+          "3": 35,
+          "4": 35
+        }
+      }
+    },
+    {
+      "id": "c5_social_boundaries_words",
+      "label": "Social Boundaries • Words",
+      "symbol": "💬",
+      "symbolKey": "social_boundaries",
+      "column": 5,
+      "page": 3,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "social_boundaries",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_temperature_words",
+      "label": "Temperature • Words",
+      "symbol": "◆",
+      "symbolKey": "temperature",
+      "column": 5,
+      "page": 3,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 16,
+      "totalPages": 2,
+      "sourceBranch": "temperature",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 2,
+          "3": 16,
+          "4": 16
+        },
+        "teen": {
+          "1": 0,
+          "2": 11,
+          "3": 16,
+          "4": 16
+        },
+        "adult": {
+          "1": 0,
+          "2": 11,
+          "3": 16,
+          "4": 16
+        }
+      }
+    },
+    {
+      "id": "c5_choice_preference_compounds",
+      "label": "Choice Preference • Compounds",
+      "symbol": "☑️",
+      "symbolKey": "choice_preference",
+      "column": 5,
+      "page": 4,
+      "slot": 1,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "choice_preference",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c5_communication_repair_compounds",
+      "label": "Communication Repair • Compounds",
+      "symbol": "🛠️",
+      "symbolKey": "communication_repair",
+      "column": 5,
+      "page": 4,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 12,
+      "totalPages": 2,
+      "sourceBranch": "communication_repair",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 12
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 12
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 12
+        }
+      }
+    },
+    {
+      "id": "c5_academic_deep_words",
+      "label": "Academic Deep • Words",
+      "symbol": "◆",
+      "symbolKey": "academic_deep",
+      "column": 5,
+      "page": 4,
+      "slot": 3,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "academic_deep",
+      "entryKind": "words",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_animals_deep_words",
+      "label": "Animals Deep • Words",
+      "symbol": "🐾",
+      "symbolKey": "animals_deep",
+      "column": 5,
+      "page": 4,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "animals_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_community_errands_words",
+      "label": "Community Errands • Words",
+      "symbol": "🏙️",
+      "symbolKey": "community_errands",
+      "column": 5,
+      "page": 4,
+      "slot": 5,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "community_errands",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_expanded_descriptors_words",
+      "label": "Expanded Descriptors • Words",
+      "symbol": "◆",
+      "symbolKey": "expanded_descriptors",
+      "column": 5,
+      "page": 4,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 31,
+      "totalPages": 4,
+      "sourceBranch": "expanded_descriptors",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        }
+      }
+    },
+    {
+      "id": "c5_food_cooking_deep_words",
+      "label": "Food Cooking Deep • Words",
+      "symbol": "🍎",
+      "symbolKey": "food_cooking_deep",
+      "column": 5,
+      "page": 5,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "food_cooking_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c5_home_living_deep_words",
+      "label": "Home Living Deep • Words",
+      "symbol": "🏠",
+      "symbolKey": "home_living_deep",
+      "column": 5,
+      "page": 5,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "home_living_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_household_items_deep_words",
+      "label": "Household Items Deep • Words",
+      "symbol": "◆",
+      "symbolKey": "household_items_deep",
+      "column": 5,
+      "page": 5,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "household_items_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c5_math_deep_words",
+      "label": "Math Deep • Words",
+      "symbol": "◆",
+      "symbolKey": "math_deep",
+      "column": 5,
+      "page": 5,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "math_deep",
+      "entryKind": "words",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_medical_deep_words",
+      "label": "Medical Deep • Words",
+      "symbol": "🩺",
+      "symbolKey": "medical_deep",
+      "column": 5,
+      "page": 5,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 5,
+      "totalPages": 1,
+      "sourceBranch": "medical_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        }
+      }
+    },
+    {
+      "id": "c5_music_art_creativity_words",
+      "label": "Music Art Creativity • Words",
+      "symbol": "◆",
+      "symbolKey": "music_art_creativity",
+      "column": 5,
+      "page": 5,
+      "slot": 6,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "music_art_creativity",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_places_words",
+      "label": "Places • Words",
+      "symbol": "📍",
+      "symbolKey": "places",
+      "column": 5,
+      "page": 6,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "places",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_school_words",
+      "label": "School • Words",
+      "symbol": "🏫",
+      "symbolKey": "school",
+      "column": 5,
+      "page": 6,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "school",
+      "entryKind": "words",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 1,
+          "3": 4,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 2,
+          "3": 4,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 4,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_science_nature_words",
+      "label": "Science Nature • Words",
+      "symbol": "◆",
+      "symbolKey": "science_nature",
+      "column": 5,
+      "page": 6,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "science_nature",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 2,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c5_social_words",
+      "label": "Social • Words",
+      "symbol": "💬",
+      "symbolKey": "social",
+      "column": 5,
+      "page": 6,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "social",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 4,
+          "3": 4,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 4,
+          "3": 4,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 4,
+          "3": 4,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_sports_movement_words",
+      "label": "Sports Movement • Words",
+      "symbol": "➡️",
+      "symbolKey": "sports_movement",
+      "column": 5,
+      "page": 6,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "sports_movement",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 3,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 2,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c5_states_conditions_words",
+      "label": "States Conditions • Words",
+      "symbol": "◆",
+      "symbolKey": "states_conditions",
+      "column": 5,
+      "page": 6,
+      "slot": 6,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 15,
+      "totalPages": 2,
+      "sourceBranch": "states_conditions",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 15
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 15
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 15
+        }
+      }
+    },
+    {
+      "id": "c5_therapy_goals_words",
+      "label": "Therapy Goals • Words",
+      "symbol": "◆",
+      "symbolKey": "therapy_goals",
+      "column": 5,
+      "page": 7,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "therapy_goals",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_travel_navigation_words",
+      "label": "Travel Navigation • Words",
+      "symbol": "◆",
+      "symbolKey": "travel_navigation",
+      "column": 5,
+      "page": 7,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "travel_navigation",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_weather_clothing_words",
+      "label": "Weather Clothing • Words",
+      "symbol": "👕",
+      "symbolKey": "weather_clothing",
+      "column": 5,
+      "page": 7,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 23,
+      "totalPages": 3,
+      "sourceBranch": "weather_clothing",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 23
+        }
+      }
+    },
+    {
+      "id": "c5_academic_deep_compounds",
+      "label": "Academic Deep • Compounds",
+      "symbol": "◆",
+      "symbolKey": "academic_deep",
+      "column": 5,
+      "page": 7,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 8,
+      "totalPages": 1,
+      "sourceBranch": "academic_deep",
+      "entryKind": "compounds",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 8
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 8
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 8
+        }
+      }
+    },
+    {
+      "id": "c5_actions_compounds",
+      "label": "Actions • Compounds",
+      "symbol": "⚡",
+      "symbolKey": "actions",
+      "column": 5,
+      "page": 7,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 39,
+      "totalPages": 4,
+      "sourceBranch": "actions",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 39,
+          "3": 39,
+          "4": 39
+        },
+        "teen": {
+          "1": 0,
+          "2": 39,
+          "3": 39,
+          "4": 39
+        },
+        "adult": {
+          "1": 0,
+          "2": 39,
+          "3": 39,
+          "4": 39
+        }
+      }
+    },
+    {
+      "id": "c5_body_pain_compounds_01",
+      "label": "Body Pain • Compounds B–W • Part 1",
+      "symbol": "🙌",
+      "symbolKey": "body_pain",
+      "column": 5,
+      "page": 7,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "body_pain",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 50,
+          "3": 50,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 50,
+          "3": 50,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 50,
+          "3": 50,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c5_body_pain_compounds_02",
+      "label": "Body Pain • Compounds Y–W • Part 2",
+      "symbol": "🙌",
+      "symbolKey": "body_pain",
+      "column": 5,
+      "page": 8,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 22,
+      "totalPages": 3,
+      "sourceBranch": "body_pain",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 3,
+          "3": 22,
+          "4": 22
+        },
+        "teen": {
+          "1": 0,
+          "2": 3,
+          "3": 22,
+          "4": 22
+        },
+        "adult": {
+          "1": 0,
+          "2": 3,
+          "3": 22,
+          "4": 22
+        }
+      }
+    },
+    {
+      "id": "c5_grammar_language_compounds",
+      "label": "Grammar Language • Compounds",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 5,
+      "page": 8,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c5_math_deep_compounds",
+      "label": "Math Deep • Compounds",
+      "symbol": "◆",
+      "symbolKey": "math_deep",
+      "column": 5,
+      "page": 8,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 32,
+      "totalPages": 4,
+      "sourceBranch": "math_deep",
+      "entryKind": "compounds",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 32
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 32
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 32
+        }
+      }
+    },
+    {
+      "id": "c5_science_nature_compounds",
+      "label": "Science Nature • Compounds",
+      "symbol": "◆",
+      "symbolKey": "science_nature",
+      "column": 5,
+      "page": 8,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 10,
+      "totalPages": 1,
+      "sourceBranch": "science_nature",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        }
+      }
+    },
+    {
+      "id": "c5_sensory_compounds",
+      "label": "Sensory • Compounds",
+      "symbol": "◆",
+      "symbolKey": "sensory",
+      "column": 5,
+      "page": 8,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 26,
+      "totalPages": 3,
+      "sourceBranch": "sensory",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 22,
+          "4": 26
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 26,
+          "4": 26
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 26,
+          "4": 26
+        }
+      }
+    },
+    {
+      "id": "c5_temperature_compounds",
+      "label": "Temperature • Compounds",
+      "symbol": "◆",
+      "symbolKey": "temperature",
+      "column": 5,
+      "page": 8,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 40,
+      "totalPages": 4,
+      "sourceBranch": "temperature",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 40,
+          "4": 40
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 40,
+          "4": 40
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 40,
+          "4": 40
+        }
+      }
+    },
+    {
+      "id": "c5_digital_safety_words",
+      "label": "Digital Safety • Words",
+      "symbol": "🛡️",
+      "symbolKey": "digital_safety",
+      "column": 5,
+      "page": 9,
+      "slot": 1,
+      "colorRole": "emotion",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "digital_safety",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_household_words",
+      "label": "Household • Words",
+      "symbol": "◆",
+      "symbolKey": "household",
+      "column": 5,
+      "page": 9,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "household",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 2,
+          "3": 3,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 2,
+          "3": 3,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 3,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c5_nature_animals_words",
+      "label": "Nature Animals • Words",
+      "symbol": "🐾",
+      "symbolKey": "nature_animals",
+      "column": 5,
+      "page": 9,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 8,
+      "totalPages": 1,
+      "sourceBranch": "nature_animals",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        }
+      }
+    },
+    {
+      "id": "c5_transportation_words",
+      "label": "Transportation • Words",
+      "symbol": "🚗",
+      "symbolKey": "transportation",
+      "column": 5,
+      "page": 9,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "transportation",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_grocery_compounds",
+      "label": "Grocery • Compounds",
+      "symbol": "◆",
+      "symbolKey": "grocery",
+      "column": 5,
+      "page": 9,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 29,
+      "totalPages": 3,
+      "sourceBranch": "grocery",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 16,
+          "4": 29
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 18,
+          "4": 29
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 18,
+          "4": 29
+        }
+      }
+    },
+    {
+      "id": "c5_personal_care_compounds",
+      "label": "Personal Care • Compounds",
+      "symbol": "◆",
+      "symbolKey": "personal_care",
+      "column": 5,
+      "page": 9,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 8,
+      "totalPages": 1,
+      "sourceBranch": "personal_care",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 8
+        }
+      }
+    },
+    {
+      "id": "c5_places_compounds",
+      "label": "Places • Compounds",
+      "symbol": "📍",
+      "symbolKey": "places",
+      "column": 5,
+      "page": 10,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 35,
+      "totalPages": 4,
+      "sourceBranch": "places",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 3,
+          "3": 35,
+          "4": 35
+        },
+        "teen": {
+          "1": 0,
+          "2": 13,
+          "3": 35,
+          "4": 35
+        },
+        "adult": {
+          "1": 0,
+          "2": 8,
+          "3": 35,
+          "4": 35
+        }
+      }
+    },
+    {
+      "id": "c5_play_compounds_01",
+      "label": "Play • Compounds B–S • Part 1",
+      "symbol": "◆",
+      "symbolKey": "play",
+      "column": 5,
+      "page": 10,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "play",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 12,
+          "3": 50,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 50,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 38,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c5_play_compounds_02",
+      "label": "Play • Compounds S–T • Part 2",
+      "symbol": "◆",
+      "symbolKey": "play",
+      "column": 5,
+      "page": 10,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 35,
+      "totalPages": 4,
+      "sourceBranch": "play",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 2,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 15,
+          "3": 31,
+          "4": 35
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 15,
+          "4": 35
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 11,
+          "4": 35
+        }
+      }
+    },
+    {
+      "id": "c5_school_compounds",
+      "label": "School • Compounds",
+      "symbol": "🏫",
+      "symbolKey": "school",
+      "column": 5,
+      "page": 10,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 29,
+      "totalPages": 3,
+      "sourceBranch": "school",
+      "entryKind": "compounds",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 26,
+          "4": 29
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 28,
+          "4": 29
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 29,
+          "4": 29
+        }
+      }
+    },
+    {
+      "id": "c5_social_compounds",
+      "label": "Social • Compounds",
+      "symbol": "💬",
+      "symbolKey": "social",
+      "column": 5,
+      "page": 10,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 33,
+      "totalPages": 4,
+      "sourceBranch": "social",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 2,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 31,
+          "4": 33
+        },
+        "teen": {
+          "1": 0,
+          "2": 3,
+          "3": 33,
+          "4": 33
+        },
+        "adult": {
+          "1": 0,
+          "2": 5,
+          "3": 33,
+          "4": 33
+        }
+      }
+    },
+    {
+      "id": "c5_technology_media_compounds",
+      "label": "Technology Media • Compounds",
+      "symbol": "💻",
+      "symbolKey": "technology_media",
+      "column": 5,
+      "page": 10,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 37,
+      "totalPages": 4,
+      "sourceBranch": "technology_media",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 23,
+          "4": 37
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 37,
+          "4": 37
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 37,
+          "4": 37
+        }
+      }
+    },
+    {
+      "id": "c5_descriptors_compounds_01",
+      "label": "Descriptors • Compounds B • Part 1",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 5,
+      "page": 11,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "descriptors",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 6,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 26,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 5,
+          "3": 38,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c5_descriptors_compounds_02",
+      "label": "Descriptors • Compounds B–L • Part 2",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 5,
+      "page": 11,
+      "slot": 2,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "descriptors",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 7,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 25,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 5,
+          "3": 36,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c5_descriptors_compounds_03",
+      "label": "Descriptors • Compounds L–R • Part 3",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 5,
+      "page": 11,
+      "slot": 3,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "descriptors",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 8,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 25,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 6,
+          "3": 38,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c5_descriptors_compounds_04",
+      "label": "Descriptors • Compounds R–Y • Part 4",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 5,
+      "page": 11,
+      "slot": 4,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 44,
+      "totalPages": 5,
+      "sourceBranch": "descriptors",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 5,
+          "4": 44
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 24,
+          "4": 44
+        },
+        "adult": {
+          "1": 0,
+          "2": 2,
+          "3": 32,
+          "4": 44
+        }
+      }
+    },
+    {
+      "id": "c5_life_skills_compounds",
+      "label": "Life Skills • Compounds",
+      "symbol": "◆",
+      "symbolKey": "life_skills",
+      "column": 5,
+      "page": 11,
+      "slot": 5,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "life_skills",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 4,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 4,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c5_life_skills_templates",
+      "label": "Life Skills • Templates",
+      "symbol": "◆",
+      "symbolKey": "life_skills",
+      "column": 5,
+      "page": 11,
+      "slot": 6,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        2,
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "life_skills",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 2
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c5_social_templates",
+      "label": "Social • Templates",
+      "symbol": "💬",
+      "symbolKey": "social",
+      "column": 5,
+      "page": 12,
+      "slot": 1,
+      "colorRole": "adjective",
+      "visibleByStage": [
+        3,
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [
+          2
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "social",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 3,
+        "teen": 3,
+        "adult": 3
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 1
+        }
+      }
+    }
+  ]
+}

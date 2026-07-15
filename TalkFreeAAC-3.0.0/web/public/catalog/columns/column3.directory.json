@@ -1,0 +1,3018 @@
+{
+  "schemaVersion": "board-core-catalog-v1.3.1",
+  "metadata": {
+    "sourceSchemaVersion": "8.2.0",
+    "column": 3,
+    "title": "Modifiers / Negations / Prepositions",
+    "sourceRole": "modifiers_negations_prepositions",
+    "totalEntries": 543,
+    "bucketedEntries": 543,
+    "alwaysActiveEntries": 0,
+    "totalBuckets": 47,
+    "rootSlotsPerPage": 6,
+    "wordSlotsPerPage": 12,
+    "stagePaths": {
+      "1": [
+        1,
+        2,
+        6
+      ],
+      "2": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "3": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "4": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "earlyChildhoodPolicyVersion": "1.0"
+  },
+  "column": 3,
+  "buckets": [
+    {
+      "id": "c3_accessibility_devices_words",
+      "label": "Accessibility Devices • Words",
+      "symbol": "♿",
+      "symbolKey": "accessibility_devices",
+      "column": 3,
+      "page": 1,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "accessibility_devices",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_body_pain_words",
+      "label": "Body Pain • Words",
+      "symbol": "🙌",
+      "symbolKey": "body_pain",
+      "column": 3,
+      "page": 1,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "body_pain",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c3_choice_preference_words",
+      "label": "Choice Preference • Words",
+      "symbol": "☑️",
+      "symbolKey": "choice_preference",
+      "column": 3,
+      "page": 1,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "choice_preference",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_communication_repair_words",
+      "label": "Communication Repair • Words",
+      "symbol": "🛠️",
+      "symbolKey": "communication_repair",
+      "column": 3,
+      "page": 1,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "communication_repair",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_core_words",
+      "label": "Core • Words",
+      "symbol": "⭐",
+      "symbolKey": "core",
+      "column": 3,
+      "page": 1,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 37,
+      "totalPages": 4,
+      "sourceBranch": "core",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 4,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 16
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 37
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 37
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 37
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 16
+    },
+    {
+      "id": "c3_emergency_words",
+      "label": "Emergency • Words",
+      "symbol": "🚨",
+      "symbolKey": "emergency",
+      "column": 3,
+      "page": 1,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "emergency",
+      "entryKind": "words",
+      "requiresEmergencyMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_emergency_deep_words",
+      "label": "Emergency Deep • Words",
+      "symbol": "🚨",
+      "symbolKey": "emergency_deep",
+      "column": 3,
+      "page": 2,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "emergency_deep",
+      "entryKind": "words",
+      "requiresEmergencyMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_life_skills_words",
+      "label": "Life Skills • Words",
+      "symbol": "◆",
+      "symbolKey": "life_skills",
+      "column": 3,
+      "page": 2,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "life_skills",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": 4,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      },
+      "earlyChildhoodCurated": true,
+      "earlyChildhoodWordCount": 2
+    },
+    {
+      "id": "c3_questions_words",
+      "label": "Questions • Words",
+      "symbol": "❓",
+      "symbolKey": "questions",
+      "column": 3,
+      "page": 2,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "questions",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c3_sensory_words",
+      "label": "Sensory • Words",
+      "symbol": "◆",
+      "symbolKey": "sensory",
+      "column": 3,
+      "page": 2,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "sensory",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_social_boundaries_words",
+      "label": "Social Boundaries • Words",
+      "symbol": "💬",
+      "symbolKey": "social_boundaries",
+      "column": 3,
+      "page": 2,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "social_boundaries",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_technology_media_words",
+      "label": "Technology Media • Words",
+      "symbol": "💻",
+      "symbolKey": "technology_media",
+      "column": 3,
+      "page": 2,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "technology_media",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_time_routines_words",
+      "label": "Time Routines • Words",
+      "symbol": "🕒",
+      "symbolKey": "time_routines",
+      "column": 3,
+      "page": 3,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 5,
+      "totalPages": 1,
+      "sourceBranch": "time_routines",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 5
+        }
+      }
+    },
+    {
+      "id": "c3_communication_repair_templates",
+      "label": "Communication Repair • Templates",
+      "symbol": "🛠️",
+      "symbolKey": "communication_repair",
+      "column": 3,
+      "page": 3,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 14,
+      "totalPages": 2,
+      "sourceBranch": "communication_repair",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 14
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 14
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 14
+        }
+      }
+    },
+    {
+      "id": "c3_expanded_descriptors_words",
+      "label": "Expanded Descriptors • Words",
+      "symbol": "◆",
+      "symbolKey": "expanded_descriptors",
+      "column": 3,
+      "page": 3,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "expanded_descriptors",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_words",
+      "label": "Grammar Language • Words",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 3,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 31,
+      "totalPages": 4,
+      "sourceBranch": "grammar_language",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 31
+        }
+      }
+    },
+    {
+      "id": "c3_math_deep_words",
+      "label": "Math Deep • Words",
+      "symbol": "◆",
+      "symbolKey": "math_deep",
+      "column": 3,
+      "page": 3,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "math_deep",
+      "entryKind": "words",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_medical_deep_words",
+      "label": "Medical Deep • Words",
+      "symbol": "🩺",
+      "symbolKey": "medical_deep",
+      "column": 3,
+      "page": 3,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "medical_deep",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_reading_writing_words",
+      "label": "Reading Writing • Words",
+      "symbol": "◆",
+      "symbolKey": "reading_writing",
+      "column": 3,
+      "page": 4,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "reading_writing",
+      "entryKind": "words",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_sports_movement_words",
+      "label": "Sports Movement • Words",
+      "symbol": "➡️",
+      "symbolKey": "sports_movement",
+      "column": 3,
+      "page": 4,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 2,
+      "totalPages": 1,
+      "sourceBranch": "sports_movement",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 2
+        }
+      }
+    },
+    {
+      "id": "c3_states_conditions_words",
+      "label": "States Conditions • Words",
+      "symbol": "◆",
+      "symbolKey": "states_conditions",
+      "column": 3,
+      "page": 4,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "states_conditions",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_travel_navigation_words",
+      "label": "Travel Navigation • Words",
+      "symbol": "◆",
+      "symbolKey": "travel_navigation",
+      "column": 3,
+      "page": 4,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "travel_navigation",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_compounds_01",
+      "label": "Grammar Language • Compounds G–L • Part 1",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 4,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_compounds_02",
+      "label": "Grammar Language • Compounds L–R • Part 2",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 4,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_compounds_03",
+      "label": "Grammar Language • Compounds R–S • Part 3",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 5,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_compounds_04",
+      "label": "Grammar Language • Compounds S–W • Part 4",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 5,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_grammar_language_compounds_05",
+      "label": "Grammar Language • Compounds W • Part 5",
+      "symbol": "🔤",
+      "symbolKey": "grammar_language",
+      "column": 3,
+      "page": 5,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 10,
+      "totalPages": 1,
+      "sourceBranch": "grammar_language",
+      "entryKind": "compounds",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        }
+      }
+    },
+    {
+      "id": "c3_academic_deep_templates",
+      "label": "Academic Deep • Templates",
+      "symbol": "◆",
+      "symbolKey": "academic_deep",
+      "column": 3,
+      "page": 5,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "academic_deep",
+      "entryKind": "templates",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_medical_deep_templates",
+      "label": "Medical Deep • Templates",
+      "symbol": "🩺",
+      "symbolKey": "medical_deep",
+      "column": 3,
+      "page": 5,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "medical_deep",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_descriptors_words",
+      "label": "Descriptors • Words",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 3,
+      "page": 5,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "descriptors",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_digital_safety_words",
+      "label": "Digital Safety • Words",
+      "symbol": "🛡️",
+      "symbolKey": "digital_safety",
+      "column": 3,
+      "page": 6,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "digital_safety",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_money_life_skills_words",
+      "label": "Money Life Skills • Words",
+      "symbol": "◆",
+      "symbolKey": "money_life_skills",
+      "column": 3,
+      "page": 6,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "money_life_skills",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_transportation_words",
+      "label": "Transportation • Words",
+      "symbol": "🚗",
+      "symbolKey": "transportation",
+      "column": 3,
+      "page": 6,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "transportation",
+      "entryKind": "words",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_actions_templates",
+      "label": "Actions • Templates",
+      "symbol": "⚡",
+      "symbolKey": "actions",
+      "column": 3,
+      "page": 6,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "actions",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c3_body_pain_templates",
+      "label": "Body Pain • Templates",
+      "symbol": "🙌",
+      "symbolKey": "body_pain",
+      "column": 3,
+      "page": 6,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "body_pain",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_core_templates",
+      "label": "Core • Templates",
+      "symbol": "⭐",
+      "symbolKey": "core",
+      "column": 3,
+      "page": 6,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "core",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_descriptors_phrases",
+      "label": "Descriptors • Phrases",
+      "symbol": "◆",
+      "symbolKey": "descriptors",
+      "column": 3,
+      "page": 7,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 1,
+      "totalPages": 1,
+      "sourceBranch": "descriptors",
+      "entryKind": "phrases",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1
+        }
+      }
+    },
+    {
+      "id": "c3_community_templates",
+      "label": "Community • Templates",
+      "symbol": "🏙️",
+      "symbolKey": "community",
+      "column": 3,
+      "page": 7,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "community",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_places_templates",
+      "label": "Places • Templates",
+      "symbol": "📍",
+      "symbolKey": "places",
+      "column": 3,
+      "page": 7,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 13,
+      "totalPages": 2,
+      "sourceBranch": "places",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 13
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 13
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 13
+        }
+      }
+    },
+    {
+      "id": "c3_questions_templates_01",
+      "label": "Questions • Templates R • Part 1",
+      "symbol": "❓",
+      "symbolKey": "questions",
+      "column": 3,
+      "page": 7,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "questions",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_questions_templates_02",
+      "label": "Questions • Templates R–S • Part 2",
+      "symbol": "❓",
+      "symbolKey": "questions",
+      "column": 3,
+      "page": 7,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "questions",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_questions_templates_03",
+      "label": "Questions • Templates S • Part 3",
+      "symbol": "❓",
+      "symbolKey": "questions",
+      "column": 3,
+      "page": 7,
+      "slot": 6,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 9,
+      "totalPages": 1,
+      "sourceBranch": "questions",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 9
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 9
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 9
+        }
+      }
+    },
+    {
+      "id": "c3_regulation_templates_01",
+      "label": "Regulation • Templates C • Part 1",
+      "symbol": "◆",
+      "symbolKey": "regulation",
+      "column": 3,
+      "page": 8,
+      "slot": 1,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 50,
+      "totalPages": 5,
+      "sourceBranch": "regulation",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 50
+        }
+      }
+    },
+    {
+      "id": "c3_regulation_templates_02",
+      "label": "Regulation • Templates C • Part 2",
+      "symbol": "◆",
+      "symbolKey": "regulation",
+      "column": 3,
+      "page": 8,
+      "slot": 2,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 4,
+      "totalPages": 1,
+      "sourceBranch": "regulation",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 4
+        }
+      }
+    },
+    {
+      "id": "c3_school_templates",
+      "label": "School • Templates",
+      "symbol": "🏫",
+      "symbolKey": "school",
+      "column": 3,
+      "page": 8,
+      "slot": 3,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 10,
+      "totalPages": 1,
+      "sourceBranch": "school",
+      "entryKind": "templates",
+      "requiresSchoolMode": true,
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 10
+        }
+      }
+    },
+    {
+      "id": "c3_time_routines_templates",
+      "label": "Time Routines • Templates",
+      "symbol": "🕒",
+      "symbolKey": "time_routines",
+      "column": 3,
+      "page": 8,
+      "slot": 4,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 3,
+      "totalPages": 1,
+      "sourceBranch": "time_routines",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3
+        }
+      }
+    },
+    {
+      "id": "c3_transportation_templates",
+      "label": "Transportation • Templates",
+      "symbol": "🚗",
+      "symbolKey": "transportation",
+      "column": 3,
+      "page": 8,
+      "slot": 5,
+      "colorRole": "preposition",
+      "visibleByStage": [
+        4
+      ],
+      "visibleAfterColumnsByStage": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "wordCount": 6,
+      "totalPages": 1,
+      "sourceBranch": "transportation",
+      "entryKind": "templates",
+      "minimumStageByAgeBand": {
+        "early_childhood": null,
+        "school_age": 4,
+        "teen": 4,
+        "adult": 4
+      },
+      "wordCountsByAgeStage": {
+        "early_childhood": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "school_age": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 6
+        },
+        "teen": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 6
+        },
+        "adult": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 6
+        }
+      }
+    }
+  ]
+}

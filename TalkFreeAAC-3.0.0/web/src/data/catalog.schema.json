@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://talkfreeaac.example/schemas/board-catalog.schema.json",
+  "title": "TalkFreeAAC Board Catalog",
+  "type": "object",
+  "patternProperties": {
+    "^[1-6]$": {
+      "type": "object",
+      "required": ["column", "buckets"],
+      "properties": {
+        "column": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "buckets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/bucket" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "visibility": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1, "maximum": 4 },
+      "uniqueItems": true
+    },
+    "bucket": {
+      "type": "object",
+      "required": ["id", "label", "column", "page", "slot", "colorRole", "visibleByStage", "words"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "symbol": { "type": "string" },
+        "colorRole": { "type": "string", "minLength": 1 },
+        "column": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "page": { "type": "integer", "minimum": 1 },
+        "slot": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "visibleByStage": { "$ref": "#/$defs/visibility" },
+        "words": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/word" }
+        }
+      }
+    },
+    "word": {
+      "type": "object",
+      "required": ["id", "label", "spoken", "column", "page", "slot", "role", "visibleByStage"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "spoken": { "type": "string" },
+        "column": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "page": { "type": "integer", "minimum": 1 },
+        "slot": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "role": { "type": "string", "minLength": 1 },
+        "visibleByStage": { "$ref": "#/$defs/visibility" },
+        "grammarProfileId": { "type": "string" },
+        "slamShutTrigger": { "type": "boolean" }
+      }
+    }
+  }
+}

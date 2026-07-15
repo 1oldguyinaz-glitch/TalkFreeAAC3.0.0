@@ -1,0 +1,12 @@
+{
+  "name": "talkfreeaac",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "install:web": "npm --prefix web install",
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "test": "npm --prefix web test",
+    "validate:catalog": "npm --prefix web run validate:catalog"
+  }
+}

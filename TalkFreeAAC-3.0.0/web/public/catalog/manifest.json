@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "board-core-catalog-v1.3.1",
+  "catalogVersion": "10k-age-stage-early-childhood-curated-1",
+  "totalSourceEntries": 10000,
+  "totalBucketedWords": 9995,
+  "totalAlwaysActiveControls": 5,
+  "totalBuckets": 478,
+  "stagePaths": {
+    "1": [
+      1,
+      2,
+      6
+    ],
+    "2": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "3": [
+      1,
+      2,
+      4,
+      5,
+      6
+    ],
+    "4": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "columns": {
+    "1": {
+      "directory": "catalog/columns/column1.directory.json",
+      "words": "catalog/columns/column1.words.json",
+      "sourceEntries": 2934,
+      "bucketedEntries": 2930,
+      "alwaysActiveEntries": 4,
+      "buckets": 116,
+      "rootPages": 20,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 1028,
+        "2": 1289,
+        "3": 1985,
+        "4": 2930
+      }
+    },
+    "2": {
+      "directory": "catalog/columns/column2.directory.json",
+      "words": "catalog/columns/column2.words.json",
+      "sourceEntries": 648,
+      "bucketedEntries": 647,
+      "alwaysActiveEntries": 1,
+      "buckets": 73,
+      "rootPages": 13,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 167,
+        "2": 334,
+        "3": 593,
+        "4": 647
+      }
+    },
+    "3": {
+      "directory": "catalog/columns/column3.directory.json",
+      "words": "catalog/columns/column3.words.json",
+      "sourceEntries": 543,
+      "bucketedEntries": 543,
+      "alwaysActiveEntries": 0,
+      "buckets": 47,
+      "rootPages": 8,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 543
+      }
+    },
+    "4": {
+      "directory": "catalog/columns/column4.directory.json",
+      "words": "catalog/columns/column4.words.json",
+      "sourceEntries": 265,
+      "bucketedEntries": 265,
+      "alwaysActiveEntries": 0,
+      "buckets": 35,
+      "rootPages": 6,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 0,
+        "2": 0,
+        "3": 243,
+        "4": 265
+      }
+    },
+    "5": {
+      "directory": "catalog/columns/column5.directory.json",
+      "words": "catalog/columns/column5.words.json",
+      "sourceEntries": 1034,
+      "bucketedEntries": 1034,
+      "alwaysActiveEntries": 0,
+      "buckets": 67,
+      "rootPages": 12,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 0,
+        "2": 476,
+        "3": 814,
+        "4": 1034
+      }
+    },
+    "6": {
+      "directory": "catalog/columns/column6.directory.json",
+      "words": "catalog/columns/column6.words.json",
+      "sourceEntries": 4576,
+      "bucketedEntries": 4576,
+      "alwaysActiveEntries": 0,
+      "buckets": 140,
+      "rootPages": 24,
+      "maximumWordPage": 5,
+      "visibleWordCountsByStage": {
+        "1": 698,
+        "2": 3122,
+        "3": 4318,
+        "4": 4576
+      }
+    }
+  },
+  "alwaysActiveControls": [
+    {
+      "id": "yes",
+      "sourceId": "v5_25_w_0028_yes",
+      "label": "Yes",
+      "spoken": "yes",
+      "column": 1,
+      "alwaysActive": true,
+      "action": "insert"
+    },
+    {
+      "id": "no",
+      "sourceId": "v5_25_w_0029_no",
+      "label": "No",
+      "spoken": "no",
+      "column": 1,
+      "alwaysActive": true,
+      "action": "insert"
+    },
+    {
+      "id": "help",
+      "sourceId": "v5_25_w_0144_help",
+      "label": "Help",
+      "spoken": "help",
+      "column": 1,
+      "alwaysActive": true,
+      "action": "insert"
+    },
+    {
+      "id": "stop",
+      "sourceId": "v5_25_w_0092_stop",
+      "label": "Stop",
+      "spoken": "stop",
+      "column": 2,
+      "alwaysActive": true,
+      "action": "insert"
+    },
+    {
+      "id": "clear",
+      "sourceId": "v5_25_w_0955_clear",
+      "label": "Clear",
+      "spoken": "clear",
+      "column": 1,
+      "alwaysActive": true,
+      "action": "clear"
+    }
+  ],
+  "ageBands": {
+    "early_childhood": {
+      "label": "Early Childhood",
+      "range": "2–5"
+    },
+    "school_age": {
+      "label": "School Age",
+      "range": "6–12"
+    },
+    "teen": {
+      "label": "Teen",
+      "range": "13–17"
+    },
+    "adult": {
+      "label": "Adult",
+      "range": "18+"
+    }
+  },
+  "stageDefinitions": {
+    "1": {
+      "label": "Emerging Talker",
+      "path": [
+        1,
+        2,
+        6
+      ]
+    },
+    "2": {
+      "label": "Expanding Talker",
+      "path": [
+        1,
+        2,
+        5,
+        6
+      ]
+    },
+    "3": {
+      "label": "Sentence Builder",
+      "path": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "4": {
+      "label": "Advanced Communicator",
+      "path": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  "bucketedWordCountsByAgeStage": {
+    "early_childhood": {
+      "1": 180,
+      "2": 230,
+      "3": 270,
+      "4": 300
+    },
+    "school_age": {
+      "1": 343,
+      "2": 1100,
+      "3": 2800,
+      "4": 9995
+    },
+    "teen": {
+      "1": 383,
+      "2": 1250,
+      "3": 3200,
+      "4": 9995
+    },
+    "adult": {
+      "1": 383,
+      "2": 1350,
+      "3": 3500,
+      "4": 9995
+    }
+  },
+  "displayWordCountsByAgeStage": {
+    "early_childhood": {
+      "1": 185,
+      "2": 235,
+      "3": 275,
+      "4": 305
+    },
+    "school_age": {
+      "1": 348,
+      "2": 1105,
+      "3": 2805,
+      "4": 10000
+    },
+    "teen": {
+      "1": 388,
+      "2": 1255,
+      "3": 3205,
+      "4": 10000
+    },
+    "adult": {
+      "1": 388,
+      "2": 1355,
+      "3": 3505,
+      "4": 10000
+    }
+  },
+  "wordCountsByAgeStageColumn": {
+    "early_childhood": {
+      "1": {
+        "1": 35,
+        "2": 55,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 90
+      },
+      "2": {
+        "1": 40,
+        "2": 60,
+        "3": 0,
+        "4": 0,
+        "5": 35,
+        "6": 95
+      },
+      "3": {
+        "1": 42,
+        "2": 62,
+        "3": 0,
+        "4": 18,
+        "5": 48,
+        "6": 100
+      },
+      "4": {
+        "1": 45,
+        "2": 65,
+        "3": 18,
+        "4": 22,
+        "5": 50,
+        "6": 100
+      }
+    },
+    "school_age": {
+      "1": {
+        "1": 63,
+        "2": 88,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 192
+      },
+      "2": {
+        "1": 165,
+        "2": 220,
+        "3": 0,
+        "4": 0,
+        "5": 220,
+        "6": 495
+      },
+      "3": {
+        "1": 420,
+        "2": 420,
+        "3": 0,
+        "4": 224,
+        "5": 616,
+        "6": 1120
+      },
+      "4": {
+        "1": 2930,
+        "2": 647,
+        "3": 543,
+        "4": 265,
+        "5": 1034,
+        "6": 4576
+      }
+    },
+    "teen": {
+      "1": {
+        "1": 63,
+        "2": 100,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 220
+      },
+      "2": {
+        "1": 188,
+        "2": 250,
+        "3": 0,
+        "4": 0,
+        "5": 250,
+        "6": 562
+      },
+      "3": {
+        "1": 480,
+        "2": 480,
+        "3": 0,
+        "4": 256,
+        "5": 704,
+        "6": 1280
+      },
+      "4": {
+        "1": 2930,
+        "2": 647,
+        "3": 543,
+        "4": 265,
+        "5": 1034,
+        "6": 4576
+      }
+    },
+    "adult": {
+      "1": {
+        "1": 63,
+        "2": 100,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 220
+      },
+      "2": {
+        "1": 200,
+        "2": 270,
+        "3": 0,
+        "4": 0,
+        "5": 270,
+        "6": 610
+      },
+      "3": {
+        "1": 520,
+        "2": 500,
+        "3": 0,
+        "4": 265,
+        "5": 735,
+        "6": 1480
+      },
+      "4": {
+        "1": 2930,
+        "2": 647,
+        "3": 543,
+        "4": 265,
+        "5": 1034,
+        "6": 4576
+      }
+    }
+  },
+  "alwaysActiveControlCount": 5,
+  "earlyChildhoodBucketPolicy": {
+    "version": "1.0",
+    "maximumDisplayItems": 305,
+    "interruptControls": 5,
+    "bucketedWordsAtStage4": 300,
+    "column1MaximumVisibleBuckets": 5,
+    "allowedBucketIds": {
+      "1": [
+        "c1_core_words",
+        "c1_questions_words",
+        "c1_social_words",
+        "c1_feelings_words",
+        "c1_emergency_phrases"
+      ],
+      "2": [
+        "c2_actions_words_01",
+        "c2_actions_words_02",
+        "c2_communication_repair_words",
+        "c2_food_drink_words",
+        "c2_questions_words",
+        "c2_regulation_words",
+        "c2_school_words"
+      ],
+      "3": [
+        "c3_core_words",
+        "c3_life_skills_words"
+      ],
+      "4": [
+        "c4_core_words",
+        "c4_questions_words",
+        "c4_social_words"
+      ],
+      "5": [
+        "c5_descriptors_words",
+        "c5_feelings_words",
+        "c5_body_pain_words",
+        "c5_food_drink_words",
+        "c5_regulation_words"
+      ],
+      "6": [
+        "c6_people_words",
+        "c6_food_drink_words",
+        "c6_places_words",
+        "c6_personal_care_words",
+        "c6_body_pain_words_01",
+        "c6_school_words_01",
+        "c6_play_words",
+        "c6_technology_media_words"
+      ]
+    },
+    "visibleBucketIdsByStage": {
+      "1": {
+        "1": [
+          "c1_core_words",
+          "c1_feelings_words",
+          "c1_questions_words",
+          "c1_social_words",
+          "c1_emergency_phrases"
+        ],
+        "2": [
+          "c2_actions_words_01",
+          "c2_actions_words_02",
+          "c2_food_drink_words",
+          "c2_questions_words",
+          "c2_regulation_words",
+          "c2_school_words"
+        ],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [
+          "c6_body_pain_words_01",
+          "c6_food_drink_words",
+          "c6_people_words",
+          "c6_personal_care_words",
+          "c6_places_words",
+          "c6_school_words_01",
+          "c6_technology_media_words",
+          "c6_play_words"
+        ]
+      },
+      "2": {
+        "1": [
+          "c1_core_words",
+          "c1_feelings_words",
+          "c1_questions_words",
+          "c1_social_words",
+          "c1_emergency_phrases"
+        ],
+        "2": [
+          "c2_actions_words_01",
+          "c2_actions_words_02",
+          "c2_communication_repair_words",
+          "c2_food_drink_words",
+          "c2_questions_words",
+          "c2_regulation_words",
+          "c2_school_words"
+        ],
+        "3": [],
+        "4": [],
+        "5": [
+          "c5_body_pain_words",
+          "c5_descriptors_words",
+          "c5_feelings_words",
+          "c5_food_drink_words",
+          "c5_regulation_words"
+        ],
+        "6": [
+          "c6_body_pain_words_01",
+          "c6_food_drink_words",
+          "c6_people_words",
+          "c6_personal_care_words",
+          "c6_places_words",
+          "c6_school_words_01",
+          "c6_technology_media_words",
+          "c6_play_words"
+        ]
+      },
+      "3": {
+        "1": [
+          "c1_core_words",
+          "c1_feelings_words",
+          "c1_questions_words",
+          "c1_social_words",
+          "c1_emergency_phrases"
+        ],
+        "2": [
+          "c2_actions_words_01",
+          "c2_actions_words_02",
+          "c2_communication_repair_words",
+          "c2_food_drink_words",
+          "c2_questions_words",
+          "c2_regulation_words",
+          "c2_school_words"
+        ],
+        "3": [],
+        "4": [
+          "c4_core_words",
+          "c4_questions_words",
+          "c4_social_words"
+        ],
+        "5": [
+          "c5_body_pain_words",
+          "c5_descriptors_words",
+          "c5_feelings_words",
+          "c5_food_drink_words",
+          "c5_regulation_words"
+        ],
+        "6": [
+          "c6_body_pain_words_01",
+          "c6_food_drink_words",
+          "c6_people_words",
+          "c6_personal_care_words",
+          "c6_places_words",
+          "c6_school_words_01",
+          "c6_technology_media_words",
+          "c6_play_words"
+        ]
+      },
+      "4": {
+        "1": [
+          "c1_core_words",
+          "c1_feelings_words",
+          "c1_questions_words",
+          "c1_social_words",
+          "c1_emergency_phrases"
+        ],
+        "2": [
+          "c2_actions_words_01",
+          "c2_actions_words_02",
+          "c2_communication_repair_words",
+          "c2_food_drink_words",
+          "c2_questions_words",
+          "c2_regulation_words",
+          "c2_school_words"
+        ],
+        "3": [
+          "c3_core_words",
+          "c3_life_skills_words"
+        ],
+        "4": [
+          "c4_core_words",
+          "c4_questions_words",
+          "c4_social_words"
+        ],
+        "5": [
+          "c5_body_pain_words",
+          "c5_descriptors_words",
+          "c5_feelings_words",
+          "c5_food_drink_words",
+          "c5_regulation_words"
+        ],
+        "6": [
+          "c6_body_pain_words_01",
+          "c6_food_drink_words",
+          "c6_people_words",
+          "c6_personal_care_words",
+          "c6_places_words",
+          "c6_school_words_01",
+          "c6_technology_media_words",
+          "c6_play_words"
+        ]
+      }
+    }
+  }
+}
