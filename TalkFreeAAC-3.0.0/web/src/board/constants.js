@@ -52,3 +52,25 @@ export const INTERRUPTS = Object.freeze([
   { id: 'stop', sourceId: 'v5_25_w_0092_stop', label: 'Stop', spoken: 'stop', alwaysActive: true },
   { id: 'clear', sourceId: 'v5_25_w_0955_clear', label: 'Clear', spoken: '', alwaysActive: true, action: 'clear' }
 ]);
+
+export const EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS = Object.freeze([
+  INTERRUPTS[0],
+  INTERRUPTS[1],
+  INTERRUPTS[2],
+  {
+    id: 'please',
+    sourceId: 'ec_s1_quick_please',
+    label: 'Please',
+    spoken: 'please',
+    alwaysActive: true
+  },
+  {
+    id: 'no-thank-you',
+    sourceId: 'ec_s1_quick_no_thank_you',
+    label: 'No Thank You',
+    spoken: 'no thank you',
+    alwaysActive: true
+  },
+  INTERRUPTS[3],
+  INTERRUPTS[4]
+]);

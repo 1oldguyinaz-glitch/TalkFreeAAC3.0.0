@@ -1,10 +1,20 @@
 import React from 'react';
-import { INTERRUPTS } from './constants.js';
+import {
+  EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS,
+  INTERRUPTS
+} from './constants.js';
 
-export function InterruptRow({ onInterrupt }) {
+export function InterruptRow({ onInterrupt, stageOneMode = false }) {
+  const controls = stageOneMode
+    ? EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS
+    : INTERRUPTS;
+  const className = stageOneMode
+    ? 'interruptRow interruptRowStageOne'
+    : 'interruptRow';
+
   return (
-    <nav className="interruptRow" aria-label="Always available communication controls">
-      {INTERRUPTS.map((interrupt) => (
+    <nav className={className} aria-label="Always available communication controls">
+      {controls.map((interrupt) => (
         <button
           type="button"
           className={`interruptButton interrupt-${interrupt.id}`}

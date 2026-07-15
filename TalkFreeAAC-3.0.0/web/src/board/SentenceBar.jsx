@@ -6,11 +6,19 @@ function speakSentence(text) {
   window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 }
 
-export function SentenceBar({ sentence, onUndo, onResetBoard }) {
+export function SentenceBar({
+  sentence,
+  onUndo,
+  onResetBoard,
+  stageOneMode = false
+}) {
   const text = sentence.map((token) => token.text).join(' ').trim();
+  const className = stageOneMode
+    ? 'sentenceBar sentenceBarStageOne'
+    : 'sentenceBar';
 
   return (
-    <section className="sentenceBar" aria-label="Sentence bar">
+    <section className={className} aria-label="Sentence bar">
       <div className="sentenceText" aria-live="polite">
         {sentence.length ? (
           sentence.map((token) => (
@@ -22,18 +30,34 @@ export function SentenceBar({ sentence, onUndo, onResetBoard }) {
             </span>
           ))
         ) : (
-          <span className="sentencePlaceholder">Build a sentence from left to right</span>
+          <span className="sentencePlaceholder">
+            Build a sentence from left to right
+          </span>
         )}
       </div>
       <div className="sentenceActions">
-        <button type="button" onClick={() => speakSentence(text)} disabled={!text}>
+        <button
+          type="button"
+          className="sentenceActionButton speakButton"
+          onClick={() => speakSentence(text)}
+          disabled={!text}
+        >
           Speak
         </button>
-        <button type="button" onClick={onUndo} disabled={!sentence.length}>
+        <button
+          type="button"
+          className="sentenceActionButton undoButton"
+          onClick={onUndo}
+          disabled={!sentence.length}
+        >
           Undo
         </button>
-        <button type="button" onClick={onResetBoard}>
-          Reset path
+        <button
+          type="button"
+          className="sentenceActionButton resetPathButton"
+          onClick={onResetBoard}
+        >
+          Reset Path
         </button>
       </div>
     </section>

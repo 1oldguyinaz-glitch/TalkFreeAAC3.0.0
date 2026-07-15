@@ -102,7 +102,7 @@ export function BoardColumn({
             disabled={!enabled}
             onClick={() => actions.backToBuckets(column)}
           >
-            Categories
+            {singleColumnMode ? 'Back' : 'Categories'}
           </button>
           <strong>{pageData.bucket?.label ?? 'Words'}</strong>
         </div>

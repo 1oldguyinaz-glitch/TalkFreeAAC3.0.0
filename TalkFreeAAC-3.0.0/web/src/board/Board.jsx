@@ -97,10 +97,20 @@ export function Board() {
         sentence={state.sentence}
         onUndo={actions.undo}
         onResetBoard={actions.resetBoard}
+        stageOneMode={usesEarlyChildhoodStageOne}
       />
 
-      <div className="boardUtilityRow">
-        <InterruptRow onInterrupt={actions.interrupt} />
+      <div
+        className={
+          usesEarlyChildhoodStageOne
+            ? 'boardUtilityRow boardUtilityRowStageOne'
+            : 'boardUtilityRow'
+        }
+      >
+        <InterruptRow
+          onInterrupt={actions.interrupt}
+          stageOneMode={usesEarlyChildhoodStageOne}
+        />
         <BoardSettings
           stage={state.stage}
           ageBand={state.ageBand}
