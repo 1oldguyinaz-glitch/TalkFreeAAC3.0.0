@@ -14,6 +14,7 @@ export function createInitialBoardState(stage = 1, ageBand = DEFAULT_AGE_BAND) {
     activeColumn: 1,
     sentence: [],
     pendingVerb: null,
+    targetAdvanceAvailable: false,
     columnViews: makeRootColumnViews(),
     lastAnnouncement: 'Column 1 is active.'
   };
@@ -24,15 +25,60 @@ export function isColumnInteractive(state, column) {
   return behavior.interactionMode === 'soft_guide' || state.activeColumn === column;
 }
 
+function lastLanguageToken(sentence) {
+  for (let index = sentence.length - 1; index >= 0; index -= 1) {
+    if ((sentence[index]?.column ?? 0) >= 1) return sentence[index];
+  }
+  return null;
+}
+
+function firstWordAndRemainder(text) {
+  const [first, ...rest] = text.split(' ');
+  return { first, remainder: rest.length ? ` ${rest.join(' ')}` : '' };
+}
+
+function thirdPersonVerb(text) {
+  const { first, remainder } = firstWordAndRemainder(text);
+  const lower = first.toLowerCase();
+  const irregular = {
+    have: 'has',
+    do: 'does',
+    go: 'goes',
+    "don't": "doesn't"
+  };
+  if (irregular[lower]) return `${irregular[lower]}${remainder}`;
+  if (lower === "can't") return `${first}${remainder}`;
+  if (/[^aeiou]y$/i.test(first)) return `${first.slice(0, -1)}ies${remainder}`;
+  if (/(s|sh|ch|x|z|o)$/i.test(first)) return `${first}es${remainder}`;
+  return `${first}s${remainder}`;
+}
+
+function schoolAgeStageOneSpokenText(state, word) {
+  const base = word.spoken ?? word.label;
+  if (state.stage !== 1 || state.ageBand !== 'school_age' || word.column !== 2) {
+    return base;
+  }
+
+  const previous = lastLanguageToken(state.sentence);
+  if (previous?.column === 2) return base;
+
+  const starter = state.sentence.find((token) => token.column === 1);
+  return starter?.subjectAgreement === 'third_person'
+    ? thirdPersonVerb(base)
+    : base;
+}
+
 function appendToken(state, word, pending = false) {
   const token = {
     id: `${word.id}-${Date.now()}-${state.sentence.length}`,
     sourceId: word.id,
-    text: word.spoken ?? word.label,
+    text: schoolAgeStageOneSpokenText(state, word),
     label: word.label,
     role: word.role,
     column: word.column,
-    pending
+    pending,
+    ...(word.subjectAgreement ? { subjectAgreement: word.subjectAgreement } : {}),
+    ...(word.targetAdvanceAllowed ? { targetAdvanceAllowed: true } : {})
   };
   return [...state.sentence, token];
 }
@@ -53,6 +99,7 @@ function commitPendingVerbAsBase(state) {
       token.id === state.pendingVerb.tokenId ? { ...token, pending: false } : token
     ),
     pendingVerb: null,
+    targetAdvanceAvailable: false,
     columnViews: restoreColumnView(state.columnViews, 3)
   };
 }
@@ -137,6 +184,7 @@ export function boardReducer(state, action) {
         return {
           ...workingState,
           sentence: pendingSentence,
+          targetAdvanceAvailable: false,
           pendingVerb: {
             tokenId: pendingSentence[pendingSentence.length - 1].id,
             sourceWord: word,
@@ -171,10 +219,29 @@ export function boardReducer(state, action) {
         ...workingState,
         sentence,
         activeColumn: nextColumn,
+        targetAdvanceAvailable:
+          nextColumn === 2 && word.targetAdvanceAllowed === true,
         columnViews: staysInCurrentColumn
           ? workingState.columnViews
           : restoreColumnView(workingState.columnViews, word.column),
         lastAnnouncement: progressionAnnouncement(word.label, nextColumn, workingState.stage)
+      };
+    }
+
+    case 'ADVANCE_TO_TARGETS': {
+      if (
+        state.stage !== 1
+        || state.ageBand !== 'school_age'
+        || state.activeColumn !== 2
+        || !state.targetAdvanceAvailable
+      ) return state;
+
+      return {
+        ...state,
+        activeColumn: 6,
+        targetAdvanceAvailable: false,
+        columnViews: restoreColumnView(state.columnViews, 2),
+        lastAnnouncement: 'Targets are active in Column 6.'
       };
     }
 
@@ -197,6 +264,7 @@ export function boardReducer(state, action) {
         ...state,
         sentence,
         pendingVerb: null,
+        targetAdvanceAvailable: false,
         activeColumn: nextColumn,
         columnViews: restoreColumnView(state.columnViews, 3),
         lastAnnouncement: progressionAnnouncement(variant.label, nextColumn, state.stage)
@@ -227,10 +295,14 @@ export function boardReducer(state, action) {
       if (!state.sentence.length) return state;
       const removed = state.sentence[state.sentence.length - 1];
       const wasPending = removed.id === state.pendingVerb?.tokenId;
+      const sentence = state.sentence.slice(0, -1);
+      const previous = lastLanguageToken(sentence);
       return {
         ...state,
-        sentence: state.sentence.slice(0, -1),
+        sentence,
         pendingVerb: wasPending ? null : state.pendingVerb,
+        targetAdvanceAvailable:
+          previous?.column === 2 && previous?.targetAdvanceAllowed === true,
         activeColumn: wasPending ? 2 : state.activeColumn,
         columnViews: wasPending
           ? {

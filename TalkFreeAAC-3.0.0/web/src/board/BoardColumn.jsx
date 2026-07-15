@@ -95,7 +95,11 @@ export function BoardColumn({
           recommended={recommended}
           behavior={behavior}
         />
-        <div className="columnToolbar">
+        <div className={
+          state.targetAdvanceAvailable && column === 2
+            ? 'columnToolbar columnToolbarWithTargetAdvance'
+            : 'columnToolbar'
+        }>
           <button
             type="button"
             className="backButton"
@@ -105,6 +109,15 @@ export function BoardColumn({
             {singleColumnMode ? 'Back' : 'Categories'}
           </button>
           <strong>{pageData.bucket?.label ?? 'Words'}</strong>
+          {state.targetAdvanceAvailable && column === 2 ? (
+            <button
+              type="button"
+              className="targetAdvanceButton"
+              onClick={actions.advanceToTargets}
+            >
+              Targets
+            </button>
+          ) : null}
         </div>
         <div className="columnBody columnBodyWords">
           <FixedSlotGrid
@@ -176,6 +189,18 @@ export function BoardColumn({
         recommended={recommended}
         behavior={behavior}
       />
+      {singleColumnMode && state.targetAdvanceAvailable && column === 2 ? (
+        <div className="columnContinuationToolbar">
+          <strong>Choose another action or continue to a target</strong>
+          <button
+            type="button"
+            className="targetAdvanceButton"
+            onClick={actions.advanceToTargets}
+          >
+            Targets
+          </button>
+        </div>
+      ) : null}
       {singleColumnMode ? null : (
         <div className="columnInstruction">{instruction}</div>
       )}

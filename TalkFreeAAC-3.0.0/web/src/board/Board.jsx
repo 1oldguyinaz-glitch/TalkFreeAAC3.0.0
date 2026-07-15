@@ -3,6 +3,7 @@ import { COLUMN_DEFINITIONS } from './constants.js';
 import { useBoardMachine } from './useBoardMachine.js';
 import { useBoardCatalog } from '../data/useBoardCatalog.js';
 import { EARLY_CHILDHOOD_STAGE_1_CATALOG } from '../data/earlyChildhoodStage1Catalog.js';
+import { SCHOOL_AGE_STAGE_1_CATALOG } from '../data/schoolAgeStage1Catalog.js';
 import { firstVisibleWordPage } from './catalogSelectors.js';
 import { InterruptRow } from './InterruptRow.jsx';
 import { SentenceBar } from './SentenceBar.jsx';
@@ -23,12 +24,18 @@ export function Board() {
 
   const usesEarlyChildhoodStageOne =
     state.ageBand === 'early_childhood' && state.stage === 1;
+  const usesSchoolAgeStageOne =
+    state.ageBand === 'school_age' && state.stage === 1;
+  const usesSingleColumnStageOne =
+    usesEarlyChildhoodStageOne || usesSchoolAgeStageOne;
 
   const displayedCatalog = usesEarlyChildhoodStageOne
     ? EARLY_CHILDHOOD_STAGE_1_CATALOG
-    : catalog;
+    : usesSchoolAgeStageOne
+      ? SCHOOL_AGE_STAGE_1_CATALOG
+      : catalog;
 
-  const visibleColumnDefinitions = usesEarlyChildhoodStageOne
+  const visibleColumnDefinitions = usesSingleColumnStageOne
     ? COLUMN_DEFINITIONS.filter(
         (definition) => definition.id === state.activeColumn
       )
@@ -49,7 +56,7 @@ export function Board() {
       try {
         setInteractionError('');
 
-        if (usesEarlyChildhoodStageOne) {
+        if (usesSingleColumnStageOne) {
           const firstPage = firstVisibleWordPage(bucket.words ?? [], context);
           actions.openBucket(column, bucket, firstPage);
           return;
@@ -65,9 +72,9 @@ export function Board() {
         setInteractionError(loadError.message);
       }
     }
-  }), [actions, context, loadColumnWords, usesEarlyChildhoodStageOne]);
+  }), [actions, context, loadColumnWords, usesSingleColumnStageOne]);
 
-  if (!usesEarlyChildhoodStageOne && !directoriesReady && !error) {
+  if (!usesSingleColumnStageOne && !directoriesReady && !error) {
     return (
       <main className="boardShell boardLoading" aria-busy="true">
         <h1>TalkFreeAAC</h1>
@@ -76,7 +83,7 @@ export function Board() {
     );
   }
 
-  if (!usesEarlyChildhoodStageOne && error && !directoriesReady) {
+  if (!usesSingleColumnStageOne && error && !directoriesReady) {
     return (
       <main className="boardShell boardError" role="alert">
         <h1>Catalog could not be loaded</h1>
@@ -88,7 +95,7 @@ export function Board() {
   return (
     <main
       className={
-        usesEarlyChildhoodStageOne
+        usesSingleColumnStageOne
           ? 'boardShell boardShellSingleColumn'
           : 'boardShell'
       }
@@ -97,19 +104,19 @@ export function Board() {
         sentence={state.sentence}
         onUndo={actions.undo}
         onResetBoard={actions.resetBoard}
-        stageOneMode={usesEarlyChildhoodStageOne}
+        stageOneMode={usesSingleColumnStageOne}
       />
 
       <div
         className={
-          usesEarlyChildhoodStageOne
+          usesSingleColumnStageOne
             ? 'boardUtilityRow boardUtilityRowStageOne'
             : 'boardUtilityRow'
         }
       >
         <InterruptRow
           onInterrupt={actions.interrupt}
-          stageOneMode={usesEarlyChildhoodStageOne}
+          stageOneMode={usesSingleColumnStageOne}
         />
         <BoardSettings
           stage={state.stage}
@@ -126,14 +133,14 @@ export function Board() {
       <div
         className="boardViewport"
         aria-label={
-          usesEarlyChildhoodStageOne
+          usesSingleColumnStageOne
             ? `Active grammatical column ${state.activeColumn}`
             : 'Six-column grammatical board'
         }
       >
         <div
           className={
-            usesEarlyChildhoodStageOne
+            usesSingleColumnStageOne
               ? 'sixColumnGrid singleActiveColumnGrid'
               : 'sixColumnGrid'
           }
@@ -147,7 +154,7 @@ export function Board() {
               state={state}
               actions={runtimeActions}
               context={context}
-              singleColumnMode={usesEarlyChildhoodStageOne}
+              singleColumnMode={usesSingleColumnStageOne}
             />
           ))}
         </div>

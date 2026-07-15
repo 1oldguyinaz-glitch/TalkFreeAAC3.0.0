@@ -926,3 +926,94 @@ button:disabled { cursor: not-allowed; }
     font-size: 1rem;
   }
 }
+
+
+/* TalkFreeAAC 3.0.2 — School Age Stage 1 uses the same one-column
+   motor-planning layout and completed Stage 1 control cadence. */
+.boardShellSingleColumn .boardColumnSingle .bucketButton:not(.bucketButtonPhotoTile),
+.boardShellSingleColumn .boardColumnSingle .wordButton:not(.wordButtonPhotoTile) {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.boardShellSingleColumn .boardColumnSingle .bucketButton:not(.bucketButtonPhotoTile) {
+  gap: 0.45rem;
+  padding: 0.55rem;
+  font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+  font-weight: 900;
+}
+
+.boardShellSingleColumn .boardColumnSingle .wordButton:not(.wordButtonPhotoTile) {
+  padding: 0.45rem;
+  font-size: clamp(1rem, 1.55vw, 1.3rem);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.columnToolbarWithTargetAdvance {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.columnContinuationToolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 4rem;
+  padding: 0.38rem 0.48rem;
+  border-bottom: 1px solid #d9dee7;
+  background: #f9fafc;
+}
+
+.columnContinuationToolbar strong {
+  text-align: center;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 900;
+}
+
+.targetAdvanceButton {
+  min-width: 7rem;
+  min-height: 3.25rem;
+  border: 3px solid #a85b13;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  background: #ffd3a8;
+  color: #6e3500;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 900;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.targetAdvanceButton:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .boardShellSingleColumn .boardColumnSingle .bucketButton:not(.bucketButtonPhotoTile) {
+    padding: 0.35rem;
+    font-size: 0.98rem;
+  }
+
+  .boardShellSingleColumn .boardColumnSingle .wordButton:not(.wordButtonPhotoTile) {
+    padding: 0.28rem;
+    font-size: clamp(0.84rem, 3.1vw, 1rem);
+  }
+
+  .columnContinuationToolbar {
+    min-height: 3.35rem;
+    gap: 0.35rem;
+    padding: 0.28rem 0.35rem;
+  }
+
+  .columnContinuationToolbar strong {
+    font-size: 0.9rem;
+  }
+
+  .targetAdvanceButton {
+    min-width: 5.5rem;
+    min-height: 2.8rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 1.05rem;
+  }
+}

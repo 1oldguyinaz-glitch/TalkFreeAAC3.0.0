@@ -59,7 +59,7 @@ test('Stage 1 activates the larger sentence and quick-control presentation', () 
   const sentence = source('src/board/SentenceBar.jsx');
   const interrupts = source('src/board/InterruptRow.jsx');
 
-  assert.match(board, /stageOneMode=\{usesEarlyChildhoodStageOne\}/);
+  assert.match(board, /stageOneMode=\{usesSingleColumnStageOne\}/);
   assert.match(board, /boardUtilityRowStageOne/);
   assert.match(sentence, /sentenceBarStageOne/);
   assert.match(sentence, /speakButton/);

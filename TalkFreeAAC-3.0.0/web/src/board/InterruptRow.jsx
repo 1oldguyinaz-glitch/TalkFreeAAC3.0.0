@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS,
+  STAGE_ONE_INTERRUPTS,
   INTERRUPTS
 } from './constants.js';
 
 export function InterruptRow({ onInterrupt, stageOneMode = false }) {
   const controls = stageOneMode
-    ? EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS
+    ? STAGE_ONE_INTERRUPTS
     : INTERRUPTS;
   const className = stageOneMode
     ? 'interruptRow interruptRowStageOne'

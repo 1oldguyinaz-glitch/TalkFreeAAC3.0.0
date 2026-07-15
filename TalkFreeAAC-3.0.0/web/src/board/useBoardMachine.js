@@ -16,6 +16,7 @@ export function useBoardMachine(initialStage = 1, initialAgeBand = DEFAULT_AGE_B
     backToBuckets: (column) => dispatch({ type: 'BACK_TO_BUCKETS', column }),
     setPage: (column, page) => dispatch({ type: 'SET_PAGE', column, page }),
     selectWord: (column, word) => dispatch({ type: 'SELECT_WORD', column, word }),
+    advanceToTargets: () => dispatch({ type: 'ADVANCE_TO_TARGETS' }),
     selectGrammar: (variant) => dispatch({ type: 'SELECT_GRAMMAR', variant }),
     interrupt: (interrupt) => dispatch({ type: 'INTERRUPT', interrupt }),
     undo: () => dispatch({ type: 'UNDO' }),

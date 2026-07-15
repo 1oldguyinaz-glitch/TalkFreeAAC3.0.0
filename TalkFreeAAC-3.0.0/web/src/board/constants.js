@@ -53,7 +53,7 @@ export const INTERRUPTS = Object.freeze([
   { id: 'clear', sourceId: 'v5_25_w_0955_clear', label: 'Clear', spoken: '', alwaysActive: true, action: 'clear' }
 ]);
 
-export const EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS = Object.freeze([
+export const STAGE_ONE_INTERRUPTS = Object.freeze([
   INTERRUPTS[0],
   INTERRUPTS[1],
   INTERRUPTS[2],
@@ -74,3 +74,5 @@ export const EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS = Object.freeze([
   INTERRUPTS[3],
   INTERRUPTS[4]
 ]);
+
+export const EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS = STAGE_ONE_INTERRUPTS;
