@@ -4,7 +4,8 @@ import {
   INTERRUPTS
 } from './constants.js';
 
-export function InterruptRow({ onInterrupt, stageOneMode = false }) {
+export function InterruptRow({ onInterrupt, stageOneMode = false, schoolAgeStageOneMode = false }) {
+  stageOneMode = stageOneMode || schoolAgeStageOneMode;
   const controls = stageOneMode
     ? STAGE_ONE_INTERRUPTS
     : INTERRUPTS;

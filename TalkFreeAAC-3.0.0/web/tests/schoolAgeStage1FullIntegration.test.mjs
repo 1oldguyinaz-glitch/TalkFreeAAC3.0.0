@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { SCHOOL_AGE_STAGE_1_CATALOG } from '../src/data/schoolAgeStage1Catalog.js';
+import { getBucketPage, getWordPage } from '../src/board/catalogSelectors.js';
+const here=dirname(fileURLToPath(import.meta.url)); const root=join(here,'..');
+const context={stage:1,ageBand:'school_age',previousToken:null,pendingVerb:null,sentence:[]};
+const roots=(column)=>SCHOOL_AGE_STAGE_1_CATALOG[column].buckets.filter((b)=>!b.parentBucketId);
+const actual=(column)=>SCHOOL_AGE_STAGE_1_CATALOG[column].buckets.flatMap((b)=>b.words).filter((w)=>!w.targetBucketId);
+test('approved School Age Stage 1 count is 585',()=>{assert.equal(actual(1).length,64);assert.equal(actual(2).length,64);assert.equal(actual(6).length,457);assert.equal(actual(1).length+actual(2).length+actual(6).length,585);});
+test('only columns 1, 2, and 6 are populated',()=>{assert.equal(roots(1).length,8);assert.equal(roots(2).length,8);assert.equal(roots(6).length,8);for(const c of [3,4,5])assert.equal(SCHOOL_AGE_STAGE_1_CATALOG[c].buckets.length,0);});
+test('every visible screen has at most eight fixed choices and no pages',()=>{for(const c of [1,2,6]){const bp=getBucketPage(SCHOOL_AGE_STAGE_1_CATALOG,c,1,context);assert.equal(bp.items.length,8);assert.deepEqual(bp.pages,[1]);for(const b of roots(c)){const wp=getWordPage(SCHOOL_AGE_STAGE_1_CATALOG,c,b.id,1,context);assert.ok(wp.items.length<=8,b.label);assert.deepEqual(wp.pages,[1]);for(const nav of wp.items.filter((x)=>x.targetBucketId)){const child=getWordPage(SCHOOL_AGE_STAGE_1_CATALOG,c,nav.targetBucketId,1,context);assert.ok(child.items.length<=8,nav.label);assert.deepEqual(child.pages,[1]);}}}});
+test('all School Age images exist',()=>{for(const c of [1,2,6])for(const b of SCHOOL_AGE_STAGE_1_CATALOG[c].buckets){assert.ok(b.imageSrc);assert.ok(existsSync(join(root,'public',b.imageSrc)));for(const w of b.words){assert.ok(w.imageSrc,w.label);assert.ok(existsSync(join(root,'public',w.imageSrc)),w.imageSrc);}}});
+test('Column 6 has eight root buckets and 64 human-named sub-buckets',()=>{assert.equal(roots(6).length,8);assert.equal(SCHOOL_AGE_STAGE_1_CATALOG[6].buckets.filter((b)=>b.parentBucketId).length,64);for(const b of roots(6))assert.equal(b.words.filter((w)=>w.targetBucketId).length,8);});
+test('Fitzgerald roles remain explicit',()=>{const labels=new Map(actual(1).concat(actual(2),actual(6)).map((w)=>[w.label,w.colorRole]));assert.equal(labels.get('Can I'),'question');assert.equal(labels.get('my'),'possessive');assert.equal(labels.get("can't"),'negation');assert.equal(labels.get('happy'),'descriptor');assert.equal(labels.get('teacher'),'person');assert.equal(labels.get('backpack'),'target');});
+test('Settings source has no School Age vocabulary or phrase-manager changes',()=>{const s=readFileSync(join(root,'src/board/BoardSettings.jsx'),'utf8');assert.doesNotMatch(s,/School Age vocabulary|quick phrase manager/i);});

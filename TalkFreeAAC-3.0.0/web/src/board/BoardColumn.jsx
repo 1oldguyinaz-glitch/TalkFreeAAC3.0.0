@@ -11,7 +11,6 @@ import {
 } from './constants.js';
 import { getFitzgeraldClassName } from './fitzgerald.js';
 
-
 function fittedSingleColumnSlotCount(items, maximumSlotCount) {
   const highestAssignedSlot = items.reduce(
     (highest, item) => Math.max(highest, item?.slot ?? 0),
@@ -21,6 +20,56 @@ function fittedSingleColumnSlotCount(items, maximumSlotCount) {
   return Math.min(maximumSlotCount, Math.max(4, roundedToFullRow));
 }
 
+function WordPhoto({ word }) {
+  if (word.imageIncludesLabel !== false) {
+    return (
+      <img
+        className="wordPhotoTile"
+        src={word.imageSrc}
+        alt=""
+        aria-hidden="true"
+      />
+    );
+  }
+
+  return (
+    <span className="photoTileContent">
+      <img
+        className="wordPhotoTile"
+        src={word.imageSrc}
+        alt=""
+        aria-hidden="true"
+      />
+      <span className="photoTileLabel">{word.label}</span>
+    </span>
+  );
+}
+
+function BucketPhoto({ bucket }) {
+  if (bucket.imageIncludesLabel !== false) {
+    return (
+      <img
+        className="bucketPhotoTile"
+        src={bucket.imageSrc}
+        alt=""
+        aria-hidden="true"
+      />
+    );
+  }
+
+  return (
+    <span className="photoTileContent">
+      <img
+        className="bucketPhotoTile"
+        src={bucket.imageSrc}
+        alt=""
+        aria-hidden="true"
+      />
+      <span className="photoTileLabel">{bucket.label}</span>
+    </span>
+  );
+}
+
 export function BoardColumn({
   definition,
   catalog,
@@ -28,8 +77,11 @@ export function BoardColumn({
   state,
   actions,
   context,
-  singleColumnMode = false
+  singleColumnMode = false,
+  schoolAgeSingleColumnMode = false
 }) {
+  singleColumnMode = singleColumnMode || schoolAgeSingleColumnMode;
+
   const column = definition.id;
   const behavior = getStageBehavior(state.stage);
   const recommended = state.activeColumn === column;
@@ -95,29 +147,16 @@ export function BoardColumn({
           recommended={recommended}
           behavior={behavior}
         />
-        <div className={
-          state.targetAdvanceAvailable && column === 2
-            ? 'columnToolbar columnToolbarWithTargetAdvance'
-            : 'columnToolbar'
-        }>
+        <div className="columnToolbar">
           <button
             type="button"
             className="backButton"
             disabled={!enabled}
-            onClick={() => actions.backToBuckets(column)}
+            onClick={() => actions.back(column)}
           >
             {singleColumnMode ? 'Back' : 'Categories'}
           </button>
           <strong>{pageData.bucket?.label ?? 'Words'}</strong>
-          {state.targetAdvanceAvailable && column === 2 ? (
-            <button
-              type="button"
-              className="targetAdvanceButton"
-              onClick={actions.advanceToTargets}
-            >
-              Targets
-            </button>
-          ) : null}
         </div>
         <div className="columnBody columnBodyWords">
           <FixedSlotGrid
@@ -125,34 +164,45 @@ export function BoardColumn({
             slotCount={slotCount}
             fitToContainer={singleColumnMode}
             renderItem={(word) => (
-              <button
-                type="button"
-                className={`wordButton ${word.imageSrc ? 'wordButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
-                aria-label={word.label}
-                disabled={!enabled}
-                onClick={() => actions.selectWord(column, word)}
-              >
-                {word.imageSrc ? (
-                  <img
-                    className="wordPhotoTile"
-                    src={word.imageSrc}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <>
-                    {word.symbol ? (
-                      <span className="wordSymbol" aria-hidden="true">
-                        {word.symbol}
-                      </span>
-                    ) : null}
+              word.targetBucketId ? (
+                <button
+                  type="button"
+                  className={`bucketButton subBucketButton ${word.imageSrc ? 'bucketButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
+                  aria-label={word.label}
+                  disabled={!enabled}
+                  onClick={() => actions.openNestedBucket(column, word)}
+                >
+                  {word.imageSrc ? (
+                    <BucketPhoto bucket={word} />
+                  ) : (
                     <span>{word.label}</span>
-                    {word.slamShutTrigger && behavior.slamShutAfterTarget ? (
-                      <small>finish</small>
-                    ) : null}
-                  </>
-                )}
-              </button>
+                  )}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className={`wordButton ${word.imageSrc ? 'wordButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
+                  aria-label={word.label}
+                  disabled={!enabled}
+                  onClick={() => actions.selectWord(column, word)}
+                >
+                  {word.imageSrc ? (
+                    <WordPhoto word={word} />
+                  ) : (
+                    <>
+                      {word.symbol ? (
+                        <span className="wordSymbol" aria-hidden="true">
+                          {word.symbol}
+                        </span>
+                      ) : null}
+                      <span>{word.label}</span>
+                      {word.slamShutTrigger && behavior.slamShutAfterTarget ? (
+                        <small>finish</small>
+                      ) : null}
+                    </>
+                  )}
+                </button>
+              )
             )}
           />
           <Pagination
@@ -189,18 +239,6 @@ export function BoardColumn({
         recommended={recommended}
         behavior={behavior}
       />
-      {singleColumnMode && state.targetAdvanceAvailable && column === 2 ? (
-        <div className="columnContinuationToolbar">
-          <strong>Choose another action or continue to a target</strong>
-          <button
-            type="button"
-            className="targetAdvanceButton"
-            onClick={actions.advanceToTargets}
-          >
-            Targets
-          </button>
-        </div>
-      ) : null}
       {singleColumnMode ? null : (
         <div className="columnInstruction">{instruction}</div>
       )}
@@ -217,12 +255,7 @@ export function BoardColumn({
               onClick={() => actions.openBucket(column, bucket)}
             >
               {bucket.imageSrc ? (
-                <img
-                  className="bucketPhotoTile"
-                  src={bucket.imageSrc}
-                  alt=""
-                  aria-hidden="true"
-                />
+                <BucketPhoto bucket={bucket} />
               ) : (
                 <>
                   <span className="bucketSymbol" aria-hidden="true">

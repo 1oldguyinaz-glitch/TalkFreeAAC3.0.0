@@ -10,8 +10,10 @@ export function SentenceBar({
   sentence,
   onUndo,
   onResetBoard,
-  stageOneMode = false
+  stageOneMode = false,
+  schoolAgeStageOneMode = false
 }) {
+  stageOneMode = stageOneMode || schoolAgeStageOneMode;
   const text = sentence.map((token) => token.text).join(' ').trim();
   const className = stageOneMode
     ? 'sentenceBar sentenceBarStageOne'

@@ -24,7 +24,8 @@ export function firstVisibleWordPage(words, context) {
 }
 
 export function getBucketPage(catalog, column, page, context) {
-  return { ...visiblePageData(getColumnCatalog(catalog, column).buckets, page, context), slotCount: ROOT_BUCKET_SLOT_COUNT };
+  const rootBuckets = getColumnCatalog(catalog, column).buckets.filter((bucket) => !bucket.parentBucketId);
+  return { ...visiblePageData(rootBuckets, page, context), slotCount: ROOT_BUCKET_SLOT_COUNT };
 }
 
 export function getWordPage(catalog, column, bucketId, page, context) {

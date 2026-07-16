@@ -104,7 +104,8 @@ export function Board() {
         sentence={state.sentence}
         onUndo={actions.undo}
         onResetBoard={actions.resetBoard}
-        stageOneMode={usesSingleColumnStageOne}
+        stageOneMode={usesEarlyChildhoodStageOne}
+        schoolAgeStageOneMode={usesSchoolAgeStageOne}
       />
 
       <div
@@ -116,7 +117,8 @@ export function Board() {
       >
         <InterruptRow
           onInterrupt={actions.interrupt}
-          stageOneMode={usesSingleColumnStageOne}
+          stageOneMode={usesEarlyChildhoodStageOne}
+        schoolAgeStageOneMode={usesSchoolAgeStageOne}
         />
         <BoardSettings
           stage={state.stage}
@@ -154,7 +156,8 @@ export function Board() {
               state={state}
               actions={runtimeActions}
               context={context}
-              singleColumnMode={usesSingleColumnStageOne}
+              singleColumnMode={usesEarlyChildhoodStageOne}
+              schoolAgeSingleColumnMode={usesSchoolAgeStageOne}
             />
           ))}
         </div>
