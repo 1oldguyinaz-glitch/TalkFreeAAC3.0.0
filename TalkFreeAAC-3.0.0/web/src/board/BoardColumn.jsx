@@ -77,10 +77,8 @@ export function BoardColumn({
   state,
   actions,
   context,
-  singleColumnMode = false,
-  schoolAgeSingleColumnMode = false
+  singleColumnMode = false
 }) {
-  singleColumnMode = singleColumnMode || schoolAgeSingleColumnMode;
 
   const column = definition.id;
   const behavior = getStageBehavior(state.stage);
@@ -162,7 +160,7 @@ export function BoardColumn({
           <FixedSlotGrid
             items={pageData.items}
             slotCount={slotCount}
-            fitToContainer={singleColumnMode}
+            fitToContainer
             renderItem={(word) => (
               word.targetBucketId ? (
                 <button
@@ -246,6 +244,7 @@ export function BoardColumn({
         <FixedSlotGrid
           items={pageData.items}
           slotCount={slotCount}
+          fitToContainer
           renderItem={(bucket) => (
             <button
               type="button"

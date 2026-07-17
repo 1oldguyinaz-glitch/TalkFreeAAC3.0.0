@@ -7,7 +7,7 @@ export function FixedSlotGrid({
   slotCount,
   renderItem,
   emptyLabel = 'Reserved motor-plan position',
-  fitToContainer = false
+  fitToContainer = true
 }) {
   const gridRef = useRef(null);
   const fallbackGrid = useMemo(

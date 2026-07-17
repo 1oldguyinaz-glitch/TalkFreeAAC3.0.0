@@ -94,18 +94,17 @@ export function Board() {
 
   return (
     <main
-      className={
-        usesSingleColumnStageOne
-          ? 'boardShell boardShellSingleColumn'
-          : 'boardShell'
-      }
+      className={[
+        'boardShell',
+        'boardShellResponsive',
+        usesSingleColumnStageOne ? 'boardShellSingleColumn' : ''
+      ].filter(Boolean).join(' ')}
     >
       <SentenceBar
         sentence={state.sentence}
         onUndo={actions.undo}
         onResetBoard={actions.resetBoard}
-        stageOneMode={usesEarlyChildhoodStageOne}
-        schoolAgeStageOneMode={usesSchoolAgeStageOne}
+        stageOneMode={usesSingleColumnStageOne}
       />
 
       <div
@@ -117,8 +116,7 @@ export function Board() {
       >
         <InterruptRow
           onInterrupt={actions.interrupt}
-          stageOneMode={usesEarlyChildhoodStageOne}
-        schoolAgeStageOneMode={usesSchoolAgeStageOne}
+          stageOneMode={usesSingleColumnStageOne}
         />
         <BoardSettings
           stage={state.stage}
@@ -156,8 +154,7 @@ export function Board() {
               state={state}
               actions={runtimeActions}
               context={context}
-              singleColumnMode={usesEarlyChildhoodStageOne}
-              schoolAgeSingleColumnMode={usesSchoolAgeStageOne}
+              singleColumnMode={usesSingleColumnStageOne}
             />
           ))}
         </div>

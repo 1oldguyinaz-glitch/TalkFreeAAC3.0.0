@@ -43,12 +43,12 @@ test('narrow word areas still include every fixed slot', () => {
   assert.ok(grid.rows <= 8);
 });
 
-test('single-column words enable measured fit-to-container behavior', () => {
+test('every board grid enables measured fit-to-container behavior', () => {
   const column = source('src/board/BoardColumn.jsx');
   const fixedGrid = source('src/board/FixedSlotGrid.jsx');
   const css = source('src/board/board.css');
 
-  assert.match(column, /fitToContainer=\{singleColumnMode\}/);
+  assert.equal((column.match(/fitToContainer/g) ?? []).length, 2);
   assert.match(fixedGrid, /ResizeObserver/);
   assert.match(fixedGrid, /calculateFittedGrid/);
   assert.match(fixedGrid, /fixedSlotGridFitted/);
@@ -56,6 +56,6 @@ test('single-column words enable measured fit-to-container behavior', () => {
   assert.match(css, /repeat\(var\(--fit-rows\)/);
   assert.match(
     css,
-    /\.boardColumnSingleWords \.fixedSlotGridFitted\s*\{[\s\S]*overflow:\s*hidden/
+    /\.boardColumn \.fixedSlotGridFitted\s*\{[\s\S]*overflow:\s*hidden/
   );
 });

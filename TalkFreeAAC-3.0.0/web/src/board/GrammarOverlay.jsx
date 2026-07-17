@@ -9,6 +9,7 @@ export function GrammarOverlay({ profile, enabled, onSelect }) {
       <FixedSlotGrid
         items={profile?.variants ?? []}
         slotCount={WORD_SLOT_COUNT}
+        fitToContainer
         renderItem={(variant) => (
           <button
             type="button"

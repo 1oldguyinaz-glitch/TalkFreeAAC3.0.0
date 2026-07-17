@@ -488,6 +488,47 @@ button:disabled { cursor: not-allowed; }
   font-weight: 750;
 }
 
+/* TalkFreeAAC 3.0.4 — one shared responsive board shell for every
+   age band and communication stage. The active board area owns the remaining
+   viewport and each fixed-slot grid measures that space before sizing cards. */
+.boardShellResponsive {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.boardShellResponsive .sentenceBar,
+.boardShellResponsive .boardUtilityRow,
+.boardShellResponsive .catalogErrorBanner {
+  flex: 0 0 auto;
+}
+
+.boardShellResponsive .boardViewport {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  overflow: auto;
+  padding-bottom: 0;
+}
+
+.boardShellResponsive .sixColumnGrid {
+  height: 100%;
+  min-height: 0;
+}
+
+.boardShellResponsive .sixColumnGrid .boardColumn {
+  height: 100%;
+  min-height: 0;
+}
+
+.boardShellResponsive .boardColumn .columnBody,
+.boardShellResponsive .boardColumn .grammarBody {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .boardShellSingleColumn {
   display: flex;
   flex-direction: column;
@@ -675,7 +716,7 @@ button:disabled { cursor: not-allowed; }
   overflow: hidden;
 }
 
-.boardColumnSingleWords .fixedSlotGridFitted {
+.boardColumn .fixedSlotGridFitted {
   flex: 1 1 auto;
   width: 100%;
   height: 100%;
@@ -688,20 +729,22 @@ button:disabled { cursor: not-allowed; }
     repeat(var(--fit-rows), minmax(0, 1fr)) !important;
 }
 
-.boardColumnSingleWords .fixedSlotGridFitted .fixedSlot {
+.boardColumn .fixedSlotGridFitted .fixedSlot {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
 }
 
-.boardColumnSingleWords .fixedSlotGridFitted .wordButton {
+.boardColumn .fixedSlotGridFitted .wordButton,
+.boardColumn .fixedSlotGridFitted .bucketButton {
   min-width: 0;
   min-height: 0;
   contain: size layout paint;
   overflow: hidden;
 }
 
-.boardColumnSingleWords .fixedSlotGridFitted .wordPhotoTile {
+.boardColumn .fixedSlotGridFitted .wordPhotoTile,
+.boardColumn .fixedSlotGridFitted .bucketPhotoTile {
   width: 100%;
   height: 100%;
   min-width: 0;
