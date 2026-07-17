@@ -19,7 +19,7 @@ export function BoardSettings({
         aria-controls="board-settings-panel"
         onClick={() => setOpen(true)}
       >
-        Settings
+        <span className="controlButtonLabel">Settings</span>
       </button>
 
       {open ? (
@@ -39,8 +39,12 @@ export function BoardSettings({
           >
             <header className="settingsHeader">
               <h2 id={titleId}>Settings</h2>
-              <button type="button" onClick={() => setOpen(false)}>
-                Close
+              <button
+                type="button"
+                className="settingsCloseButton"
+                onClick={() => setOpen(false)}
+              >
+                <span className="controlButtonLabel">Close</span>
               </button>
             </header>
 

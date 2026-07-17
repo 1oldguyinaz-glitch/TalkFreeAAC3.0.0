@@ -17,7 +17,7 @@ export function GrammarOverlay({ profile, enabled, onSelect }) {
             disabled={!enabled}
             onClick={() => onSelect(variant)}
           >
-            <span>{variant.label}</span>
+            <span className="boardButtonLabel">{variant.label}</span>
             <small>{variant.form.replaceAll('_', ' ')}</small>
           </button>
         )}

@@ -1069,3 +1069,152 @@ button:disabled { cursor: not-allowed; }
 .boardColumnSingle .subBucketButton { padding:0.16rem; }
 .boardColumnSingle .columnBodyWords .fixedSlotGrid[data-slot-count="8"] { grid-template-columns:repeat(4,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); }
 @media (max-width:760px){ .photoTileLabel{min-height:1.7rem;font-size:0.78rem;padding:0.12rem;} }
+
+/* TalkFreeAAC 3.0.5 — unified correction control.
+   Speak is the only sentence-bar action. The always-visible Clear control
+   reverses the last combined board-and-sentence step. */
+.sentenceActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sentenceActions .speakButton {
+  min-width: 8.5rem;
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .sentenceActions {
+  display: flex;
+  justify-content: flex-end;
+  min-width: clamp(8.5rem, 12vw, 11rem);
+}
+
+.boardShellSingleColumn .sentenceBarStageOne .speakButton {
+  width: 100%;
+}
+
+.columnToolbarTopicOnly {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.columnToolbarTopicOnly strong {
+  width: 100%;
+}
+
+.interrupt-clear:disabled {
+  opacity: 0.48;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .boardShellSingleColumn .sentenceBarStageOne .sentenceActions {
+    min-width: 0;
+  }
+
+  .boardShellSingleColumn .sentenceBarStageOne .speakButton {
+    width: 100%;
+  }
+}
+
+/* TalkFreeAAC 3.1.0 — global large-type button system.
+   Every text control scales with its own rendered box so the label uses the
+   available surface without clipping or changing the responsive board grid. */
+.interruptButton,
+.sentenceActionButton,
+.settingsButton,
+.settingsCloseButton,
+.pagination button,
+.backButton,
+.targetAdvanceButton,
+.bucketButton,
+.wordButton {
+  container-type: size;
+}
+
+.controlButtonLabel,
+.boardButtonLabel {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  font-weight: 950;
+  letter-spacing: -0.025em;
+}
+
+.controlButtonLabel {
+  min-height: 0;
+  max-height: 100%;
+  font-size: clamp(1.1rem, min(22cqw, 56cqh), 2.7rem);
+  line-height: 0.9;
+}
+
+.boardButtonLabel {
+  min-height: 0;
+  max-height: 100%;
+  font-size: clamp(0.95rem, min(18cqw, 28cqh), 2.45rem);
+  line-height: 0.92;
+}
+
+.interruptButton,
+.sentenceActionButton,
+.settingsButton,
+.settingsCloseButton,
+.pagination button,
+.backButton,
+.targetAdvanceButton {
+  padding: 0.14rem 0.24rem;
+}
+
+.interruptButton,
+.sentenceActionButton,
+.settingsButton,
+.settingsCloseButton,
+.backButton,
+.targetAdvanceButton {
+  font-weight: 950;
+}
+
+.settingsCloseButton {
+  min-width: 7rem;
+  min-height: 3.2rem;
+}
+
+.bucketButton:not(.bucketButtonPhotoTile),
+.wordButton:not(.wordButtonPhotoTile) {
+  padding: 0.2rem;
+}
+
+.bucketButton:not(.bucketButtonPhotoTile) .bucketSymbol,
+.wordButton:not(.wordButtonPhotoTile) .wordSymbol {
+  flex: 0 0 auto;
+  font-size: clamp(1.1rem, min(14cqw, 22cqh), 2.1rem);
+}
+
+.bucketButton:not(.bucketButtonPhotoTile) .boardButtonLabel,
+.wordButton:not(.wordButtonPhotoTile) .boardButtonLabel {
+  flex: 1 1 auto;
+}
+
+.photoTileLabel {
+  font-size: clamp(0.95rem, min(15cqw, 20cqh), 1.7rem);
+  line-height: 0.92;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 760px) {
+  .controlButtonLabel {
+    font-size: clamp(1rem, min(22cqw, 54cqh), 2.15rem);
+  }
+
+  .boardButtonLabel {
+    font-size: clamp(0.9rem, min(18cqw, 27cqh), 1.85rem);
+  }
+
+  .settingsButton {
+    min-width: 6.4rem;
+  }
+}

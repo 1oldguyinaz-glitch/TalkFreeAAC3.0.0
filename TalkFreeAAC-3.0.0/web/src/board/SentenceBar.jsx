@@ -1,15 +1,15 @@
 import React from 'react';
 
 function speakSentence(text) {
-  if (!text || typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  if (!text || typeof window === 'undefined' || !('speechSynthesis' in window)) {
+    return;
+  }
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 }
 
 export function SentenceBar({
   sentence,
-  onUndo,
-  onResetBoard,
   stageOneMode = false,
   schoolAgeStageOneMode = false
 }) {
@@ -25,7 +25,11 @@ export function SentenceBar({
         {sentence.length ? (
           sentence.map((token) => (
             <span
-              className={token.pending ? 'sentenceToken sentenceTokenPending' : 'sentenceToken'}
+              className={
+                token.pending
+                  ? 'sentenceToken sentenceTokenPending'
+                  : 'sentenceToken'
+              }
               key={token.id}
             >
               {token.text}
@@ -44,22 +48,7 @@ export function SentenceBar({
           onClick={() => speakSentence(text)}
           disabled={!text}
         >
-          Speak
-        </button>
-        <button
-          type="button"
-          className="sentenceActionButton undoButton"
-          onClick={onUndo}
-          disabled={!sentence.length}
-        >
-          Undo
-        </button>
-        <button
-          type="button"
-          className="sentenceActionButton resetPathButton"
-          onClick={onResetBoard}
-        >
-          Reset Path
+          <span className="controlButtonLabel">Speak</span>
         </button>
       </div>
     </section>

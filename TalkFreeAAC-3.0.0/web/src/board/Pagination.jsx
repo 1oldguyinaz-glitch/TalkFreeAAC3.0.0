@@ -8,9 +8,21 @@ export function Pagination({ page, pages = [], onPage, enabled = true }) {
 
   return (
     <div className="pagination" aria-label="Column pages">
-      <button type="button" onClick={() => onPage(previousPage)} disabled={!enabled || previousPage == null}>Previous</button>
+      <button
+        type="button"
+        onClick={() => onPage(previousPage)}
+        disabled={!enabled || previousPage == null}
+      >
+        <span className="controlButtonLabel">Previous</span>
+      </button>
       <span>Page {currentIndex + 1} of {pages.length}</span>
-      <button type="button" onClick={() => onPage(nextPage)} disabled={!enabled || nextPage == null}>Next</button>
+      <button
+        type="button"
+        onClick={() => onPage(nextPage)}
+        disabled={!enabled || nextPage == null}
+      >
+        <span className="controlButtonLabel">Next</span>
+      </button>
     </div>
   );
 }

@@ -63,15 +63,17 @@ test('Stage 1 activates the larger sentence and quick-control presentation', () 
   assert.match(board, /boardUtilityRowStageOne/);
   assert.match(sentence, /sentenceBarStageOne/);
   assert.match(sentence, /speakButton/);
-  assert.match(sentence, /undoButton/);
-  assert.match(sentence, /resetPathButton/);
+  assert.doesNotMatch(sentence, /undoButton|resetPathButton|Reset Path|Undo/);
+  assert.equal((sentence.match(/sentenceActionButton/g) ?? []).length, 1);
   assert.match(interrupts, /interruptRowStageOne/);
 });
 
-test('word view says Back only in the single-column Stage 1 interface', () => {
+test('Clear replaces the separate board Back button', () => {
   const column = source('src/board/BoardColumn.jsx');
+  const interrupts = source('src/board/InterruptRow.jsx');
 
-  assert.match(column, /singleColumnMode \? 'Back' : 'Categories'/);
+  assert.doesNotMatch(column, /className="backButton"/);
+  assert.match(interrupts, /Clear the last choice and return to the previous board view/);
 });
 
 test('Stage 1 UI controls have enlarged typography and touch targets', () => {
@@ -91,7 +93,7 @@ test('Stage 1 UI controls have enlarged typography and touch targets', () => {
   );
   assert.match(
     css,
-    /\.boardColumnSingleWords \.backButton[\s\S]*font-size:\s*clamp/
+    /\.columnToolbarTopicOnly[\s\S]*grid-template-columns:\s*minmax\(0, 1fr\)/
   );
 });
 

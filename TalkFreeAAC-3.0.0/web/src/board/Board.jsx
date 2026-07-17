@@ -102,8 +102,6 @@ export function Board() {
     >
       <SentenceBar
         sentence={state.sentence}
-        onUndo={actions.undo}
-        onResetBoard={actions.resetBoard}
         stageOneMode={usesSingleColumnStageOne}
       />
 
@@ -116,6 +114,7 @@ export function Board() {
       >
         <InterruptRow
           onInterrupt={actions.interrupt}
+          canClear={Boolean(state.backStack?.length)}
           stageOneMode={usesSingleColumnStageOne}
         />
         <BoardSettings

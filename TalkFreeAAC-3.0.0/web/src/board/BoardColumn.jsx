@@ -145,15 +145,7 @@ export function BoardColumn({
           recommended={recommended}
           behavior={behavior}
         />
-        <div className="columnToolbar">
-          <button
-            type="button"
-            className="backButton"
-            disabled={!enabled}
-            onClick={() => actions.back(column)}
-          >
-            {singleColumnMode ? 'Back' : 'Categories'}
-          </button>
+        <div className="columnToolbar columnToolbarTopicOnly">
           <strong>{pageData.bucket?.label ?? 'Words'}</strong>
         </div>
         <div className="columnBody columnBodyWords">
@@ -173,7 +165,7 @@ export function BoardColumn({
                   {word.imageSrc ? (
                     <BucketPhoto bucket={word} />
                   ) : (
-                    <span>{word.label}</span>
+                    <span className="boardButtonLabel">{word.label}</span>
                   )}
                 </button>
               ) : (
@@ -193,7 +185,7 @@ export function BoardColumn({
                           {word.symbol}
                         </span>
                       ) : null}
-                      <span>{word.label}</span>
+                      <span className="boardButtonLabel">{word.label}</span>
                       {word.slamShutTrigger && behavior.slamShutAfterTarget ? (
                         <small>finish</small>
                       ) : null}
@@ -260,7 +252,7 @@ export function BoardColumn({
                   <span className="bucketSymbol" aria-hidden="true">
                     {bucket.symbol}
                   </span>
-                  <span>{bucket.label}</span>
+                  <span className="boardButtonLabel">{bucket.label}</span>
                 </>
               )}
             </button>

@@ -2675,7 +2675,8 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
         "visibleAfterColumnsByStage": {
           "1": [
             1,
-            2
+            2,
+            6
           ]
         },
         "wordCount": 8,
@@ -2850,10 +2851,12 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
             "visibleAfterColumnsByStage": {
               "1": [
                 1,
-                2
+                2,
+                6
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "agreeWithPreviousTarget": true
           },
           {
             "id": "ec_s1_c6_feelings_07",
@@ -3758,7 +3761,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "plural",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_02",
@@ -3787,7 +3794,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "plural",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_03",
@@ -3816,7 +3827,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_04",
@@ -3845,7 +3860,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_05",
@@ -3874,7 +3893,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_06",
@@ -3903,7 +3926,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_07",
@@ -3932,7 +3959,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "plural",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_08",
@@ -3961,7 +3992,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_09",
@@ -3990,7 +4025,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "plural",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_10",
@@ -4019,7 +4058,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "plural",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_11",
@@ -4048,7 +4091,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           },
           {
             "id": "ec_s1_c6_body_12",
@@ -4077,7 +4124,11 @@ export const EARLY_CHILDHOOD_STAGE_1_CATALOG = {
                 2
               ]
             },
-            "slamShutTrigger": true
+            "slamShutTrigger": true,
+            "subjectNumber": "singular",
+            "nextColumnAfterRoles": {
+              "possessive_determiner": 6
+            }
           }
         ]
       },
