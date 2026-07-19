@@ -1,13 +1,20 @@
 import { COLUMN_IDS, DEFAULT_AGE_BAND, getStageBehavior } from './constants.js';
 import { nextColumnFor } from './congruence.js';
 
-export function makeRootColumnViews() {
-  return Object.fromEntries(
-    COLUMN_IDS.map((column) => [column, { mode: 'buckets', bucketId: null, page: 1 }])
-  );
+const MAX_BACK_STACK = 100;
+
+function rootView() {
+  return { mode: 'buckets', bucketId: null, page: 1, history: [] };
 }
 
-export function createInitialBoardState(stage = 1, ageBand = DEFAULT_AGE_BAND) {
+export function makeRootColumnViews() {
+  return Object.fromEntries(COLUMN_IDS.map((column) => [column, rootView()]));
+}
+
+export function createInitialBoardState(
+  stage = 1,
+  ageBand = DEFAULT_AGE_BAND
+) {
   return {
     stage,
     ageBand,
@@ -15,6 +22,7 @@ export function createInitialBoardState(stage = 1, ageBand = DEFAULT_AGE_BAND) {
     sentence: [],
     pendingVerb: null,
     columnViews: makeRootColumnViews(),
+    backStack: [],
     lastAnnouncement: 'Column 1 is active.'
   };
 }
@@ -24,50 +32,155 @@ export function isColumnInteractive(state, column) {
   return behavior.interactionMode === 'soft_guide' || state.activeColumn === column;
 }
 
-function appendToken(state, word, pending = false) {
-  const token = {
-    id: `${word.id}-${Date.now()}-${state.sentence.length}`,
-    sourceId: word.id,
-    text: word.spoken ?? word.label,
-    label: word.label,
-    role: word.role,
-    column: word.column,
-    pending
-  };
-  return [...state.sentence, token];
+function lastLanguageToken(sentence) {
+  for (let index = sentence.length - 1; index >= 0; index -= 1) {
+    if ((sentence[index]?.column ?? 0) >= 1) return sentence[index];
+  }
+  return null;
 }
 
-function restoreColumnView(columnViews, column) {
-  return {
-    ...columnViews,
-    [column]: { mode: 'buckets', bucketId: null, page: 1 }
+function thirdPersonVerb(text) {
+  const [first, ...rest] = text.split(' ');
+  const lower = first.toLowerCase();
+  const irregular = {
+    have: 'has',
+    do: 'does',
+    go: 'goes',
+    "don't": "doesn't"
   };
+
+  let inflected;
+  if (irregular[lower]) inflected = irregular[lower];
+  else if (lower === "can't") inflected = first;
+  else if (/[^aeiou]y$/i.test(first)) inflected = `${first.slice(0, -1)}ies`;
+  else if (/(s|sh|ch|x|z|o)$/i.test(first)) inflected = `${first}es`;
+  else inflected = `${first}s`;
+
+  return [inflected, ...rest].join(' ');
+}
+
+function spokenText(state, word) {
+  const base = word.spoken ?? word.label;
+  const previous = lastLanguageToken(state.sentence);
+
+  if (
+    state.stage === 1
+    && state.ageBand === 'school_age'
+    && word.column === 2
+    && word.fixedForm
+  ) {
+    return base;
+  }
+
+  if (word.agreeWithPreviousTarget) {
+    return previous?.subjectNumber === 'plural' ? base : thirdPersonVerb(base);
+  }
+
+  if (
+    state.stage !== 1
+    || state.ageBand !== 'school_age'
+    || word.column !== 2
+  ) {
+    return base;
+  }
+
+  if (previous?.column === 2) return base;
+  const starter = state.sentence.find((token) => token.column === 1);
+  return starter?.subjectAgreement === 'third_person'
+    ? thirdPersonVerb(base)
+    : base;
+}
+
+function appendToken(state, word, pending = false) {
+  return [
+    ...state.sentence,
+    {
+      id: `${word.id}-${Date.now()}-${state.sentence.length}`,
+      sourceId: word.id,
+      text: spokenText(state, word),
+      label: word.label,
+      role: word.role,
+      column: word.column,
+      pending,
+      ...(word.subjectAgreement
+        ? { subjectAgreement: word.subjectAgreement }
+        : {}),
+      ...(word.subjectNumber ? { subjectNumber: word.subjectNumber } : {})
+    }
+  ];
+}
+
+function restoreColumnView(views, column) {
+  return { ...views, [column]: rootView() };
 }
 
 function commitPendingVerbAsBase(state) {
   if (!state.pendingVerb) return state;
-
   return {
     ...state,
     sentence: state.sentence.map((token) =>
-      token.id === state.pendingVerb.tokenId ? { ...token, pending: false } : token
+      token.id === state.pendingVerb.tokenId
+        ? { ...token, pending: false }
+        : token
     ),
     pendingVerb: null,
     columnViews: restoreColumnView(state.columnViews, 3)
   };
 }
 
-function prepareColumnInteraction(state, column) {
-  if (!state.pendingVerb || column === 3) return state;
-  return commitPendingVerbAsBase(state);
+function prepare(state, column) {
+  return !state.pendingVerb || column === 3
+    ? state
+    : commitPendingVerbAsBase(state);
 }
 
-function progressionAnnouncement(label, nextColumn, stage) {
+function announce(label, next, stage) {
   const behavior = getStageBehavior(stage);
-  if (behavior.interactionMode === 'soft_guide') {
-    return `${label} added. Column ${nextColumn} is suggested; every column remains available.`;
+  return behavior.interactionMode === 'soft_guide'
+    ? `${label} added. Column ${next} is suggested; every column remains available.`
+    : `${label} added. Column ${next} is active.`;
+}
+
+function historySnapshot(state) {
+  return {
+    activeColumn: state.activeColumn,
+    sentence: state.sentence,
+    pendingVerb: state.pendingVerb,
+    columnViews: state.columnViews
+  };
+}
+
+function withBackStep(previousState, nextState) {
+  const backStack = [
+    ...(previousState.backStack ?? []),
+    historySnapshot(previousState)
+  ].slice(-MAX_BACK_STACK);
+
+  return { ...nextState, backStack };
+}
+
+function restorePreviousStep(state) {
+  const backStack = state.backStack ?? [];
+  if (!backStack.length) {
+    return {
+      ...state,
+      lastAnnouncement: 'Nothing to clear or go back to.'
+    };
   }
-  return `${label} added. Column ${nextColumn} is active.`;
+
+  const previous = backStack.at(-1);
+  return {
+    ...state,
+    ...previous,
+    backStack: backStack.slice(0, -1),
+    lastAnnouncement: 'Last choice cleared. Previous board view restored.'
+  };
+}
+
+function contextualNextColumn(state, word) {
+  const previous = lastLanguageToken(state.sentence);
+  if (!previous?.role) return null;
+  return word.nextColumnAfterRoles?.[previous.role] ?? null;
 }
 
 export function boardReducer(state, action) {
@@ -80,106 +193,177 @@ export function boardReducer(state, action) {
 
     case 'OPEN_BUCKET': {
       if (!isColumnInteractive(state, action.column)) return state;
-      const workingState = prepareColumnInteraction(state, action.column);
-      const behavior = getStageBehavior(workingState.stage);
-      return {
-        ...workingState,
+      const prepared = prepare(state, action.column);
+      const behavior = getStageBehavior(prepared.stage);
+      const nextState = {
+        ...prepared,
         activeColumn:
-          behavior.interactionMode === 'soft_guide' ? action.column : workingState.activeColumn,
+          behavior.interactionMode === 'soft_guide'
+            ? action.column
+            : prepared.activeColumn,
         columnViews: {
-          ...workingState.columnViews,
+          ...prepared.columnViews,
           [action.column]: {
             mode: 'words',
             bucketId: action.bucketId,
-            page: action.page ?? 1
+            page: action.page ?? 1,
+            history: []
           }
         },
         lastAnnouncement: `${action.bucketLabel} opened in Column ${action.column}.`
       };
+      return withBackStep(state, nextState);
     }
 
-    case 'BACK_TO_BUCKETS': {
+    case 'OPEN_NESTED_BUCKET': {
       if (!isColumnInteractive(state, action.column)) return state;
-      const workingState = prepareColumnInteraction(state, action.column);
-      const behavior = getStageBehavior(workingState.stage);
+      const prepared = prepare(state, action.column);
+      const current = prepared.columnViews[action.column];
+      if (current?.mode !== 'words') return state;
+
+      const nextState = {
+        ...prepared,
+        columnViews: {
+          ...prepared.columnViews,
+          [action.column]: {
+            mode: 'words',
+            bucketId: action.bucketId,
+            page: 1,
+            history: [...(current.history ?? []), current.bucketId]
+          }
+        },
+        lastAnnouncement: `${action.bucketLabel} opened.`
+      };
+      return withBackStep(state, nextState);
+    }
+
+    case 'BACK': {
+      if (!isColumnInteractive(state, action.column)) return state;
+      const prepared = prepare(state, action.column);
+      const current = prepared.columnViews[action.column];
+      const history = current?.history ?? [];
+
+      if (current?.mode === 'words' && history.length) {
+        const parent = history[history.length - 1];
+        return {
+          ...prepared,
+          columnViews: {
+            ...prepared.columnViews,
+            [action.column]: {
+              mode: 'words',
+              bucketId: parent,
+              page: 1,
+              history: history.slice(0, -1)
+            }
+          },
+          lastAnnouncement: 'Previous bucket restored.'
+        };
+      }
+
+      const behavior = getStageBehavior(prepared.stage);
       return {
-        ...workingState,
+        ...prepared,
         activeColumn:
-          behavior.interactionMode === 'soft_guide' ? action.column : workingState.activeColumn,
-        columnViews: restoreColumnView(workingState.columnViews, action.column),
+          behavior.interactionMode === 'soft_guide'
+            ? action.column
+            : prepared.activeColumn,
+        columnViews: restoreColumnView(prepared.columnViews, action.column),
         lastAnnouncement: `Column ${action.column} categories restored.`
       };
     }
 
     case 'SET_PAGE': {
       if (!isColumnInteractive(state, action.column)) return state;
-      const workingState = prepareColumnInteraction(state, action.column);
-      return {
-        ...workingState,
+      const nextState = {
+        ...state,
         columnViews: {
-          ...workingState.columnViews,
+          ...state.columnViews,
           [action.column]: {
-            ...workingState.columnViews[action.column],
+            ...state.columnViews[action.column],
             page: action.page
           }
         }
       };
+      return withBackStep(state, nextState);
     }
 
     case 'SELECT_WORD': {
-      if (!isColumnInteractive(state, action.column)) return state;
-      const workingState = prepareColumnInteraction(state, action.column);
-      const word = action.word;
-      const behavior = getStageBehavior(workingState.stage);
+      if (!isColumnInteractive(state, action.column) || action.word.targetBucketId) {
+        return state;
+      }
 
-      if (word.column === 2 && word.grammarProfileId && behavior.useVerbGrammarOverlay) {
-        const pendingSentence = appendToken(workingState, word, true);
-        return {
-          ...workingState,
-          sentence: pendingSentence,
+      const prepared = prepare(state, action.column);
+      const word = action.word;
+      const behavior = getStageBehavior(prepared.stage);
+
+      if (
+        word.column === 2
+        && word.grammarProfileId
+        && behavior.useVerbGrammarOverlay
+      ) {
+        const sentence = appendToken(prepared, word, true);
+        const nextState = {
+          ...prepared,
+          sentence,
           pendingVerb: {
-            tokenId: pendingSentence[pendingSentence.length - 1].id,
+            tokenId: sentence.at(-1).id,
             sourceWord: word,
             grammarProfileId: word.grammarProfileId
           },
           activeColumn: 3,
           columnViews: {
-            ...restoreColumnView(workingState.columnViews, 2),
+            ...restoreColumnView(prepared.columnViews, 2),
             3: {
               mode: 'grammar',
               grammarProfileId: word.grammarProfileId,
               bucketId: null,
-              page: 1
+              page: 1,
+              history: []
             }
           },
-          lastAnnouncement: `${word.label} selected. Choose its grammar form in Column 3, or continue with the base form from another column.`
+          lastAnnouncement: `${word.label} selected. Choose its grammar form in Column 3.`
         };
+        return withBackStep(state, nextState);
       }
 
-      const sentence = appendToken(workingState, word, false);
-      if (word.slamShutTrigger && behavior.slamShutAfterTarget) {
-        return {
-          ...createInitialBoardState(workingState.stage, workingState.ageBand),
+      const contextualNext = contextualNextColumn(prepared, word);
+      const sentence = appendToken(prepared, word, false);
+
+      if (
+        word.slamShutTrigger
+        && behavior.slamShutAfterTarget
+        && contextualNext == null
+      ) {
+        const reset = createInitialBoardState(prepared.stage, prepared.ageBand);
+        return withBackStep(state, {
+          ...reset,
           sentence,
           lastAnnouncement: `${word.label} added. Board reset to Column 1.`
-        };
+        });
       }
 
-      const nextColumn = word.nextColumnOverride ?? nextColumnFor(word.column, workingState.stage);
-      const staysInCurrentColumn = nextColumn === word.column;
-      return {
-        ...workingState,
+      const next =
+        contextualNext
+        ?? word.nextColumnOverride
+        ?? nextColumnFor(word.column, prepared.stage);
+      const nextState = {
+        ...prepared,
         sentence,
-        activeColumn: nextColumn,
-        columnViews: staysInCurrentColumn
-          ? workingState.columnViews
-          : restoreColumnView(workingState.columnViews, word.column),
-        lastAnnouncement: progressionAnnouncement(word.label, nextColumn, workingState.stage)
+        activeColumn: next,
+        columnViews:
+          next === word.column
+            ? prepared.columnViews
+            : restoreColumnView(prepared.columnViews, word.column),
+        lastAnnouncement: announce(word.label, next, prepared.stage)
       };
+      return withBackStep(state, nextState);
     }
 
     case 'SELECT_GRAMMAR': {
-      if (!state.pendingVerb || state.columnViews[3]?.mode !== 'grammar') return state;
+      if (!state.pendingVerb || state.columnViews[3]?.mode !== 'grammar') {
+        return state;
+      }
+
       const variant = action.variant;
       const sentence = state.sentence.map((token) =>
         token.id === state.pendingVerb.tokenId
@@ -192,21 +376,23 @@ export function boardReducer(state, action) {
             }
           : token
       );
-      const nextColumn = nextColumnFor(3, state.stage);
-      return {
+      const next = nextColumnFor(3, state.stage);
+      const nextState = {
         ...state,
         sentence,
         pendingVerb: null,
-        activeColumn: nextColumn,
+        activeColumn: next,
         columnViews: restoreColumnView(state.columnViews, 3),
-        lastAnnouncement: progressionAnnouncement(variant.label, nextColumn, state.stage)
+        lastAnnouncement: announce(variant.label, next, state.stage)
       };
+      return withBackStep(state, nextState);
     }
 
     case 'INTERRUPT': {
       if (action.interrupt.action === 'clear') {
-        return createInitialBoardState(state.stage, state.ageBand);
+        return restorePreviousStep(state);
       }
+
       const token = {
         id: `interrupt-${action.interrupt.id}-${Date.now()}`,
         sourceId: action.interrupt.id,
@@ -216,37 +402,21 @@ export function boardReducer(state, action) {
         column: 0,
         pending: false
       };
-      return {
+      return withBackStep(state, {
         ...state,
         sentence: [...state.sentence, token],
         lastAnnouncement: `${action.interrupt.label} added.`
-      };
+      });
     }
 
-    case 'UNDO': {
-      if (!state.sentence.length) return state;
-      const removed = state.sentence[state.sentence.length - 1];
-      const wasPending = removed.id === state.pendingVerb?.tokenId;
-      return {
-        ...state,
-        sentence: state.sentence.slice(0, -1),
-        pendingVerb: wasPending ? null : state.pendingVerb,
-        activeColumn: wasPending ? 2 : state.activeColumn,
-        columnViews: wasPending
-          ? {
-              ...restoreColumnView(state.columnViews, 2),
-              3: { mode: 'buckets', bucketId: null, page: 1 }
-            }
-          : state.columnViews,
-        lastAnnouncement: `${removed.label} removed.`
-      };
-    }
+    case 'UNDO':
+      return restorePreviousStep(state);
 
     case 'RESET_BOARD':
-      return {
+      return withBackStep(state, {
         ...createInitialBoardState(state.stage, state.ageBand),
         sentence: state.sentence
-      };
+      });
 
     default:
       return state;
