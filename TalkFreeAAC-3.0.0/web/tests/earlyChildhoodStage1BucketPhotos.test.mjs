@@ -15,6 +15,6 @@ test('BoardColumn renders bucket photographs when imageSrc exists', () => {
 
   assert.match(source, /bucketButtonPhotoTile/);
   assert.match(source, /className="bucketPhotoTile"/);
-  assert.match(source, /src=\{bucket\.imageSrc\}/);
+  assert.match(source, /src=\{publicAssetUrl\(bucket\.imageSrc\)\}/);
   assert.match(source, /aria-label=\{bucket\.label\}/);
 });

@@ -1,23 +1,87 @@
-import React, { useId, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { AGE_BANDS, STAGE_DEFINITIONS } from './constants.js';
+
+const FOCUSABLE_SELECTOR = [
+  'button:not([disabled])',
+  'select:not([disabled])',
+  'input:not([disabled])',
+  '[href]',
+  '[tabindex]:not([tabindex="-1"])'
+].join(',');
 
 export function BoardSettings({
   stage,
   ageBand,
+  contentSettings,
   onStageChange,
-  onAgeBandChange
+  onAgeBandChange,
+  onContentSettingChange
 }) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
+  const panelRef = useRef(null);
+  const triggerRef = useRef(null);
+  const previousFocusRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const panel = panelRef.current;
+    const focusableElements = () => [
+      ...(panel?.querySelectorAll(FOCUSABLE_SELECTOR) ?? [])
+    ];
+    focusableElements()[0]?.focus();
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setOpen(false);
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+      const elements = focusableElements();
+      if (!elements.length) {
+        event.preventDefault();
+        panel?.focus();
+        return;
+      }
+
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (!panel?.contains(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      (previousFocusRef.current ?? triggerRef.current)?.focus?.();
+    };
+  }, [open]);
+
+  function openSettings(event) {
+    previousFocusRef.current = event.currentTarget;
+    setOpen(true);
+  }
 
   return (
     <div className="boardSettings">
       <button
+        ref={triggerRef}
         type="button"
         className="settingsButton"
         aria-expanded={open}
         aria-controls="board-settings-panel"
-        onClick={() => setOpen(true)}
+        onClick={openSettings}
       >
         Settings
       </button>
@@ -31,6 +95,8 @@ export function BoardSettings({
           }}
         >
           <section
+            ref={panelRef}
+            tabIndex={-1}
             id="board-settings-panel"
             className="settingsPanel"
             role="dialog"
@@ -71,6 +137,42 @@ export function BoardSettings({
                 ))}
               </select>
             </label>
+
+            <fieldset className="contentSettingsGroup">
+              <legend>Optional topics</legend>
+
+              <label className="settingToggle">
+                <input
+                  type="checkbox"
+                  checked={contentSettings.showSchool}
+                  onChange={(event) => onContentSettingChange(
+                    'showSchool',
+                    event.target.checked,
+                    'School topics'
+                  )}
+                />
+                <span>
+                  <strong>School topics</strong>
+                  <small>Turn off at home to reduce school-related choices.</small>
+                </span>
+              </label>
+
+              <label className="settingToggle">
+                <input
+                  type="checkbox"
+                  checked={contentSettings.showPrivateParts}
+                  onChange={(event) => onContentSettingChange(
+                    'showPrivateParts',
+                    event.target.checked,
+                    'Private-parts vocabulary'
+                  )}
+                />
+                <span>
+                  <strong>Private-parts vocabulary</strong>
+                  <small>Safety gate for explicit anatomy words and topics.</small>
+                </span>
+              </label>
+            </fieldset>
           </section>
         </div>
       ) : null}

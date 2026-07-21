@@ -91,16 +91,14 @@ test('Stage 3 follows 1 to 2 to 4 to 5 to 6', () => {
   assert.equal(state.activeColumn, 6);
 });
 
-test('Stage 4 makes every column interactive while retaining a suggested column', () => {
-  let state = createInitialBoardState(4);
+test('Stage 4 keeps only its active AXIS column interactive', () => {
+  const state = createInitialBoardState(4);
   for (let column = 1; column <= 6; column += 1) {
-    assert.equal(isColumnInteractive(state, column), true);
+    assert.equal(isColumnInteractive(state, column), column === 1);
   }
 
-  state = openBucket(state, 6, 'c6_food');
-  assert.equal(state.activeColumn, 6);
-  assert.equal(state.columnViews[6].mode, 'words');
-  assert.equal(state.columnViews[1].mode, 'buckets');
+  const ignored = openBucket(state, 6, 'c6_food');
+  assert.deepEqual(ignored, state);
 });
 
 test('Stage 4 grammar selection overwrites the pending verb instead of appending a duplicate', () => {
@@ -123,17 +121,18 @@ test('Stage 4 grammar selection overwrites the pending verb instead of appending
   assert.equal(state.activeColumn, 4);
 });
 
-test('Stage 4 commits the base verb when the user continues from another column', () => {
+test('Stage 4 does not allow another column to bypass the grammar step', () => {
   let state = createInitialBoardState(4);
+  state = openBucket(state, 1, 'c1_people');
+  state = chooseWord(state, 1, 'c1_people', 'i');
   state = openBucket(state, 2, 'c2_needs');
   state = chooseWord(state, 2, 'c2_needs', 'want');
   assert.equal(state.pendingVerb?.sourceWord.id, 'want');
 
-  state = openBucket(state, 6, 'c6_food');
-  assert.equal(state.pendingVerb, null);
-  assert.equal(state.sentence.at(-1).pending, false);
-  assert.equal(state.sentence.at(-1).text, 'want');
-  assert.equal(state.columnViews[3].mode, 'buckets');
+  const ignored = openBucket(state, 6, 'c6_food');
+  assert.deepEqual(ignored, state);
+  assert.equal(ignored.activeColumn, 3);
+  assert.equal(ignored.sentence.at(-1).pending, true);
 });
 
 test('hard-gated slam-shut target appends the noun and resets every column to roots', () => {
@@ -148,16 +147,28 @@ test('hard-gated slam-shut target appends the noun and resets every column to ro
   }
 });
 
-test('Stage 4 target does not slam the whole board shut or clear the sentence', () => {
+test('Stage 4 target finishes the sentence and resets every column to roots', () => {
   let state = createInitialBoardState(4);
+  state = openBucket(state, 1, 'c1_people');
+  state = chooseWord(state, 1, 'c1_people', 'i');
   state = openBucket(state, 2, 'c2_needs');
+  state = chooseWord(state, 2, 'c2_needs', 'want');
+  state = boardReducer(state, {
+    type: 'SELECT_GRAMMAR',
+    variant: GRAMMAR_PROFILES.grammar_want.variants[0]
+  });
+  state = openBucket(state, 4, 'c4_possessive_determiners');
+  state = chooseWord(state, 4, 'c4_possessive_determiners', 'my');
+  state = openBucket(state, 5, 'c5_size');
+  state = chooseWord(state, 5, 'c5_size', 'big');
   state = openBucket(state, 6, 'c6_food');
   state = chooseWord(state, 6, 'c6_food', 'apple');
 
   assert.equal(state.sentence.at(-1).text, 'apple');
   assert.equal(state.activeColumn, 1);
-  assert.equal(state.columnViews[6].mode, 'buckets');
-  assert.equal(state.columnViews[2].mode, 'words');
+  for (let column = 1; column <= 6; column += 1) {
+    assert.equal(state.columnViews[column].mode, 'buckets');
+  }
 });
 
 test('interrupt controls work without changing the suggested or active column', () => {

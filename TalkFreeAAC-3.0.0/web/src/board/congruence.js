@@ -1,4 +1,5 @@
 import { DEFAULT_AGE_BAND, STAGE_PATHS } from './constants.js';
+import { itemIsContentEnabled } from './contentPolicy.js';
 
 export function isColumnCongruent(fromColumn, toColumn, stage) {
   const path = STAGE_PATHS[stage] ?? STAGE_PATHS[3];
@@ -15,6 +16,9 @@ export function nextColumnFor(currentColumn, stage) {
 
 export function itemIsCongruent(item, context) {
   const ageBand = context.ageBand ?? DEFAULT_AGE_BAND;
+
+  if (!itemIsContentEnabled(item, context.contentSettings)) return false;
+
   const hasAgePolicy =
     item.minimumStageByAgeBand != null
     && Object.prototype.hasOwnProperty.call(item.minimumStageByAgeBand, ageBand);

@@ -11,14 +11,18 @@ const repoRoot = join(testDir, '..');
 
 test('Board uses the Early Childhood Stage 1 photo catalog at runtime', () => {
   const boardSource = readFileSync(join(repoRoot, 'src/board/Board.jsx'), 'utf8');
+  const profileSource = readFileSync(
+    join(repoRoot, 'src/data/profileCatalogs.js'),
+    'utf8'
+  );
 
   assert.match(
-    boardSource,
-    /import \{ EARLY_CHILDHOOD_STAGE_1_CATALOG \} from '\.\.\/data\/earlyChildhoodStage1Catalog\.js';/
+    profileSource,
+    /import \{ EARLY_CHILDHOOD_STAGE_1_CATALOG \} from '\.\/earlyChildhoodStage1Catalog\.js';/
   );
   assert.match(
     boardSource,
-    /state\.ageBand === 'early_childhood' && state\.stage === 1/
+    /getCatalogProfile\(state\.ageBand, state\.stage\)/
   );
   assert.match(boardSource, /catalog=\{displayedCatalog\}/);
   assert.match(

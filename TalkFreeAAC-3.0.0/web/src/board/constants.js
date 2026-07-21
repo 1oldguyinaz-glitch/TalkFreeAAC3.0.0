@@ -10,10 +10,10 @@ export const COLUMN_DEFINITIONS = Object.freeze([
 export const COLUMN_IDS = Object.freeze(COLUMN_DEFINITIONS.map(({ id }) => id));
 
 export const STAGE_DEFINITIONS = Object.freeze({
-  1: Object.freeze({ id: 1, label: 'Emerging Talker', path: Object.freeze([1, 2, 6]), description: 'Short, immediate messages with simple questions and high-frequency words.' }),
-  2: Object.freeze({ id: 2, label: 'Expanding Talker', path: Object.freeze([1, 2, 5, 6]), description: 'Adds feelings and basic descriptors while keeping the path highly guided.' }),
-  3: Object.freeze({ id: 3, label: 'Sentence Builder', path: Object.freeze([1, 2, 4, 5, 6]), description: 'Adds ownership, articles, determiners, quantities, and richer description.' }),
-  4: Object.freeze({ id: 4, label: 'Advanced Communicator', path: Object.freeze([1, 2, 3, 4, 5, 6]), description: 'All six columns are available with soft guidance and the complete catalog.' })
+  1: Object.freeze({ id: 1, label: 'Emerging Talker', path: Object.freeze([1, 2, 6]), description: 'Short, immediate messages using Start, Act, and Target.' }),
+  2: Object.freeze({ id: 2, label: 'Expanding Talker', path: Object.freeze([1, 2, 5, 6]), description: 'Adds one Describe step to the guided message path.' }),
+  3: Object.freeze({ id: 3, label: 'Sentence Builder', path: Object.freeze([1, 2, 4, 5, 6]), description: 'Adds ownership and determiners before description.' }),
+  4: Object.freeze({ id: 4, label: 'Advanced Communicator', path: Object.freeze([1, 2, 3, 4, 5, 6]), description: 'Uses the complete six-step AXIS path and catalog.' })
 });
 
 export const STAGE_PATHS = Object.freeze(
@@ -33,7 +33,7 @@ export const STAGE_BEHAVIORS = Object.freeze({
   1: Object.freeze({ interactionMode: 'hard_gate', dimInactiveColumns: true, useVerbGrammarOverlay: false, slamShutAfterTarget: true }),
   2: Object.freeze({ interactionMode: 'hard_gate', dimInactiveColumns: true, useVerbGrammarOverlay: false, slamShutAfterTarget: true }),
   3: Object.freeze({ interactionMode: 'hard_gate', dimInactiveColumns: true, useVerbGrammarOverlay: false, slamShutAfterTarget: true }),
-  4: Object.freeze({ interactionMode: 'soft_guide', dimInactiveColumns: false, useVerbGrammarOverlay: true, slamShutAfterTarget: false })
+  4: Object.freeze({ interactionMode: 'hard_gate', dimInactiveColumns: true, useVerbGrammarOverlay: true, slamShutAfterTarget: true })
 });
 
 export function getStageBehavior(stage) {
@@ -45,6 +45,11 @@ export const WORD_SLOT_COUNT = 12;
 export const SINGLE_ACTIVE_COLUMN_BUCKET_SLOT_COUNT = 8;
 export const SINGLE_ACTIVE_COLUMN_WORD_SLOT_COUNT = 16;
 
+export const DEFAULT_CONTENT_SETTINGS = Object.freeze({
+  showSchool: true,
+  showPrivateParts: false
+});
+
 export const INTERRUPTS = Object.freeze([
   { id: 'yes', sourceId: 'v5_25_w_0028_yes', label: 'Yes', spoken: 'yes', alwaysActive: true },
   { id: 'no', sourceId: 'v5_25_w_0029_no', label: 'No', spoken: 'no', alwaysActive: true },
@@ -52,3 +57,27 @@ export const INTERRUPTS = Object.freeze([
   { id: 'stop', sourceId: 'v5_25_w_0092_stop', label: 'Stop', spoken: 'stop', alwaysActive: true },
   { id: 'clear', sourceId: 'v5_25_w_0955_clear', label: 'Clear', spoken: '', alwaysActive: true, action: 'clear' }
 ]);
+
+export const STAGE_ONE_INTERRUPTS = Object.freeze([
+  INTERRUPTS[0],
+  INTERRUPTS[1],
+  INTERRUPTS[2],
+  {
+    id: 'please',
+    sourceId: 'ec_s1_quick_please',
+    label: 'Please',
+    spoken: 'please',
+    alwaysActive: true
+  },
+  {
+    id: 'no-thank-you',
+    sourceId: 'ec_s1_quick_no_thank_you',
+    label: 'No Thank You',
+    spoken: 'no thank you',
+    alwaysActive: true
+  },
+  INTERRUPTS[3],
+  INTERRUPTS[4]
+]);
+
+export const EARLY_CHILDHOOD_STAGE_ONE_INTERRUPTS = STAGE_ONE_INTERRUPTS;

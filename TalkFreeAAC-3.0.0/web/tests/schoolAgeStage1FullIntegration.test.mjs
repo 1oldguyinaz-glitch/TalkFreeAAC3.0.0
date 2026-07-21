@@ -39,22 +39,22 @@ test('image metadata never sends the locked UI to a missing file', () => {
       assert.ok(bucket.plannedImageSrc, bucket.label);
       if (bucket.imageSrc) assert.equal(existsSync(join(root, 'public', bucket.imageSrc)), true, bucket.imageSrc);
       if (bucket.imageSrc === bucket.plannedImageSrc) {
-        assert.equal(bucket.imageIncludesLabel, true, bucket.imageSrc);
+        assert.equal(typeof bucket.imageIncludesLabel, 'boolean', bucket.imageSrc);
         suppliedAssets.add(bucket.imageSrc);
       }
       for (const word of bucket.words) {
         assert.ok(word.plannedImageSrc, word.label);
         if (word.imageSrc) assert.equal(existsSync(join(root, 'public', word.imageSrc)), true, word.imageSrc);
         if (word.imageSrc === word.plannedImageSrc) {
-          assert.equal(word.imageIncludesLabel, true, word.imageSrc);
+          assert.equal(typeof word.imageIncludesLabel, 'boolean', word.imageSrc);
           suppliedAssets.add(word.imageSrc);
         }
       }
     }
   }
 
-  assert.equal([...suppliedAssets].filter((asset) => asset.startsWith('/p/s1/w/')).length, 214);
-  assert.equal([...suppliedAssets].filter((asset) => asset.startsWith('/p/s1/b/')).length, 87);
+  assert.equal([...suppliedAssets].filter((asset) => asset.startsWith('/p/s1/w/')).length, 413);
+  assert.equal([...suppliedAssets].filter((asset) => asset.startsWith('/p/s1/b/')).length, 89);
 });
 
 test('all nested routes point to real buckets', () => {

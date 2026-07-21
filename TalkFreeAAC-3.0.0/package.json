@@ -3,9 +3,9 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "install:web": "npm --prefix web install",
+    "install:web": "npm --prefix web ci",
     "dev": "npm --prefix web run dev",
-    "build": "npm --prefix web run build",
+    "build": "npm run install:web && npm --prefix web run build",
     "test": "npm --prefix web test",
     "validate:catalog": "npm --prefix web run validate:catalog"
   }

@@ -48,7 +48,7 @@ test('single-column words enable measured fit-to-container behavior', () => {
   const fixedGrid = source('src/board/FixedSlotGrid.jsx');
   const css = source('src/board/board.css');
 
-  assert.match(column, /fitToContainer=\{singleColumnMode\}/);
+  assert.match(column, /fitToContainer/);
   assert.match(fixedGrid, /ResizeObserver/);
   assert.match(fixedGrid, /calculateFittedGrid/);
   assert.match(fixedGrid, /fixedSlotGridFitted/);
@@ -56,6 +56,10 @@ test('single-column words enable measured fit-to-container behavior', () => {
   assert.match(css, /repeat\(var\(--fit-rows\)/);
   assert.match(
     css,
-    /\.boardColumnSingleWords \.fixedSlotGridFitted\s*\{[\s\S]*overflow:\s*hidden/
+    /\.boardColumnSingleWords \.columnBodyWords\s*\{[\s\S]*overflow:\s*hidden/
+  );
+  assert.match(
+    css,
+    /\.boardColumn \.fixedSlotGridFitted \.wordButton,[\s\S]*overflow:\s*hidden/
   );
 });

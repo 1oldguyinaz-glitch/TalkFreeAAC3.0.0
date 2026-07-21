@@ -10,9 +10,11 @@ const source = (path) => readFileSync(join(root, path), 'utf8');
 
 test('Board continues to load School Age Stage 1 through the finalized shared UI', () => {
   const board = source('src/board/Board.jsx');
-  assert.match(board, /SCHOOL_AGE_STAGE_1_CATALOG/);
-  assert.match(board, /usesSingleColumnStageOne/);
-  assert.match(board, /stageOneMode=\{usesSingleColumnStageOne\}/);
+  const profiles = source('src/data/profileCatalogs.js');
+  assert.match(profiles, /SCHOOL_AGE_STAGE_1_CATALOG/);
+  assert.match(board, /getCatalogProfile/);
+  assert.match(board, /singleColumnMode/);
+  assert.match(board, /stageOneMode=\{state\.stage === 1\}/);
 });
 
 test('patch does not introduce dedicated School Age UI or quick-access controls', () => {
@@ -24,9 +26,9 @@ test('patch does not introduce dedicated School Age UI or quick-access controls'
   assert.doesNotMatch(constants, /sa1-c6-safety|SCHOOL_AGE_STAGE_ONE_BUCKET_SLOT_COUNT|SCHOOL_AGE_STAGE_ONE_WORD_SLOT_COUNT/);
 });
 
-test('only the approved sentence-output fixed-form guard is added to runtime logic', () => {
+test('the approved Stage 1 fixed-form guard applies across age bands', () => {
   const machine = source('src/board/boardMachine.js');
-  assert.match(machine, /state\.ageBand === 'school_age'/);
+  assert.match(machine, /state\.stage === 1 && word\.column === 2/);
   assert.match(machine, /word\.fixedForm/);
   assert.match(machine, /return base/);
 });

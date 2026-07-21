@@ -2,6 +2,7 @@ export function validateCatalog(catalog) {
   const errors = [];
   const bucketIds = new Set();
   const wordIds = new Set();
+  const normalizedLabels = new Map();
   let bucketCount = 0;
   let wordCount = 0;
 
@@ -39,6 +40,20 @@ export function validateCatalog(catalog) {
         wordCoordinates.add(wordCoordinate);
         if (!word.visibleByStage?.length) errors.push(`Word ${word.id} is unreachable at every stage.`);
         if (Object.keys(word.minimumStageByAgeBand ?? {}).sort().join(',') !== 'adult,early_childhood,school_age,teen') errors.push(`Word ${word.id} is missing age-stage metadata.`);
+
+        const normalizedLabel = String(word.label)
+          .normalize('NFKC')
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, ' ')
+          .replace(/[.!?]+$/u, '');
+        if (normalizedLabels.has(normalizedLabel)) {
+          errors.push(
+            `Duplicate normalized label: ${word.label} (${normalizedLabels.get(normalizedLabel)} and ${word.id})`
+          );
+        } else {
+          normalizedLabels.set(normalizedLabel, word.id);
+        }
       }
     }
   }

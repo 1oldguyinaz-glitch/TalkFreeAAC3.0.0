@@ -94,11 +94,43 @@ test('Adult Advanced Communicator can reach the complete bucketed catalog', asyn
         ageBand: 'adult',
         previousToken: null,
         pendingVerb: null,
-        sentence: []
+        sentence: [],
+        contentSettings: {
+          showSchool: true,
+          showPrivateParts: true
+        }
       }),
       true,
       word.id
     );
+  }
+});
+
+function normalizedCatalogLabel(label) {
+  return String(label)
+    .normalize('NFKC')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/[.!?]+$/u, '');
+}
+
+test('compiled catalog never repeats a normalized label across buckets', async () => {
+  const { catalog } = await loadCompiledCatalog();
+  const seen = new Map();
+
+  for (const column of Object.values(catalog)) {
+    for (const bucket of column.buckets) {
+      for (const word of bucket.words) {
+        const normalized = normalizedCatalogLabel(word.label);
+        assert.equal(
+          seen.has(normalized),
+          false,
+          `${word.label}: ${seen.get(normalized) ?? 'first occurrence'} and ${word.id}`
+        );
+        seen.set(normalized, word.id);
+      }
+    }
   }
 });
 

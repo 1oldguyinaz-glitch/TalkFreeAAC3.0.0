@@ -35,19 +35,16 @@ test('main board keeps sentence and interrupt controls without the stage descrip
   assert.doesNotMatch(board, /Six-Column Board Core/);
 });
 
-test('Early Childhood Stage 1 renders only its current active column', () => {
+test('every age and stage renders only its current active column', () => {
   const board = source('src/board/Board.jsx');
 
   assert.match(
     board,
-    /state\.ageBand === 'early_childhood' && state\.stage === 1/
-  );
-  assert.match(
-    board,
     /COLUMN_DEFINITIONS\.filter\([\s\S]*definition\.id === state\.activeColumn/
   );
-  assert.match(board, /singleColumnMode=\{usesEarlyChildhoodStageOne\}/);
+  assert.match(board, /singleColumnMode/);
   assert.match(board, /singleActiveColumnGrid/);
+  assert.doesNotMatch(board, /Six-column grammatical board/);
 });
 
 test('single active column exposes fixed capacity for all approved Stage 1 choices', () => {

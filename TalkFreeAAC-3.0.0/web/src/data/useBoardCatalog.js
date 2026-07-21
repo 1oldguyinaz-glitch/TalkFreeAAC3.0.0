@@ -1,17 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { COLUMN_IDS } from '../board/constants.js';
+import { publicAssetUrl } from './publicAssetUrl.js';
 
 function emptyCatalog() {
   return Object.fromEntries(COLUMN_IDS.map((column) => [column, { column, buckets: [] }]));
 }
 
-function catalogUrl(relativePath) {
-  const base = import.meta.env.BASE_URL || '/';
-  return `${base}${relativePath}`.replace(/([^:]\/)\/+/g, '$1');
-}
-
 async function fetchJson(relativePath) {
-  const response = await fetch(catalogUrl(relativePath), { headers: { Accept: 'application/json' } });
+  const response = await fetch(publicAssetUrl(relativePath), { headers: { Accept: 'application/json' } });
   if (!response.ok) throw new Error(`Catalog request failed (${response.status}): ${relativePath}`);
   return response.json();
 }

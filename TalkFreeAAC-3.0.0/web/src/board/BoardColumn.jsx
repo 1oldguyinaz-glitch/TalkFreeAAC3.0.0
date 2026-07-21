@@ -10,6 +10,7 @@ import {
   SINGLE_ACTIVE_COLUMN_WORD_SLOT_COUNT
 } from './constants.js';
 import { getFitzgeraldClassName } from './fitzgerald.js';
+import { publicAssetUrl } from '../data/publicAssetUrl.js';
 
 
 function fittedSingleColumnSlotCount(items, maximumSlotCount) {
@@ -21,6 +22,56 @@ function fittedSingleColumnSlotCount(items, maximumSlotCount) {
   return Math.min(maximumSlotCount, Math.max(4, roundedToFullRow));
 }
 
+function WordPhoto({ word }) {
+  if (word.imageIncludesLabel !== false) {
+    return (
+      <img
+        className="wordPhotoTile"
+        src={publicAssetUrl(word.imageSrc)}
+        alt=""
+        aria-hidden="true"
+      />
+    );
+  }
+
+  return (
+    <span className="photoTileContent">
+      <img
+        className="wordPhotoTile"
+        src={publicAssetUrl(word.imageSrc)}
+        alt=""
+        aria-hidden="true"
+      />
+      <span className="photoTileLabel">{word.label}</span>
+    </span>
+  );
+}
+
+function BucketPhoto({ bucket }) {
+  if (bucket.imageIncludesLabel !== false) {
+    return (
+      <img
+        className="bucketPhotoTile"
+        src={publicAssetUrl(bucket.imageSrc)}
+        alt=""
+        aria-hidden="true"
+      />
+    );
+  }
+
+  return (
+    <span className="photoTileContent">
+      <img
+        className="bucketPhotoTile"
+        src={publicAssetUrl(bucket.imageSrc)}
+        alt=""
+        aria-hidden="true"
+      />
+      <span className="photoTileLabel">{bucket.label}</span>
+    </span>
+  );
+}
+
 export function BoardColumn({
   definition,
   catalog,
@@ -28,7 +79,8 @@ export function BoardColumn({
   state,
   actions,
   context,
-  singleColumnMode = false
+  singleColumnMode = false,
+  sectionRef = null
 }) {
   const column = definition.id;
   const behavior = getStageBehavior(state.stage);
@@ -49,6 +101,8 @@ export function BoardColumn({
     const profile = GRAMMAR_PROFILES[view.grammarProfileId];
     return (
       <section
+        ref={sectionRef}
+        tabIndex={-1}
         className={className}
         data-column={column}
         aria-label={`Column ${column}: ${definition.label}`}
@@ -85,6 +139,8 @@ export function BoardColumn({
 
     return (
       <section
+        ref={sectionRef}
+        tabIndex={-1}
         className={className}
         data-column={column}
         aria-label={`Column ${column}: ${definition.label}`}
@@ -95,51 +151,54 @@ export function BoardColumn({
           recommended={recommended}
           behavior={behavior}
         />
-        <div className="columnToolbar">
-          <button
-            type="button"
-            className="backButton"
-            disabled={!enabled}
-            onClick={() => actions.backToBuckets(column)}
-          >
-            Categories
-          </button>
+        <div className="columnToolbar columnToolbarTopicOnly">
           <strong>{pageData.bucket?.label ?? 'Words'}</strong>
         </div>
         <div className="columnBody columnBodyWords">
           <FixedSlotGrid
             items={pageData.items}
             slotCount={slotCount}
-            fitToContainer={singleColumnMode}
+            fitToContainer
             renderItem={(word) => (
-              <button
-                type="button"
-                className={`wordButton ${word.imageSrc ? 'wordButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
-                aria-label={word.label}
-                disabled={!enabled}
-                onClick={() => actions.selectWord(column, word)}
-              >
-                {word.imageSrc ? (
-                  <img
-                    className="wordPhotoTile"
-                    src={word.imageSrc}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <>
-                    {word.symbol ? (
-                      <span className="wordSymbol" aria-hidden="true">
-                        {word.symbol}
-                      </span>
-                    ) : null}
-                    <span>{word.label}</span>
-                    {word.slamShutTrigger && behavior.slamShutAfterTarget ? (
-                      <small>finish</small>
-                    ) : null}
-                  </>
-                )}
-              </button>
+              word.targetBucketId ? (
+                <button
+                  type="button"
+                  className={`bucketButton subBucketButton ${word.imageSrc ? 'bucketButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
+                  aria-label={word.label}
+                  disabled={!enabled}
+                  onClick={() => actions.openNestedBucket(column, word)}
+                >
+                  {word.imageSrc ? (
+                    <BucketPhoto bucket={word} />
+                  ) : (
+                    <span className="boardButtonLabel">{word.label}</span>
+                  )}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className={`wordButton ${word.imageSrc ? 'wordButtonPhotoTile' : ''} ${getFitzgeraldClassName(word, column)}`.trim()}
+                  aria-label={word.label}
+                  disabled={!enabled}
+                  onClick={() => actions.selectWord(column, word)}
+                >
+                  {word.imageSrc ? (
+                    <WordPhoto word={word} />
+                  ) : (
+                    <>
+                      {word.symbol ? (
+                        <span className="wordSymbol" aria-hidden="true">
+                          {word.symbol}
+                        </span>
+                      ) : null}
+                      <span className="boardButtonLabel">{word.label}</span>
+                      {word.slamShutTrigger && behavior.slamShutAfterTarget ? (
+                        <small>finish</small>
+                      ) : null}
+                    </>
+                  )}
+                </button>
+              )
             )}
           />
           <Pagination
@@ -166,6 +225,8 @@ export function BoardColumn({
 
   return (
     <section
+      ref={sectionRef}
+      tabIndex={-1}
       className={className}
       data-column={column}
       aria-label={`Column ${column}: ${definition.label}`}
@@ -183,6 +244,7 @@ export function BoardColumn({
         <FixedSlotGrid
           items={pageData.items}
           slotCount={slotCount}
+          fitToContainer
           renderItem={(bucket) => (
             <button
               type="button"
@@ -192,18 +254,13 @@ export function BoardColumn({
               onClick={() => actions.openBucket(column, bucket)}
             >
               {bucket.imageSrc ? (
-                <img
-                  className="bucketPhotoTile"
-                  src={bucket.imageSrc}
-                  alt=""
-                  aria-hidden="true"
-                />
+                <BucketPhoto bucket={bucket} />
               ) : (
                 <>
                   <span className="bucketSymbol" aria-hidden="true">
                     {bucket.symbol}
                   </span>
-                  <span>{bucket.label}</span>
+                  <span className="boardButtonLabel">{bucket.label}</span>
                 </>
               )}
             </button>

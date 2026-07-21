@@ -1,4 +1,4 @@
-export const SCHOOL_AGE_STAGE_1_CATALOG = {
+export const SCHOOL_AGE_STAGE_1_CATALOG = Object.freeze({
   "1": {
     "column": 1,
     "buckets": [
@@ -132,7 +132,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "pronoun",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-who-is-talking-someone.jpg",
+            "imageSrc": "/p/s1/w/someone.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/someone.jpg",
             "nextColumnOverride": 2,
@@ -177,7 +177,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "possessive",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-your-this-that-your.jpg",
+            "imageSrc": "/p/s1/w/your.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/your.jpg",
             "nextColumnOverride": 6
@@ -192,7 +192,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "possessive",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-your-this-that-our.jpg",
+            "imageSrc": "/p/s1/w/our.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/our.jpg",
             "nextColumnOverride": 6
@@ -207,7 +207,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "possessive",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-your-this-that-his.jpg",
+            "imageSrc": "/p/s1/w/his.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/his.jpg",
             "nextColumnOverride": 6
@@ -237,7 +237,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "possessive",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-your-this-that-their.jpg",
+            "imageSrc": "/p/s1/w/their.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/their.jpg",
             "nextColumnOverride": 6
@@ -446,7 +446,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-grandma.jpg",
+            "imageSrc": "/p/s1/w/grandma.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/grandma.jpg",
             "nextColumnOverride": 2,
@@ -462,7 +462,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-grandpa.jpg",
+            "imageSrc": "/p/s1/w/grandpa.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/grandpa.jpg",
             "nextColumnOverride": 2,
@@ -542,7 +542,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 13,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-family.jpg",
+            "imageSrc": "/p/s1/w/family.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/family.jpg",
             "nextColumnOverride": 2,
@@ -605,7 +605,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-classmate.jpg",
+            "imageSrc": "/p/s1/w/classmate.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/classmate.jpg",
             "nextColumnOverride": 2,
@@ -621,7 +621,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-people-i-play-with-teammate.jpg",
+            "imageSrc": "/p/s1/w/teammate.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/teammate.jpg",
             "nextColumnOverride": 2,
@@ -685,7 +685,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-who-i-mean-everyone.jpg",
+            "imageSrc": "/p/s1/w/everyone.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/everyone.jpg",
             "nextColumnOverride": 2,
@@ -732,7 +732,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-principal.jpg",
+            "imageSrc": "/p/s1/w/principal.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/principal.jpg",
             "nextColumnOverride": 2,
@@ -748,7 +748,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-people-who-help-me-counselor.jpg",
+            "imageSrc": "/p/s1/w/counselor.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/counselor.jpg",
             "nextColumnOverride": 2,
@@ -764,7 +764,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-coach.jpg",
+            "imageSrc": "/p/s1/w/coach.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/coach.jpg",
             "nextColumnOverride": 2,
@@ -780,7 +780,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-people-who-help-me-school-nurse.jpg",
+            "imageSrc": "/p/s1/w/school-nurse.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/school-nurse.jpg",
             "nextColumnOverride": 2,
@@ -859,7 +859,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-caregiver.jpg",
+            "imageSrc": "/p/s1/w/caregiver.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/caregiver.jpg",
             "nextColumnOverride": 2,
@@ -891,7 +891,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-helper.jpg",
+            "imageSrc": "/p/s1/w/helper.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/helper.jpg",
             "nextColumnOverride": 2,
@@ -907,7 +907,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-assistant.jpg",
+            "imageSrc": "/p/s1/w/assistant.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/assistant.jpg",
             "nextColumnOverride": 2,
@@ -971,7 +971,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-firefighter.jpg",
+            "imageSrc": "/p/s1/w/firefighter.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/firefighter.jpg",
             "nextColumnOverride": 2,
@@ -1190,7 +1190,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "social",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-social-and-quick-starts-sorry.jpg",
+            "imageSrc": "/p/s1/w/sorry.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/sorry.jpg",
             "slamShutTrigger": true
@@ -1205,7 +1205,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "social",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-social-and-quick-starts-excuse-me.jpg",
+            "imageSrc": "/p/s1/w/excuse-me.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/excuse-me.jpg",
             "slamShutTrigger": true
@@ -1448,7 +1448,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-feel.jpg",
+            "imageSrc": "/p/s1/w/feel.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/feel.jpg",
             "nextColumnOverride": 6
@@ -1552,7 +1552,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-move-and-play-jump.jpg",
+            "imageSrc": "/p/s1/w/jump.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/jump.jpg",
             "nextColumnOverride": 6
@@ -1567,7 +1567,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-move-and-play-climb.jpg",
+            "imageSrc": "/p/s1/w/climb.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/climb.jpg",
             "nextColumnOverride": 6
@@ -1671,7 +1671,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-what-i-want-or-need-get.jpg",
+            "imageSrc": "/p/s1/w/get.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/get.jpg",
             "nextColumnOverride": 6
@@ -1717,7 +1717,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-what-i-want-or-need-use.jpg",
+            "imageSrc": "/p/s1/w/use.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/use.jpg",
             "nextColumnOverride": 6
@@ -1732,7 +1732,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-find.jpg",
+            "imageSrc": "/p/s1/w/find.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/find.jpg",
             "nextColumnOverride": 6
@@ -1763,7 +1763,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-choose.jpg",
+            "imageSrc": "/p/s1/w/choose.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/choose.jpg",
             "nextColumnOverride": 6
@@ -1841,7 +1841,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 15,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-take.jpg",
+            "imageSrc": "/p/s1/w/take.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/take.jpg",
             "nextColumnOverride": 6
@@ -1917,7 +1917,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-ask.jpg",
+            "imageSrc": "/p/s1/w/ask.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/ask.jpg",
             "nextColumnOverride": 6
@@ -1932,7 +1932,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-answer.jpg",
+            "imageSrc": "/p/s1/w/answer.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/answer.jpg",
             "nextColumnOverride": 6
@@ -1962,7 +1962,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-tell.jpg",
+            "imageSrc": "/p/s1/w/tell.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/tell.jpg",
             "nextColumnOverride": 6
@@ -1993,7 +1993,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-show.jpg",
+            "imageSrc": "/p/s1/w/show.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/show.jpg",
             "nextColumnOverride": 6
@@ -2024,7 +2024,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-look-at.jpg",
+            "imageSrc": "/p/s1/w/look-at.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/look-at.jpg",
             "nextColumnOverride": 6
@@ -2039,7 +2039,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-listen-to.jpg",
+            "imageSrc": "/p/s1/w/listen-to.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/listen-to.jpg",
             "nextColumnOverride": 6
@@ -2054,7 +2054,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-call.jpg",
+            "imageSrc": "/p/s1/w/call.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/call.jpg",
             "nextColumnOverride": 6
@@ -2085,7 +2085,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 12,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-text.jpg",
+            "imageSrc": "/p/s1/w/text.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/text.jpg",
             "nextColumnOverride": 6
@@ -2129,7 +2129,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-write.jpg",
+            "imageSrc": "/p/s1/w/write.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/write.jpg",
             "nextColumnOverride": 6
@@ -2144,7 +2144,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-learn.jpg",
+            "imageSrc": "/p/s1/w/learn.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/learn.jpg",
             "nextColumnOverride": 6
@@ -2159,7 +2159,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-practice.jpg",
+            "imageSrc": "/p/s1/w/practice.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/practice.jpg",
             "nextColumnOverride": 6
@@ -2174,7 +2174,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-know.jpg",
+            "imageSrc": "/p/s1/w/know.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/know.jpg",
             "nextColumnOverride": 6
@@ -2189,7 +2189,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-understand.jpg",
+            "imageSrc": "/p/s1/w/understand.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/understand.jpg",
             "nextColumnOverride": 6
@@ -2204,7 +2204,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-remember.jpg",
+            "imageSrc": "/p/s1/w/remember.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/remember.jpg",
             "nextColumnOverride": 6
@@ -2219,7 +2219,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-think-and-feel-forget.jpg",
+            "imageSrc": "/p/s1/w/forget.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/forget.jpg",
             "nextColumnOverride": 6
@@ -2234,7 +2234,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-finish.jpg",
+            "imageSrc": "/p/s1/w/finish.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/finish.jpg",
             "nextColumnOverride": 6
@@ -2249,7 +2249,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-count.jpg",
+            "imageSrc": "/p/s1/w/count.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/count.jpg",
             "nextColumnOverride": 6
@@ -2264,7 +2264,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 11,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-spell.jpg",
+            "imageSrc": "/p/s1/w/spell.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/spell.jpg",
             "nextColumnOverride": 6
@@ -2293,7 +2293,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-make.jpg",
+            "imageSrc": "/p/s1/w/make.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/make.jpg",
             "nextColumnOverride": 6
@@ -2308,7 +2308,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-move-and-play-build.jpg",
+            "imageSrc": "/p/s1/w/build.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/build.jpg",
             "nextColumnOverride": 6
@@ -2323,7 +2323,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-put.jpg",
+            "imageSrc": "/p/s1/w/put.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/put.jpg",
             "nextColumnOverride": 6,
@@ -2369,7 +2369,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-turn-on.jpg",
+            "imageSrc": "/p/s1/w/turn-on.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/turn-on.jpg",
             "nextColumnOverride": 6
@@ -2384,7 +2384,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-turn-off.jpg",
+            "imageSrc": "/p/s1/w/turn-off.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/turn-off.jpg",
             "nextColumnOverride": 6
@@ -2399,7 +2399,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-make-and-change-things-charge.jpg",
+            "imageSrc": "/p/s1/w/charge.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/charge.jpg",
             "nextColumnOverride": 6
@@ -2488,7 +2488,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-take-care-of-me-dress.jpg",
+            "imageSrc": "/p/s1/w/dress.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/dress.jpg",
             "nextColumnOverride": 6
@@ -2533,7 +2533,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-take-care-of-me-wake.jpg",
+            "imageSrc": "/p/s1/w/wake.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/wake.jpg",
             "nextColumnOverride": 6
@@ -2593,7 +2593,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-help-and-regulate-breathe.jpg",
+            "imageSrc": "/p/s1/w/breathe.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/breathe.jpg",
             "nextColumnOverride": 6
@@ -2608,7 +2608,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "verb",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-help-and-regulate-rest.jpg",
+            "imageSrc": "/p/s1/w/rest.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/rest.jpg",
             "nextColumnOverride": 6
@@ -3552,7 +3552,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "targetBucketId": "sa1-c6-food-and-drink-food-fruit",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-fruit.jpg",
-            "imageSrc": "/p/s1/b/column-6-lunch-and-snacks-fruit.jpg"
+            "imageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-fruit.jpg"
           },
           {
             "id": "sa1-c6-food-and-drink-food-nav-vegetables",
@@ -3580,7 +3580,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "targetBucketId": "sa1-c6-food-and-drink-food-snacks",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-snacks.jpg",
-            "imageSrc": "/p/s1/b/column-6-lunch-and-snacks-snacks.jpg"
+            "imageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-snacks.jpg"
           },
           {
             "id": "sa1-c6-food-and-drink-food-nav-fast-food",
@@ -3706,7 +3706,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-plate.jpg",
+            "imageSrc": "/p/s1/w/plate.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/plate.jpg",
             "slamShutTrigger": true
@@ -3721,7 +3721,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-bowl.jpg",
+            "imageSrc": "/p/s1/w/bowl.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/bowl.jpg",
             "slamShutTrigger": true
@@ -3766,7 +3766,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-fork.jpg",
+            "imageSrc": "/p/s1/w/fork.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/fork.jpg",
             "slamShutTrigger": true
@@ -3781,7 +3781,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-spoon.jpg",
+            "imageSrc": "/p/s1/w/spoon.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/spoon.jpg",
             "slamShutTrigger": true
@@ -3796,7 +3796,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-knife.jpg",
+            "imageSrc": "/p/s1/w/knife.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/knife.jpg",
             "slamShutTrigger": true
@@ -3811,7 +3811,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-drink-straw.jpg",
+            "imageSrc": "/p/s1/w/straw.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/straw.jpg",
             "slamShutTrigger": true
@@ -3826,7 +3826,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-eat-with-napkin.jpg",
+            "imageSrc": "/p/s1/w/napkin.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/napkin.jpg",
             "slamShutTrigger": true
@@ -3841,7 +3841,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-what-holds-my-lunch-lunchbox.jpg",
+            "imageSrc": "/p/s1/w/lunchbox.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/lunchbox.jpg",
             "slamShutTrigger": true
@@ -3991,7 +3991,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-yogurt.jpg",
+            "imageSrc": "/p/s1/w/yogurt.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/yogurt.jpg",
             "slamShutTrigger": true
@@ -4036,7 +4036,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-lunch-foods-sandwich.jpg",
+            "imageSrc": "/p/s1/w/sandwich.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/sandwich.jpg",
             "slamShutTrigger": true
@@ -4051,7 +4051,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-lunch-foods-soup.jpg",
+            "imageSrc": "/p/s1/w/soup.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/soup.jpg",
             "slamShutTrigger": true
@@ -4066,7 +4066,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-veggies-and-sides-salad.jpg",
+            "imageSrc": "/p/s1/w/salad.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/salad.jpg",
             "slamShutTrigger": true
@@ -4231,7 +4231,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-lunch-foods-pasta.jpg",
+            "imageSrc": "/p/s1/w/pasta.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/pasta.jpg",
             "slamShutTrigger": true
@@ -4277,7 +4277,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
         "page": 1,
         "role": "target",
         "colorRole": "target",
-        "imageSrc": "/p/s1/b/column-6-lunch-and-snacks-fruit.jpg",
+        "imageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-fruit.jpg",
         "imageIncludesLabel": false,
         "plannedImageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-fruit.jpg",
         "words": [
@@ -4351,7 +4351,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-fruit-grapes.jpg",
+            "imageSrc": "/p/s1/w/grapes.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/grapes.jpg",
             "slamShutTrigger": true
@@ -4366,7 +4366,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-fruit-strawberry.jpg",
+            "imageSrc": "/p/s1/w/strawberry.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/strawberry.jpg",
             "slamShutTrigger": true
@@ -4456,7 +4456,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-veggies-and-sides-carrots.jpg",
+            "imageSrc": "/p/s1/w/carrots.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/carrots.jpg",
             "slamShutTrigger": true
@@ -4471,7 +4471,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-veggies-and-sides-broccoli.jpg",
+            "imageSrc": "/p/s1/w/broccoli.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/broccoli.jpg",
             "slamShutTrigger": true
@@ -4486,7 +4486,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-veggies-and-sides-corn.jpg",
+            "imageSrc": "/p/s1/w/corn.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/corn.jpg",
             "slamShutTrigger": true
@@ -4561,7 +4561,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-veggies-and-sides-cucumber.jpg",
+            "imageSrc": "/p/s1/w/cucumber.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/cucumber.jpg",
             "slamShutTrigger": true
@@ -4577,7 +4577,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
         "page": 1,
         "role": "target",
         "colorRole": "target",
-        "imageSrc": "/p/s1/b/column-6-lunch-and-snacks-snacks.jpg",
+        "imageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-snacks.jpg",
         "imageIncludesLabel": false,
         "plannedImageSrc": "/p/s1/b/sa1-c6-food-and-drink-food-snacks.jpg",
         "words": [
@@ -4769,7 +4769,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-yogurt.jpg",
+            "imageSrc": "/p/s1/w/yogurt.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/yogurt.jpg",
             "slamShutTrigger": true
@@ -4784,7 +4784,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-cheese.jpg",
+            "imageSrc": "/p/s1/w/cheese.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/cheese.jpg",
             "slamShutTrigger": true
@@ -4799,7 +4799,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-crackers.jpg",
+            "imageSrc": "/p/s1/w/crackers.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/crackers.jpg",
             "slamShutTrigger": true
@@ -4814,7 +4814,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-granola-bar.jpg",
+            "imageSrc": "/p/s1/w/granola-bar.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/granola-bar.jpg",
             "slamShutTrigger": true
@@ -4904,7 +4904,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-snacks-chips.jpg",
+            "imageSrc": "/p/s1/w/chips.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/chips.jpg",
             "slamShutTrigger": true
@@ -5234,7 +5234,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-drink-chocolate-milk.jpg",
+            "imageSrc": "/p/s1/w/chocolate-milk.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/chocolate-milk.jpg",
             "slamShutTrigger": true
@@ -5369,7 +5369,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-things-i-drink-smoothie.jpg",
+            "imageSrc": "/p/s1/w/smoothie.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/smoothie.jpg",
             "slamShutTrigger": true
@@ -5534,7 +5534,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-grandma.jpg",
+            "imageSrc": "/p/s1/w/grandma.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/grandma.jpg",
             "slamShutTrigger": true
@@ -5549,7 +5549,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-grandpa.jpg",
+            "imageSrc": "/p/s1/w/grandpa.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/grandpa.jpg",
             "slamShutTrigger": true
@@ -5624,7 +5624,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 13,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-family.jpg",
+            "imageSrc": "/p/s1/w/family.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/family.jpg",
             "slamShutTrigger": true
@@ -5684,7 +5684,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-classmate.jpg",
+            "imageSrc": "/p/s1/w/classmate.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/classmate.jpg",
             "slamShutTrigger": true
@@ -5699,7 +5699,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-people-i-play-with-teammate.jpg",
+            "imageSrc": "/p/s1/w/teammate.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/teammate.jpg",
             "slamShutTrigger": true
@@ -5759,7 +5759,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-who-i-mean-everyone.jpg",
+            "imageSrc": "/p/s1/w/everyone.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/everyone.jpg",
             "slamShutTrigger": true
@@ -5804,7 +5804,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-principal.jpg",
+            "imageSrc": "/p/s1/w/principal.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/principal.jpg",
             "slamShutTrigger": true
@@ -5819,7 +5819,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-people-who-help-me-counselor.jpg",
+            "imageSrc": "/p/s1/w/counselor.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/counselor.jpg",
             "slamShutTrigger": true
@@ -5834,7 +5834,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-coach.jpg",
+            "imageSrc": "/p/s1/w/coach.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/coach.jpg",
             "slamShutTrigger": true
@@ -5849,7 +5849,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-people-who-help-me-school-nurse.jpg",
+            "imageSrc": "/p/s1/w/school-nurse.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/school-nurse.jpg",
             "slamShutTrigger": true
@@ -5924,7 +5924,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-my-family-caregiver.jpg",
+            "imageSrc": "/p/s1/w/caregiver.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/caregiver.jpg",
             "slamShutTrigger": true
@@ -5954,7 +5954,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-helper.jpg",
+            "imageSrc": "/p/s1/w/helper.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/helper.jpg",
             "slamShutTrigger": true
@@ -5969,7 +5969,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-assistant.jpg",
+            "imageSrc": "/p/s1/w/assistant.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/assistant.jpg",
             "slamShutTrigger": true
@@ -6029,7 +6029,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-firefighter.jpg",
+            "imageSrc": "/p/s1/w/firefighter.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/firefighter.jpg",
             "slamShutTrigger": true
@@ -6254,7 +6254,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-who-i-mean-us.jpg",
+            "imageSrc": "/p/s1/w/us.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/us.jpg",
             "slamShutTrigger": true
@@ -6284,7 +6284,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "person",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-who-is-talking-someone.jpg",
+            "imageSrc": "/p/s1/w/someone.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/someone.jpg",
             "slamShutTrigger": true
@@ -6344,7 +6344,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-good-excited.jpg",
+            "imageSrc": "/p/s1/w/excited.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/excited.jpg",
             "slamShutTrigger": true
@@ -6359,7 +6359,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-good-proud.jpg",
+            "imageSrc": "/p/s1/w/proud.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/proud.jpg",
             "slamShutTrigger": true
@@ -6374,7 +6374,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-good-calm.jpg",
+            "imageSrc": "/p/s1/w/calm.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/calm.jpg",
             "slamShutTrigger": true
@@ -6389,7 +6389,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-social-and-quick-starts-okay.jpg",
+            "imageSrc": "/p/s1/w/okay.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/okay.jpg",
             "slamShutTrigger": true
@@ -6479,7 +6479,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-bad-worried.jpg",
+            "imageSrc": "/p/s1/w/worried.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/worried.jpg",
             "slamShutTrigger": true
@@ -6494,7 +6494,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-bad-nervous.jpg",
+            "imageSrc": "/p/s1/w/nervous.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/nervous.jpg",
             "slamShutTrigger": true
@@ -6509,7 +6509,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-bad-bored.jpg",
+            "imageSrc": "/p/s1/w/bored.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/bored.jpg",
             "slamShutTrigger": true
@@ -6524,7 +6524,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-bad-lonely.jpg",
+            "imageSrc": "/p/s1/w/lonely.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/lonely.jpg",
             "slamShutTrigger": true
@@ -6584,7 +6584,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-what-my-body-needs-sick.jpg",
+            "imageSrc": "/p/s1/w/sick.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/sick.jpg",
             "slamShutTrigger": true
@@ -6644,7 +6644,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-what-my-body-needs-hot.jpg",
+            "imageSrc": "/p/s1/w/hot.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/hot.jpg",
             "slamShutTrigger": true
@@ -6659,7 +6659,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-what-my-body-needs-cold.jpg",
+            "imageSrc": "/p/s1/w/cold.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/cold.jpg",
             "slamShutTrigger": true
@@ -6884,7 +6884,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-games-we-play-tag.jpg",
+            "imageSrc": "/p/s1/w/tag.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/tag.jpg",
             "slamShutTrigger": true
@@ -6899,7 +6899,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-games-we-play-hide-and-seek.jpg",
+            "imageSrc": "/p/s1/w/hide-and-seek.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/hide-and-seek.jpg",
             "slamShutTrigger": true
@@ -6929,7 +6929,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-places-outside-playground.jpg",
+            "imageSrc": "/p/s1/w/playground.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/playground.jpg",
             "slamShutTrigger": true
@@ -6959,7 +6959,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-on-the-playground-slide.jpg",
+            "imageSrc": "/p/s1/w/slide.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/slide.jpg",
             "slamShutTrigger": true
@@ -6974,7 +6974,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-wheels-and-play-gear-bicycle.jpg",
+            "imageSrc": "/p/s1/w/bicycle.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/bicycle.jpg",
             "slamShutTrigger": true
@@ -6989,7 +6989,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-wheels-and-play-gear-scooter.jpg",
+            "imageSrc": "/p/s1/w/scooter.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/scooter.jpg",
             "slamShutTrigger": true
@@ -7004,7 +7004,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-wheels-and-play-gear-jump-rope.jpg",
+            "imageSrc": "/p/s1/w/jump-rope.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/jump-rope.jpg",
             "slamShutTrigger": true
@@ -7034,7 +7034,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-soccer.jpg",
+            "imageSrc": "/p/s1/w/soccer.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/soccer.jpg",
             "slamShutTrigger": true
@@ -7049,7 +7049,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-basketball.jpg",
+            "imageSrc": "/p/s1/w/basketball.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/basketball.jpg",
             "slamShutTrigger": true
@@ -7064,7 +7064,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-baseball.jpg",
+            "imageSrc": "/p/s1/w/baseball.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/baseball.jpg",
             "slamShutTrigger": true
@@ -7079,7 +7079,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-football.jpg",
+            "imageSrc": "/p/s1/w/football.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/football.jpg",
             "slamShutTrigger": true
@@ -7274,7 +7274,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-classroom.jpg",
+            "imageSrc": "/p/s1/w/classroom.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/classroom.jpg",
             "slamShutTrigger": true
@@ -7289,7 +7289,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-hallway.jpg",
+            "imageSrc": "/p/s1/w/hallway.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/hallway.jpg",
             "slamShutTrigger": true
@@ -7304,7 +7304,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-cafeteria.jpg",
+            "imageSrc": "/p/s1/w/cafeteria.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/cafeteria.jpg",
             "slamShutTrigger": true
@@ -7319,7 +7319,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-gym.jpg",
+            "imageSrc": "/p/s1/w/gym.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/gym.jpg",
             "slamShutTrigger": true
@@ -7334,7 +7334,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-library.jpg",
+            "imageSrc": "/p/s1/w/library.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/library.jpg",
             "slamShutTrigger": true
@@ -7364,7 +7364,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-places-outside-playground.jpg",
+            "imageSrc": "/p/s1/w/playground.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/playground.jpg",
             "slamShutTrigger": true
@@ -7499,7 +7499,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-library.jpg",
+            "imageSrc": "/p/s1/w/library.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/library.jpg",
             "slamShutTrigger": true
@@ -7544,7 +7544,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-ways-i-get-there-car.jpg",
+            "imageSrc": "/p/s1/w/car.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/car.jpg",
             "slamShutTrigger": true
@@ -7574,7 +7574,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "place",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-ways-i-get-there-train.jpg",
+            "imageSrc": "/p/s1/w/train.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/train.jpg",
             "slamShutTrigger": true
@@ -7679,7 +7679,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-in-the-bathroom-sink.jpg",
+            "imageSrc": "/p/s1/w/sink.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/sink.jpg",
             "slamShutTrigger": true
@@ -7694,7 +7694,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-in-the-bathroom-toilet-paper.jpg",
+            "imageSrc": "/p/s1/w/toilet-paper.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/toilet-paper.jpg",
             "slamShutTrigger": true
@@ -7859,7 +7859,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-in-the-bathroom-tissue.jpg",
+            "imageSrc": "/p/s1/w/tissue.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/tissue.jpg",
             "slamShutTrigger": true
@@ -7889,7 +7889,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-at-the-nurse-s-office-medicine.jpg",
+            "imageSrc": "/p/s1/w/medicine.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/medicine.jpg",
             "slamShutTrigger": true
@@ -7904,7 +7904,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-at-the-nurse-s-office-bandage.jpg",
+            "imageSrc": "/p/s1/w/bandage.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/bandage.jpg",
             "slamShutTrigger": true
@@ -7919,7 +7919,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-things-that-help-my-body-thermometer.jpg",
+            "imageSrc": "/p/s1/w/thermometer.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/thermometer.jpg",
             "slamShutTrigger": true
@@ -7934,7 +7934,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-things-that-help-my-body-inhaler.jpg",
+            "imageSrc": "/p/s1/w/inhaler.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/inhaler.jpg",
             "slamShutTrigger": true
@@ -7949,7 +7949,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-things-that-help-my-body-glasses.jpg",
+            "imageSrc": "/p/s1/w/glasses.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/glasses.jpg",
             "slamShutTrigger": true
@@ -7994,7 +7994,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-at-the-nurse-s-office-pillow.jpg",
+            "imageSrc": "/p/s1/w/pillow.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/pillow.jpg",
             "slamShutTrigger": true
@@ -8024,7 +8024,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-what-holds-my-lunch-ice-pack.jpg",
+            "imageSrc": "/p/s1/w/ice-pack.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/ice-pack.jpg",
             "slamShutTrigger": true
@@ -8084,7 +8084,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-things-that-help-my-body-wheelchair.jpg",
+            "imageSrc": "/p/s1/w/wheelchair.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/wheelchair.jpg",
             "slamShutTrigger": true
@@ -8204,7 +8204,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-head-and-face-eye.jpg",
+            "imageSrc": "/p/s1/w/eye.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/eye.jpg",
             "slamShutTrigger": true
@@ -8219,7 +8219,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-head-and-face-ear.jpg",
+            "imageSrc": "/p/s1/w/ear.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/ear.jpg",
             "slamShutTrigger": true
@@ -8294,7 +8294,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-head-and-face-throat.jpg",
+            "imageSrc": "/p/s1/w/throat.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/throat.jpg",
             "slamShutTrigger": true
@@ -8354,7 +8354,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-chest.jpg",
+            "imageSrc": "/p/s1/w/chest.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/chest.jpg",
             "slamShutTrigger": true
@@ -8369,7 +8369,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-back.jpg",
+            "imageSrc": "/p/s1/w/back.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/back.jpg",
             "slamShutTrigger": true
@@ -8384,7 +8384,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-arm.jpg",
+            "imageSrc": "/p/s1/w/arm.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/arm.jpg",
             "slamShutTrigger": true
@@ -8414,7 +8414,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-hand.jpg",
+            "imageSrc": "/p/s1/w/hand.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/hand.jpg",
             "slamShutTrigger": true
@@ -8459,7 +8459,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-stomach.jpg",
+            "imageSrc": "/p/s1/w/stomach.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/stomach.jpg",
             "slamShutTrigger": true
@@ -8489,7 +8489,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-leg.jpg",
+            "imageSrc": "/p/s1/w/leg.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/leg.jpg",
             "slamShutTrigger": true
@@ -8504,7 +8504,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-knee.jpg",
+            "imageSrc": "/p/s1/w/knee.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/knee.jpg",
             "slamShutTrigger": true
@@ -8534,7 +8534,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-my-body-arms-and-legs-foot.jpg",
+            "imageSrc": "/p/s1/w/foot.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/foot.jpg",
             "slamShutTrigger": true
@@ -8654,7 +8654,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-things-i-write-with-pencil.jpg",
+            "imageSrc": "/p/s1/w/pencil.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/pencil.jpg",
             "slamShutTrigger": true
@@ -8684,7 +8684,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-things-i-write-with-paper.jpg",
+            "imageSrc": "/p/s1/w/paper.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/paper.jpg",
             "slamShutTrigger": true
@@ -8699,7 +8699,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-notebook.jpg",
+            "imageSrc": "/p/s1/w/notebook.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/notebook.jpg",
             "slamShutTrigger": true
@@ -8729,7 +8729,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-folder.jpg",
+            "imageSrc": "/p/s1/w/folder.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/folder.jpg",
             "slamShutTrigger": true
@@ -8744,7 +8744,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-binder.jpg",
+            "imageSrc": "/p/s1/w/binder.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/binder.jpg",
             "slamShutTrigger": true
@@ -8759,7 +8759,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-backpack.jpg",
+            "imageSrc": "/p/s1/w/backpack.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/backpack.jpg",
             "slamShutTrigger": true
@@ -8774,7 +8774,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-what-holds-my-lunch-lunchbox.jpg",
+            "imageSrc": "/p/s1/w/lunchbox.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/lunchbox.jpg",
             "slamShutTrigger": true
@@ -8789,7 +8789,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-things-i-write-with-ruler.jpg",
+            "imageSrc": "/p/s1/w/ruler.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/ruler.jpg",
             "slamShutTrigger": true
@@ -8804,7 +8804,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 11,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-scissors.jpg",
+            "imageSrc": "/p/s1/w/scissors.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/scissors.jpg",
             "slamShutTrigger": true
@@ -8819,7 +8819,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 12,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-in-my-backpack-glue.jpg",
+            "imageSrc": "/p/s1/w/glue.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/glue.jpg",
             "slamShutTrigger": true
@@ -8864,7 +8864,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 15,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-things-i-use-for-math-calculator.jpg",
+            "imageSrc": "/p/s1/w/calculator.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/calculator.jpg",
             "slamShutTrigger": true
@@ -8909,7 +8909,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-around-my-classroom-table.jpg",
+            "imageSrc": "/p/s1/w/table.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/table.jpg",
             "slamShutTrigger": true
@@ -8999,7 +8999,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-schedule-and-turn-clock.jpg",
+            "imageSrc": "/p/s1/w/clock.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/clock.jpg",
             "slamShutTrigger": true
@@ -9059,7 +9059,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 12,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-lunch-and-snacks-around-the-cafeteria-trash-can.jpg",
+            "imageSrc": "/p/s1/w/trash-can.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/trash-can.jpg",
             "slamShutTrigger": true
@@ -9089,7 +9089,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 14,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-at-the-nurse-s-office-pillow.jpg",
+            "imageSrc": "/p/s1/w/pillow.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/pillow.jpg",
             "slamShutTrigger": true
@@ -9179,7 +9179,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-what-i-m-working-on-worksheet.jpg",
+            "imageSrc": "/p/s1/w/worksheet.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/worksheet.jpg",
             "slamShutTrigger": true
@@ -9194,7 +9194,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-what-i-m-working-on-homework.jpg",
+            "imageSrc": "/p/s1/w/homework.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/homework.jpg",
             "slamShutTrigger": true
@@ -9209,7 +9209,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-what-i-m-working-on-test.jpg",
+            "imageSrc": "/p/s1/w/test.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/test.jpg",
             "slamShutTrigger": true
@@ -9224,7 +9224,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-what-i-m-working-on-project.jpg",
+            "imageSrc": "/p/s1/w/project.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/project.jpg",
             "slamShutTrigger": true
@@ -9239,7 +9239,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-schedule-and-turn-schedule.jpg",
+            "imageSrc": "/p/s1/w/schedule.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/schedule.jpg",
             "slamShutTrigger": true
@@ -9329,7 +9329,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-paper-and-craft-things-picture.jpg",
+            "imageSrc": "/p/s1/w/picture.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/picture.jpg",
             "slamShutTrigger": true
@@ -9359,7 +9359,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-things-i-make-with-clay.jpg",
+            "imageSrc": "/p/s1/w/clay.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/clay.jpg",
             "slamShutTrigger": true
@@ -9374,7 +9374,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-things-i-paint-with-paintbrush.jpg",
+            "imageSrc": "/p/s1/w/paintbrush.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/paintbrush.jpg",
             "slamShutTrigger": true
@@ -9404,7 +9404,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-music-words-music.jpg",
+            "imageSrc": "/p/s1/w/music.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/music.jpg",
             "slamShutTrigger": true
@@ -9419,7 +9419,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-music-words-song.jpg",
+            "imageSrc": "/p/s1/w/song.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/song.jpg",
             "slamShutTrigger": true
@@ -9464,7 +9464,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-things-i-play-and-sing-with-piano.jpg",
+            "imageSrc": "/p/s1/w/piano.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/piano.jpg",
             "slamShutTrigger": true
@@ -9479,7 +9479,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-things-i-play-and-sing-with-guitar.jpg",
+            "imageSrc": "/p/s1/w/guitar.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/guitar.jpg",
             "slamShutTrigger": true
@@ -9509,7 +9509,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-being-in-a-show-concert.jpg",
+            "imageSrc": "/p/s1/w/concert.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/concert.jpg",
             "slamShutTrigger": true
@@ -9539,7 +9539,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-being-in-a-show-dance.jpg",
+            "imageSrc": "/p/s1/w/dance.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/dance.jpg",
             "slamShutTrigger": true
@@ -9569,7 +9569,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-practice.jpg",
+            "imageSrc": "/p/s1/w/practice.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/practice.jpg",
             "slamShutTrigger": true
@@ -9629,7 +9629,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-being-in-a-show-costume.jpg",
+            "imageSrc": "/p/s1/w/costume.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/costume.jpg",
             "slamShutTrigger": true
@@ -9719,7 +9719,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-learn-and-work-practice.jpg",
+            "imageSrc": "/p/s1/w/practice.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/practice.jpg",
             "slamShutTrigger": true
@@ -9734,7 +9734,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-1-people-at-school-coach.jpg",
+            "imageSrc": "/p/s1/w/coach.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/coach.jpg",
             "slamShutTrigger": true
@@ -9749,7 +9749,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-places-i-go-at-school-gym.jpg",
+            "imageSrc": "/p/s1/w/gym.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/gym.jpg",
             "slamShutTrigger": true
@@ -9764,7 +9764,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-soccer.jpg",
+            "imageSrc": "/p/s1/w/soccer.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/soccer.jpg",
             "slamShutTrigger": true
@@ -9779,7 +9779,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-ball-games-basketball.jpg",
+            "imageSrc": "/p/s1/w/basketball.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/basketball.jpg",
             "slamShutTrigger": true
@@ -9824,7 +9824,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-numbers-and-math-signs-number.jpg",
+            "imageSrc": "/p/s1/w/number.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/number.jpg",
             "slamShutTrigger": true
@@ -9899,7 +9899,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-say-and-share-answer.jpg",
+            "imageSrc": "/p/s1/w/answer.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/answer.jpg",
             "slamShutTrigger": true
@@ -9914,7 +9914,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-things-i-use-for-math-calculator.jpg",
+            "imageSrc": "/p/s1/w/calculator.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/calculator.jpg",
             "slamShutTrigger": true
@@ -9959,7 +9959,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-things-i-discover-experiment.jpg",
+            "imageSrc": "/p/s1/w/experiment.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/experiment.jpg",
             "slamShutTrigger": true
@@ -9974,7 +9974,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-plants-bugs-and-animals-animal.jpg",
+            "imageSrc": "/p/s1/w/animal.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/animal.jpg",
             "slamShutTrigger": true
@@ -9989,7 +9989,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-plants-bugs-and-animals-plant.jpg",
+            "imageSrc": "/p/s1/w/plant.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/plant.jpg",
             "slamShutTrigger": true
@@ -10109,7 +10109,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-what-i-need-outside-sweatshirt.jpg",
+            "imageSrc": "/p/s1/w/sweatshirt.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/sweatshirt.jpg",
             "slamShutTrigger": true
@@ -10139,7 +10139,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-what-i-need-outside-jacket.jpg",
+            "imageSrc": "/p/s1/w/jacket.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/jacket.jpg",
             "slamShutTrigger": true
@@ -10154,7 +10154,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-my-clothes-and-belongings-coat.jpg",
+            "imageSrc": "/p/s1/w/coat.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/coat.jpg",
             "slamShutTrigger": true
@@ -10229,7 +10229,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-take-care-of-me-dress.jpg",
+            "imageSrc": "/p/s1/w/dress.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/dress.jpg",
             "slamShutTrigger": true
@@ -10259,7 +10259,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-my-clothes-and-belongings-socks.jpg",
+            "imageSrc": "/p/s1/w/socks.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/socks.jpg",
             "slamShutTrigger": true
@@ -10289,7 +10289,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-my-clothes-and-belongings-boots.jpg",
+            "imageSrc": "/p/s1/w/boots.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/boots.jpg",
             "slamShutTrigger": true
@@ -10394,7 +10394,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-what-i-need-outside-hat.jpg",
+            "imageSrc": "/p/s1/w/hat.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/hat.jpg",
             "slamShutTrigger": true
@@ -10409,7 +10409,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-recess-and-play-what-i-need-outside-gloves.jpg",
+            "imageSrc": "/p/s1/w/gloves.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/gloves.jpg",
             "slamShutTrigger": true
@@ -10439,7 +10439,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-places-and-getting-around-my-clothes-and-belongings-change-of-clothes.jpg",
+            "imageSrc": "/p/s1/w/change-of-clothes.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/change-of-clothes.jpg",
             "slamShutTrigger": true
@@ -10499,7 +10499,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-laptop.jpg",
+            "imageSrc": "/p/s1/w/laptop.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/laptop.jpg",
             "slamShutTrigger": true
@@ -10589,7 +10589,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-screen.jpg",
+            "imageSrc": "/p/s1/w/screen.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/screen.jpg",
             "slamShutTrigger": true
@@ -10604,7 +10604,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-keyboard.jpg",
+            "imageSrc": "/p/s1/w/keyboard.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/keyboard.jpg",
             "slamShutTrigger": true
@@ -10619,7 +10619,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-mouse.jpg",
+            "imageSrc": "/p/s1/w/mouse.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/mouse.jpg",
             "slamShutTrigger": true
@@ -10634,7 +10634,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-headphones.jpg",
+            "imageSrc": "/p/s1/w/headphones.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/headphones.jpg",
             "slamShutTrigger": true
@@ -10649,7 +10649,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-my-school-day-my-computer-things-charger.jpg",
+            "imageSrc": "/p/s1/w/charger.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/charger.jpg",
             "slamShutTrigger": true
@@ -10709,7 +10709,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-computers-and-robots-app.jpg",
+            "imageSrc": "/p/s1/w/app.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/app.jpg",
             "slamShutTrigger": true
@@ -10739,7 +10739,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-computers-and-robots-photo.jpg",
+            "imageSrc": "/p/s1/w/photo.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/photo.jpg",
             "slamShutTrigger": true
@@ -10754,7 +10754,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 4,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-computers-and-robots-video.jpg",
+            "imageSrc": "/p/s1/w/video.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/video.jpg",
             "slamShutTrigger": true
@@ -10769,7 +10769,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 5,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-math-and-science-computers-and-robots-message.jpg",
+            "imageSrc": "/p/s1/w/message.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/message.jpg",
             "slamShutTrigger": true
@@ -10784,7 +10784,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 6,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-art-and-music-music-words-music.jpg",
+            "imageSrc": "/p/s1/w/music.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/music.jpg",
             "slamShutTrigger": true
@@ -10829,7 +10829,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-2-help-and-regulate-start.jpg",
+            "imageSrc": "/p/s1/w/start.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/start.jpg",
             "slamShutTrigger": true
@@ -10949,7 +10949,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-how-fast-or-how-much-less.jpg",
+            "imageSrc": "/p/s1/w/less.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/less.jpg",
             "slamShutTrigger": true
@@ -10964,7 +10964,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-how-fast-or-how-much-enough.jpg",
+            "imageSrc": "/p/s1/w/enough.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/enough.jpg",
             "slamShutTrigger": true
@@ -10994,7 +10994,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-how-fast-or-how-much-fast.jpg",
+            "imageSrc": "/p/s1/w/fast.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/fast.jpg",
             "slamShutTrigger": true
@@ -11009,7 +11009,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-how-fast-or-how-much-slow.jpg",
+            "imageSrc": "/p/s1/w/slow.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/slow.jpg",
             "slamShutTrigger": true
@@ -11039,7 +11039,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "descriptor",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-sounds-around-me-loud.jpg",
+            "imageSrc": "/p/s1/w/loud.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/loud.jpg",
             "slamShutTrigger": true
@@ -11084,7 +11084,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 1,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-how-i-feel-ways-i-feel-good-safe.jpg",
+            "imageSrc": "/p/s1/w/safe.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/safe.jpg",
             "slamShutTrigger": true
@@ -11099,7 +11099,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 2,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-danger.jpg",
+            "imageSrc": "/p/s1/w/danger.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/danger.jpg",
             "slamShutTrigger": true
@@ -11114,7 +11114,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 3,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-emergency.jpg",
+            "imageSrc": "/p/s1/w/emergency.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/emergency.jpg",
             "slamShutTrigger": true
@@ -11174,7 +11174,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 7,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-health-things-i-have-allergy.jpg",
+            "imageSrc": "/p/s1/w/allergy.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/allergy.jpg",
             "slamShutTrigger": true
@@ -11189,7 +11189,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 8,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-health-things-i-have-choking.jpg",
+            "imageSrc": "/p/s1/w/choking.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/choking.jpg",
             "slamShutTrigger": true
@@ -11204,7 +11204,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 9,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-health-things-i-have-bleeding.jpg",
+            "imageSrc": "/p/s1/w/bleeding.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/bleeding.jpg",
             "slamShutTrigger": true
@@ -11219,7 +11219,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 10,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-health-things-i-have-breathing-trouble.jpg",
+            "imageSrc": "/p/s1/w/breathing-trouble.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/breathing-trouble.jpg",
             "slamShutTrigger": true
@@ -11234,7 +11234,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 11,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-911.jpg",
+            "imageSrc": "/p/s1/w/911.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/911.jpg",
             "slamShutTrigger": true
@@ -11249,7 +11249,7 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
             "colorRole": "target",
             "slot": 12,
             "page": 1,
-            "imageSrc": "/p/s1/w/column-6-taking-care-of-me-getting-emergency-help-safe-adult.jpg",
+            "imageSrc": "/p/s1/w/safe-adult.jpg",
             "imageIncludesLabel": false,
             "plannedImageSrc": "/p/s1/w/safe-adult.jpg",
             "slamShutTrigger": true
@@ -11259,4 +11259,4 @@ export const SCHOOL_AGE_STAGE_1_CATALOG = {
       }
     ]
   }
-};
+});

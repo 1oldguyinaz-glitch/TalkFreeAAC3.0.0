@@ -1,4 +1,9 @@
-import { COLUMN_IDS, DEFAULT_AGE_BAND, getStageBehavior } from './constants.js';
+import {
+  COLUMN_IDS,
+  DEFAULT_AGE_BAND,
+  DEFAULT_CONTENT_SETTINGS,
+  getStageBehavior
+} from './constants.js';
 import { nextColumnFor } from './congruence.js';
 
 const MAX_BACK_STACK = 100;
@@ -13,11 +18,13 @@ export function makeRootColumnViews() {
 
 export function createInitialBoardState(
   stage = 1,
-  ageBand = DEFAULT_AGE_BAND
+  ageBand = DEFAULT_AGE_BAND,
+  contentSettings = DEFAULT_CONTENT_SETTINGS
 ) {
   return {
     stage,
     ageBand,
+    contentSettings: { ...DEFAULT_CONTENT_SETTINGS, ...contentSettings },
     activeColumn: 1,
     sentence: [],
     pendingVerb: null,
@@ -28,8 +35,7 @@ export function createInitialBoardState(
 }
 
 export function isColumnInteractive(state, column) {
-  const behavior = getStageBehavior(state.stage);
-  return behavior.interactionMode === 'soft_guide' || state.activeColumn === column;
+  return state.activeColumn === column;
 }
 
 function lastLanguageToken(sentence) {
@@ -63,12 +69,7 @@ function spokenText(state, word) {
   const base = word.spoken ?? word.label;
   const previous = lastLanguageToken(state.sentence);
 
-  if (
-    state.stage === 1
-    && state.ageBand === 'school_age'
-    && word.column === 2
-    && word.fixedForm
-  ) {
+  if (state.stage === 1 && word.column === 2 && word.fixedForm) {
     return base;
   }
 
@@ -78,7 +79,6 @@ function spokenText(state, word) {
 
   if (
     state.stage !== 1
-    || state.ageBand !== 'school_age'
     || word.column !== 2
   ) {
     return base;
@@ -134,11 +134,8 @@ function prepare(state, column) {
     : commitPendingVerbAsBase(state);
 }
 
-function announce(label, next, stage) {
-  const behavior = getStageBehavior(stage);
-  return behavior.interactionMode === 'soft_guide'
-    ? `${label} added. Column ${next} is suggested; every column remains available.`
-    : `${label} added. Column ${next} is active.`;
+function announce(label, next) {
+  return `${label} added. Column ${next} is active.`;
 }
 
 function historySnapshot(state) {
@@ -186,21 +183,39 @@ function contextualNextColumn(state, word) {
 export function boardReducer(state, action) {
   switch (action.type) {
     case 'SET_STAGE':
-      return createInitialBoardState(action.stage, state.ageBand);
+      return createInitialBoardState(
+        action.stage,
+        state.ageBand,
+        state.contentSettings
+      );
 
     case 'SET_AGE_BAND':
-      return createInitialBoardState(state.stage, action.ageBand);
+      return createInitialBoardState(
+        state.stage,
+        action.ageBand,
+        state.contentSettings
+      );
+
+    case 'SET_CONTENT_SETTING':
+      return {
+        ...state,
+        contentSettings: {
+          ...state.contentSettings,
+          [action.setting]: Boolean(action.enabled)
+        },
+        columnViews: makeRootColumnViews(),
+        backStack: [],
+        lastAnnouncement: `${action.label ?? 'Content setting'} ${
+          action.enabled ? 'shown' : 'hidden'
+        }. Column ${state.activeColumn} categories restored.`
+      };
 
     case 'OPEN_BUCKET': {
       if (!isColumnInteractive(state, action.column)) return state;
       const prepared = prepare(state, action.column);
-      const behavior = getStageBehavior(prepared.stage);
       const nextState = {
         ...prepared,
-        activeColumn:
-          behavior.interactionMode === 'soft_guide'
-            ? action.column
-            : prepared.activeColumn,
+        activeColumn: prepared.activeColumn,
         columnViews: {
           ...prepared.columnViews,
           [action.column]: {
@@ -260,13 +275,9 @@ export function boardReducer(state, action) {
         };
       }
 
-      const behavior = getStageBehavior(prepared.stage);
       return {
         ...prepared,
-        activeColumn:
-          behavior.interactionMode === 'soft_guide'
-            ? action.column
-            : prepared.activeColumn,
+        activeColumn: prepared.activeColumn,
         columnViews: restoreColumnView(prepared.columnViews, action.column),
         lastAnnouncement: `Column ${action.column} categories restored.`
       };
@@ -334,7 +345,11 @@ export function boardReducer(state, action) {
         && behavior.slamShutAfterTarget
         && contextualNext == null
       ) {
-        const reset = createInitialBoardState(prepared.stage, prepared.ageBand);
+        const reset = createInitialBoardState(
+          prepared.stage,
+          prepared.ageBand,
+          prepared.contentSettings
+        );
         return withBackStep(state, {
           ...reset,
           sentence,
@@ -354,7 +369,7 @@ export function boardReducer(state, action) {
           next === word.column
             ? prepared.columnViews
             : restoreColumnView(prepared.columnViews, word.column),
-        lastAnnouncement: announce(word.label, next, prepared.stage)
+        lastAnnouncement: announce(word.label, next)
       };
       return withBackStep(state, nextState);
     }
@@ -383,7 +398,7 @@ export function boardReducer(state, action) {
         pendingVerb: null,
         activeColumn: next,
         columnViews: restoreColumnView(state.columnViews, 3),
-        lastAnnouncement: announce(variant.label, next, state.stage)
+        lastAnnouncement: announce(variant.label, next)
       };
       return withBackStep(state, nextState);
     }
@@ -414,7 +429,11 @@ export function boardReducer(state, action) {
 
     case 'RESET_BOARD':
       return withBackStep(state, {
-        ...createInitialBoardState(state.stage, state.ageBand),
+        ...createInitialBoardState(
+          state.stage,
+          state.ageBand,
+          state.contentSettings
+        ),
         sentence: state.sentence
       });
 

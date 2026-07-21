@@ -1,20 +1,39 @@
 import React from 'react';
-import { INTERRUPTS } from './constants.js';
+import { STAGE_ONE_INTERRUPTS, INTERRUPTS } from './constants.js';
 
-export function InterruptRow({ onInterrupt }) {
+export function InterruptRow({
+  onInterrupt,
+  canClear = false,
+  stageOneMode = false,
+  singleColumnMode = false
+}) {
+  const controls = stageOneMode ? STAGE_ONE_INTERRUPTS : INTERRUPTS;
+  const className = singleColumnMode
+    ? 'interruptRow interruptRowStageOne'
+    : 'interruptRow';
+
   return (
-    <nav className="interruptRow" aria-label="Always available communication controls">
-      {INTERRUPTS.map((interrupt) => (
-        <button
-          type="button"
-          className={`interruptButton interrupt-${interrupt.id}`}
-          key={interrupt.id}
-          onClick={() => onInterrupt(interrupt)}
-          data-always-active="true"
-        >
-          {interrupt.label}
-        </button>
-      ))}
+    <nav className={className} aria-label="Always available communication controls">
+      {controls.map((interrupt) => {
+        const isClear = interrupt.action === 'clear';
+        return (
+          <button
+            type="button"
+            className={`interruptButton interrupt-${interrupt.id}`}
+            key={interrupt.id}
+            onClick={() => onInterrupt(interrupt)}
+            data-always-active="true"
+            disabled={isClear && !canClear}
+            aria-label={
+              isClear
+                ? 'Clear the last choice and return to the previous board view'
+                : interrupt.label
+            }
+          >
+            <span className="controlButtonLabel">{interrupt.label}</span>
+          </button>
+        );
+      })}
     </nav>
   );
 }
