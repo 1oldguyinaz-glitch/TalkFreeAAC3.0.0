@@ -433,6 +433,57 @@ button:disabled { cursor: not-allowed; }
   display: flex;
 }
 
+.boardViewControls {
+  display: flex;
+  gap: 0.45rem;
+  align-items: stretch;
+}
+
+.columnViewToggle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 10rem;
+  min-height: 3.3rem;
+  border: 2px solid #596273;
+  border-radius: 0.75rem;
+  padding: 0.38rem 0.6rem;
+  background: #ffffff;
+  color: #172033;
+  box-shadow: 0 2px 0 rgba(23, 32, 51, 0.18);
+}
+
+.columnViewToggle[aria-pressed="true"] {
+  border-color: #174f94;
+  background: #d8e8ff;
+  color: #0d3f7e;
+}
+
+.columnViewToggleIcon {
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.columnViewToggleCopy {
+  display: grid;
+  gap: 0.06rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.columnViewToggleCopy strong {
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
+.columnViewToggleCopy small {
+  color: #56627a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .settingsButton {
   min-width: 7.5rem;
   min-height: 3.3rem;
@@ -614,6 +665,47 @@ button:disabled { cursor: not-allowed; }
   transform: none;
 }
 
+.boardShellAllColumns {
+  padding: 0.5rem;
+}
+
+.stageColumnsGrid {
+  grid-template-columns:
+    repeat(var(--visible-columns), minmax(11rem, 1fr));
+  width: 100%;
+  min-width: max(100%, calc(var(--visible-columns) * 11rem));
+  height: 100%;
+  min-height: 0;
+}
+
+.stageColumnsGrid .boardColumn {
+  min-height: 0;
+  transform: none;
+}
+
+.boardShellAllColumns .columnHeader {
+  min-height: 3.45rem;
+  padding: 0.35rem;
+}
+
+.boardShellAllColumns .columnHeader small,
+.boardShellAllColumns .columnInstruction {
+  display: none;
+}
+
+.boardShellAllColumns .columnBody {
+  padding: 0.28rem;
+}
+
+.boardShellAllColumns .fixedSlotGrid {
+  gap: 0.25rem;
+}
+
+.boardShellAllColumns .bucketButton,
+.boardShellAllColumns .wordButton {
+  padding: 0.16rem;
+}
+
 .boardColumnSingle {
   grid-template-rows: auto minmax(0, 1fr);
 }
@@ -655,6 +747,29 @@ button:disabled { cursor: not-allowed; }
     min-height: 3rem;
     padding-inline: 0.45rem;
     font-size: 0.82rem;
+  }
+
+  .boardViewControls {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .columnViewToggle {
+    min-width: 8.1rem;
+    min-height: 3rem;
+    padding: 0.3rem 0.42rem;
+  }
+
+  .columnViewToggleIcon {
+    font-size: 1.25rem;
+  }
+
+  .columnViewToggleCopy strong {
+    font-size: 0.8rem;
+  }
+
+  .columnViewToggleCopy small {
+    font-size: 0.62rem;
   }
 
   .boardShellSingleColumn {
@@ -1365,7 +1480,358 @@ button:disabled { cursor: not-allowed; }
     height: 1.05rem;
   }
 
-  .everyWordButton[aria-checked="true"] .everyWordSwitchThumb {
+.everyWordButton[aria-checked="true"] .everyWordSwitchThumb {
     transform: translate(1.08rem, -50%);
+  }
+}
+
+/* TalkFreeAAC 3.1.2 — visual theme derived from the approved promotional
+   tablet reference. This layer changes layout and presentation only; AXIS
+   routing, catalog policy, motor positions, safety gates, and speech remain
+   owned by the existing board components. */
+:root {
+  color: #f7f9fc;
+  background: #020b18;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% -15%, #123052 0, #06162a 42%, #020b18 78%);
+}
+
+.boardShellReferenceTheme {
+  --reference-navy: #061426;
+  --reference-panel: #101d2d;
+  --reference-panel-deep: #0a1727;
+  --reference-border: #31465e;
+  --reference-blue: #1267a9;
+  --reference-green: #3f7f28;
+  --reference-orange: #ad570c;
+  --reference-purple: #60477d;
+  --reference-lime: #8bcd22;
+  color: #f7f9fc;
+  background:
+    radial-gradient(circle at 50% -20%, #173657 0, #07182b 43%, #020b18 100%);
+}
+
+.boardChromeHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 112rem;
+  min-height: 3.35rem;
+  margin: 0 auto 0.45rem;
+  padding: 0.38rem 0.55rem;
+  border: 1px solid var(--reference-border);
+  border-radius: 0.85rem;
+  background: rgba(3, 14, 28, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.boardBrand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.boardBrandName {
+  display: inline-flex;
+  align-items: baseline;
+  color: #f7f9fc;
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.boardBrandName span:last-child {
+  color: var(--reference-lime);
+}
+
+.boardBrandTagline {
+  color: #a9b8ca;
+  font-size: 0.78rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.boardShellReferenceTheme .columnViewToggle,
+.boardShellReferenceTheme .settingsButton {
+  border-color: #4a6078;
+  background: #14243a;
+  color: #f7f9fc;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+.boardShellReferenceTheme .columnViewToggle[aria-pressed="true"] {
+  border-color: #a58bc2;
+  background: var(--reference-purple);
+  color: #ffffff;
+}
+
+.boardShellReferenceTheme .columnViewToggleCopy small {
+  color: #c3cfdd;
+}
+
+.boardShellReferenceTheme .boardViewport {
+  border: 1px solid var(--reference-border);
+  border-radius: 1rem;
+  background: rgba(3, 14, 28, 0.62);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025), 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.boardShellReferenceTheme .sixColumnGrid {
+  padding: 0.4rem;
+}
+
+.boardShellReferenceTheme .boardColumn {
+  border-color: var(--column-accent, var(--reference-border));
+  border-top-width: 0.28rem;
+  border-radius: 0.72rem;
+  background: var(--reference-panel);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="1"] {
+  --column-accent: #2786c7;
+  --column-header: #0e5d99;
+  --topic-button: #1267a9;
+  --topic-border: #48a3df;
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="2"] {
+  --column-accent: #70aa43;
+  --column-header: #356f24;
+  --topic-button: #3f7f28;
+  --topic-border: #7abb50;
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="3"] {
+  --column-accent: #cf6a9d;
+  --column-header: #86345e;
+  --topic-button: #963e69;
+  --topic-border: #d978a8;
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="4"] {
+  --column-accent: #9ba6b5;
+  --column-header: #4f5c6d;
+  --topic-button: #5c6878;
+  --topic-border: #9eabba;
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="5"] {
+  --column-accent: #9a7dbb;
+  --column-header: #543b70;
+  --topic-button: #60477d;
+  --topic-border: #a48ac0;
+}
+
+.boardShellReferenceTheme .boardColumn[data-column="6"] {
+  --column-accent: #e38a2f;
+  --column-header: #934707;
+  --topic-button: #ad570c;
+  --topic-border: #ee9840;
+}
+
+.boardShellReferenceTheme .boardColumn .columnHeader {
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  background: var(--column-header);
+  color: #ffffff;
+}
+
+.boardShellReferenceTheme .columnHeader small,
+.boardShellReferenceTheme .stateBadge {
+  color: #e6edf6;
+}
+
+.boardShellReferenceTheme .columnNumber {
+  background: rgba(1, 10, 20, 0.62);
+}
+
+.boardShellReferenceTheme .stateBadge {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(1, 10, 20, 0.44);
+}
+
+.boardShellReferenceTheme .stateBadgeActive {
+  border-color: var(--reference-lime);
+  background: #21470f;
+  color: #eaffc7;
+}
+
+.boardShellReferenceTheme .boardColumnActive {
+  border-color: var(--reference-lime);
+  box-shadow: 0 0 0 2px rgba(139, 205, 34, 0.35), 0 9px 24px rgba(0, 0, 0, 0.34);
+}
+
+.boardShellReferenceTheme .boardColumnDimmed {
+  opacity: 0.38;
+  filter: saturate(0.55);
+}
+
+.boardShellReferenceTheme .columnBody,
+.boardShellReferenceTheme .grammarBody {
+  background: var(--reference-panel-deep);
+}
+
+.boardShellReferenceTheme .columnToolbar,
+.boardShellReferenceTheme .columnContinuationToolbar,
+.boardShellReferenceTheme .columnInstruction {
+  border-bottom-color: var(--reference-border);
+  background: #132238;
+  color: #e6edf6;
+}
+
+.boardShellReferenceTheme .reservedSlot {
+  border-color: rgba(130, 158, 190, 0.2);
+  background: rgba(13, 32, 52, 0.55);
+}
+
+.boardShellReferenceTheme .bucketButton:not(.bucketButtonPhotoTile) {
+  border-color: var(--topic-border);
+  background: var(--topic-button);
+  color: #ffffff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.48);
+}
+
+.boardShellReferenceTheme .bucketButtonPhotoTile,
+.boardShellReferenceTheme .wordButtonPhotoTile {
+  border-color: var(--topic-border, #70839a);
+  background: #13243a;
+}
+
+.boardShellReferenceTheme .fitzgerald-yellow { background: #8a6c00; border-color: #d9bc47; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-green { background: #356f24; border-color: #76b754; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-blue { background: #0e5d99; border-color: #5ba9dc; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-orange { background: #9a4b09; border-color: #e4913f; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-purple { background: #543b70; border-color: #a58bc2; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-pink { background: #86345e; border-color: #d978a8; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-gray { background: #4f5c6d; border-color: #9eabba; color: #ffffff; }
+.boardShellReferenceTheme .fitzgerald-white { background: #f6f8fb; border-color: #8493a6; color: #101c2d; }
+.boardShellReferenceTheme .fitzgerald-red { background: #8e2727; border-color: #d86464; color: #ffffff; }
+
+.boardCommunicationDock {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 112rem;
+  margin: 0.45rem auto 0;
+  padding: 0.45rem;
+  border: 1px solid var(--reference-border);
+  border-radius: 0.95rem;
+  background: rgba(3, 14, 28, 0.94);
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.28);
+}
+
+.boardCommunicationDock .sentenceBar {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: 2px solid #5f7186;
+  border-radius: 0.72rem;
+  background: #f5f7fa;
+  color: #0c1b2d;
+  box-shadow: none;
+}
+
+.boardCommunicationDock .sentenceText {
+  color: #0c1b2d;
+}
+
+.boardCommunicationDock .sentenceToken {
+  border-color: #8795a8;
+  background: #ffffff;
+  color: #0c1b2d;
+}
+
+.boardCommunicationDock .sentencePlaceholder {
+  color: #526176;
+}
+
+.boardCommunicationDock .speakButton {
+  border-color: #4da2e1;
+  background: var(--reference-blue);
+  color: #ffffff;
+  box-shadow: 0 2px 0 #073d68;
+}
+
+.boardCommunicationDock .everyWordButton {
+  border-color: #9e82bb;
+  background: var(--reference-purple);
+  color: #ffffff;
+}
+
+.boardCommunicationDock .everyWordButton[aria-checked="true"] {
+  border-color: var(--reference-lime);
+  background: #356f24;
+  color: #ffffff;
+}
+
+.boardCommunicationDock .everyWordCopy small {
+  color: #dce6f0;
+}
+
+.boardCommunicationDock .interruptRow {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.boardCommunicationDock .interruptButton {
+  border-color: #667a91;
+  background: #182a40;
+  color: #ffffff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.boardCommunicationDock .interrupt-yes { background: #1267a9; border-color: #4da2e1; }
+.boardCommunicationDock .interrupt-no,
+.boardCommunicationDock .interrupt-stop { background: #8e2727; border-color: #d86464; }
+.boardCommunicationDock .interrupt-help { background: #356f24; border-color: #76b754; }
+.boardCommunicationDock .interrupt-please { background: #543b70; border-color: #a58bc2; }
+.boardCommunicationDock .interrupt-no-thank-you { background: #733044; border-color: #cf718b; }
+.boardCommunicationDock .interrupt-clear { background: #344256; border-color: #7f90a4; }
+
+.boardShellReferenceTheme .settingsPanel {
+  color: #172033;
+}
+
+@media (max-width: 760px) {
+  .boardChromeHeader {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+
+  .boardBrand {
+    justify-content: center;
+  }
+
+  .boardBrandTagline {
+    display: none;
+  }
+
+  .boardChromeHeader .boardViewControls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .boardChromeHeader .columnViewToggle,
+  .boardChromeHeader .settingsButton {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .boardCommunicationDock {
+    margin-top: 0.3rem;
+    padding: 0.3rem;
   }
 }

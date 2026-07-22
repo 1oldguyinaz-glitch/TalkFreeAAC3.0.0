@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { COLUMN_DEFINITIONS } from './constants.js';
 import { useBoardMachine } from './useBoardMachine.js';
 import { useBoardCatalog } from '../data/useBoardCatalog.js';
 import { getCatalogProfile } from '../data/profileCatalogs.js';
@@ -8,6 +7,11 @@ import { InterruptRow } from './InterruptRow.jsx';
 import { SentenceBar } from './SentenceBar.jsx';
 import { BoardColumn } from './BoardColumn.jsx';
 import { BoardSettings } from './BoardSettings.jsx';
+import { ColumnViewToggle } from './ColumnViewToggle.jsx';
+import {
+  COLUMN_VIEW_MODES,
+  visibleColumnDefinitions
+} from './columnViewMode.js';
 import {
   bucketRequestContextKey,
   bucketRequestIsCurrent
@@ -28,6 +32,7 @@ export function Board() {
   const { state, actions } = useBoardMachine(1);
   const { catalog, directoriesReady, error, loadColumnWords } = useBoardCatalog();
   const [interactionError, setInteractionError] = useState('');
+  const [columnViewMode, setColumnViewMode] = useState(COLUMN_VIEW_MODES.SINGLE);
   const latestBucketRequestIdRef = useRef(0);
   const currentRequestContextRef = useRef('');
   const activeColumnSectionRef = useRef(null);
@@ -39,8 +44,11 @@ export function Board() {
   );
   const usesDedicatedCatalog = profile.source === 'dedicated';
   const displayedCatalog = profile.catalog ?? catalog;
-  const visibleColumnDefinitions = COLUMN_DEFINITIONS.filter(
-    (definition) => definition.id === state.activeColumn
+  const singleColumnMode = columnViewMode === COLUMN_VIEW_MODES.SINGLE;
+  const displayedColumnDefinitions = visibleColumnDefinitions(
+    columnViewMode,
+    state.stage,
+    state.activeColumn
   );
   const requestContextKey = bucketRequestContextKey(state);
   currentRequestContextRef.current = requestContextKey;
@@ -97,7 +105,7 @@ export function Board() {
           return;
         }
 
-        const wordsPayload = await loadColumnWords(column);
+        const loadedColumn = await loadColumnWords(column);
         if (!bucketRequestIsCurrent({
           requestId,
           latestRequestId: latestBucketRequestIdRef.current,
@@ -107,11 +115,11 @@ export function Board() {
           return;
         }
 
-        const firstPage = firstVisibleWordPage(
-          wordsPayload.buckets?.[bucket.id] ?? [],
-          context
-        );
-        actions.openBucket(column, bucket, firstPage);
+        const refreshedBucket = loadedColumn.columnCatalog.buckets.find(
+          (candidate) => candidate.id === bucket.id
+        ) ?? bucket;
+        const firstPage = firstVisibleWordPage(refreshedBucket.words ?? [], context);
+        actions.openBucket(column, refreshedBucket, firstPage);
       } catch (loadError) {
         if (bucketRequestIsCurrent({
           requestId,
@@ -150,28 +158,34 @@ export function Board() {
   }
 
   return (
-    <main className="boardShell boardShellResponsive boardShellSingleColumn">
-      <SentenceBar
-        sentence={state.sentence}
-        singleColumnMode
-      />
-
-      <div className="boardUtilityRow boardUtilityRowStageOne">
-        <InterruptRow
-          onInterrupt={actions.interrupt}
-          canClear={Boolean(state.backStack?.length)}
-          stageOneMode={state.stage === 1}
-          singleColumnMode
-        />
-        <BoardSettings
-          stage={state.stage}
-          ageBand={state.ageBand}
-          contentSettings={state.contentSettings}
-          onStageChange={actions.setStage}
-          onAgeBandChange={actions.setAgeBand}
-          onContentSettingChange={actions.setContentSetting}
-        />
-      </div>
+    <main className={[
+      'boardShell',
+      'boardShellResponsive',
+      'boardShellReferenceTheme',
+      singleColumnMode ? 'boardShellSingleColumn' : 'boardShellAllColumns'
+    ].join(' ')}>
+      <header className="boardChromeHeader">
+        <div className="boardBrand" aria-label="TalkFreeAAC">
+          <strong className="boardBrandName">
+            <span>TalkFree</span><span>AAC</span>
+          </strong>
+          <small className="boardBrandTagline">Connection is the outcome.</small>
+        </div>
+        <div className="boardViewControls">
+          <ColumnViewToggle
+            mode={columnViewMode}
+            onChange={setColumnViewMode}
+          />
+          <BoardSettings
+            stage={state.stage}
+            ageBand={state.ageBand}
+            contentSettings={state.contentSettings}
+            onStageChange={actions.setStage}
+            onAgeBandChange={actions.setAgeBand}
+            onContentSettingChange={actions.setContentSetting}
+          />
+        </div>
+      </header>
 
       {interactionError ? (
         <p className="catalogErrorBanner" role="alert">{interactionError}</p>
@@ -179,10 +193,19 @@ export function Board() {
 
       <div
         className="boardViewport"
-        aria-label={`Active grammatical column ${state.activeColumn}`}
+        aria-label={singleColumnMode
+          ? `Active grammatical column ${state.activeColumn}`
+          : `All ${displayedColumnDefinitions.length} AXIS columns for Stage ${state.stage}`}
       >
-        <div className="sixColumnGrid singleActiveColumnGrid">
-          {visibleColumnDefinitions.map((definition) => (
+        <div
+          className={singleColumnMode
+            ? 'sixColumnGrid singleActiveColumnGrid'
+            : 'sixColumnGrid stageColumnsGrid'}
+          style={singleColumnMode
+            ? undefined
+            : { '--visible-columns': displayedColumnDefinitions.length }}
+        >
+          {displayedColumnDefinitions.map((definition) => (
             <BoardColumn
               key={definition.id}
               definition={definition}
@@ -191,12 +214,28 @@ export function Board() {
               state={state}
               actions={runtimeActions}
               context={context}
-              singleColumnMode
-              sectionRef={activeColumnSectionRef}
+              singleColumnMode={singleColumnMode}
+              sectionRef={definition.id === state.activeColumn
+                ? activeColumnSectionRef
+                : null}
             />
           ))}
         </div>
       </div>
+
+      <footer className="boardCommunicationDock boardUtilityRowStageOne">
+        <SentenceBar
+          sentence={state.sentence}
+          singleColumnMode={singleColumnMode}
+          stageOneMode={state.stage === 1}
+        />
+        <InterruptRow
+          onInterrupt={actions.interrupt}
+          canClear={Boolean(state.backStack?.length)}
+          stageOneMode={state.stage === 1}
+          singleColumnMode={singleColumnMode}
+        />
+      </footer>
 
       <p className="screenReaderStatus" aria-live="assertive">
         {state.lastAnnouncement}

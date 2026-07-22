@@ -42,7 +42,7 @@ export function getStageBehavior(stage) {
 
 export const ROOT_BUCKET_SLOT_COUNT = 6;
 export const WORD_SLOT_COUNT = 12;
-export const SINGLE_ACTIVE_COLUMN_BUCKET_SLOT_COUNT = 8;
+export const SINGLE_ACTIVE_COLUMN_BUCKET_SLOT_COUNT = 16;
 export const SINGLE_ACTIVE_COLUMN_WORD_SLOT_COUNT = 16;
 
 export const DEFAULT_CONTENT_SETTINGS = Object.freeze({

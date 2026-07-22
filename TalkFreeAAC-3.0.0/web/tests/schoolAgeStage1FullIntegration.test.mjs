@@ -11,14 +11,13 @@ const root = join(here, '..');
 const context = { stage: 1, ageBand: 'school_age', previousToken: null, pendingVerb: null, sentence: [] };
 const roots = (column) => C[column].buckets.filter((bucket) => !bucket.parentBucketId);
 
-test('catalog pagination fits the finalized Stage 1 UI without changing its capacities', () => {
+test('all Stage 1 root buckets share one no-pagination surface', () => {
   for (const column of [1, 2, 6]) {
-    const pages = [...new Set(roots(column).map((bucket) => bucket.page))];
-    for (const pageNumber of pages) {
-      const page = getBucketPage(C, column, pageNumber, context);
-      assert.ok(page.items.length <= 8, `Column ${column} bucket page ${pageNumber}`);
-      assert.ok(page.items.every((item) => item.slot >= 1 && item.slot <= 8));
-    }
+    const page = getBucketPage(C, column, 1, context);
+    assert.deepEqual(page.pages, [1]);
+    assert.ok(page.items.length <= 16, `Column ${column} combined bucket list`);
+    assert.ok(page.items.every((item) => item.slot >= 1 && item.slot <= 16));
+    assert.equal(new Set(page.items.map((item) => item.slot)).size, page.items.length);
 
     for (const bucket of C[column].buckets) {
       const wordPages = [...new Set(bucket.words.map((word) => word.page))];
@@ -29,7 +28,7 @@ test('catalog pagination fits the finalized Stage 1 UI without changing its capa
       }
     }
   }
-  assert.deepEqual([...new Set(roots(6).map((bucket) => bucket.page))], [1, 2]);
+  assert.equal(getBucketPage(C, 6, 1, context).items.length, 12);
 });
 
 test('image metadata never sends the locked UI to a missing file', () => {
