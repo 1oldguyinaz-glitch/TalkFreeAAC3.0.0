@@ -35,20 +35,20 @@ test('main board keeps sentence and interrupt controls without the stage descrip
   assert.doesNotMatch(board, /Six-Column Board Core/);
 });
 
-test('every age and stage renders only its current active column', () => {
+test('every age and stage defaults to one column and can show its full AXIS path', () => {
   const board = source('src/board/Board.jsx');
 
-  assert.match(
-    board,
-    /COLUMN_DEFINITIONS\.filter\([\s\S]*definition\.id === state\.activeColumn/
-  );
+  assert.match(board, /useState\(COLUMN_VIEW_MODES\.SINGLE\)/);
+  assert.match(board, /visibleColumnDefinitions/);
+  assert.match(board, /<ColumnViewToggle/);
   assert.match(board, /singleColumnMode/);
   assert.match(board, /singleActiveColumnGrid/);
+  assert.match(board, /stageColumnsGrid/);
   assert.doesNotMatch(board, /Six-column grammatical board/);
 });
 
 test('single active column exposes fixed capacity for all approved Stage 1 choices', () => {
-  assert.equal(SINGLE_ACTIVE_COLUMN_BUCKET_SLOT_COUNT, 8);
+  assert.equal(SINGLE_ACTIVE_COLUMN_BUCKET_SLOT_COUNT, 16);
   assert.equal(SINGLE_ACTIVE_COLUMN_WORD_SLOT_COUNT, 16);
 
   const column = source('src/board/BoardColumn.jsx');
