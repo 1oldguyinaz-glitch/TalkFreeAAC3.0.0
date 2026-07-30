@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getColumnCongruenceMatrix, isColumnCongruent } from '../src/board/congruence.js';
+import {
+  getColumnCongruenceMatrix,
+  isColumnCongruent,
+  itemIsCongruent
+} from '../src/board/congruence.js';
 import { STAGE_PATHS } from '../src/board/constants.js';
 
 test('stage paths exactly match the progressive six-column design', () => {
@@ -27,4 +31,22 @@ test('matrix contains a boolean for every ordered pair', () => {
       assert.equal(typeof matrix[from][to], 'boolean');
     }
   }
+});
+
+test('advanced all-columns mode bypasses sentence-path filtering only', () => {
+  const contextualItem = {
+    visibleByStage: [4],
+    visibleAfterColumns: [2],
+    visibleAfterRoles: ['verb']
+  };
+
+  assert.equal(itemIsCongruent(contextualItem, {
+    ageBand: 'adult',
+    stage: 4,
+    allowAnyColumn: true,
+    contentSettings: {
+      showSchool: true,
+      showPrivateParts: false
+    }
+  }), true);
 });

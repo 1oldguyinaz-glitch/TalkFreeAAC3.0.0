@@ -15,7 +15,7 @@ export function ColumnViewToggle({ mode, onChange }) {
       aria-pressed={showingAll}
       aria-label={showingAll
         ? 'Show one active AXIS column'
-        : 'Show all AXIS columns in this stage'}
+        : 'Show all AXIS columns and make every visible choice available'}
       onClick={() => onChange(nextMode)}
     >
       <span className="columnViewToggleIcon" aria-hidden="true">
@@ -23,9 +23,8 @@ export function ColumnViewToggle({ mode, onChange }) {
       </span>
       <span className="columnViewToggleCopy">
         <strong>{showingAll ? 'One Column' : 'All Columns'}</strong>
-        <small>{showingAll ? 'Currently all' : 'Currently one'}</small>
+        <small>{showingAll ? 'Advanced active' : 'Advanced access'}</small>
       </span>
     </button>
   );
 }
-

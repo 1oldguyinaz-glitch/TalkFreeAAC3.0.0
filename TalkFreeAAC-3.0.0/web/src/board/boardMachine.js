@@ -38,6 +38,18 @@ export function isColumnInteractive(state, column) {
   return state.activeColumn === column;
 }
 
+function columnActionIsAllowed(state, action) {
+  return Boolean(action.allowAnyColumn)
+    || isColumnInteractive(state, action.column);
+}
+
+function prepareColumnAction(state, action) {
+  const selectedState = action.allowAnyColumn
+    ? { ...state, activeColumn: action.column }
+    : state;
+  return prepare(selectedState, action.column);
+}
+
 function lastLanguageToken(sentence) {
   for (let index = sentence.length - 1; index >= 0; index -= 1) {
     if ((sentence[index]?.column ?? 0) >= 1) return sentence[index];
@@ -211,11 +223,13 @@ export function boardReducer(state, action) {
       };
 
     case 'OPEN_BUCKET': {
-      if (!isColumnInteractive(state, action.column)) return state;
-      const prepared = prepare(state, action.column);
+      if (!columnActionIsAllowed(state, action)) return state;
+      const prepared = prepareColumnAction(state, action);
       const nextState = {
         ...prepared,
-        activeColumn: prepared.activeColumn,
+        activeColumn: action.allowAnyColumn
+          ? action.column
+          : prepared.activeColumn,
         columnViews: {
           ...prepared.columnViews,
           [action.column]: {
@@ -231,8 +245,8 @@ export function boardReducer(state, action) {
     }
 
     case 'OPEN_NESTED_BUCKET': {
-      if (!isColumnInteractive(state, action.column)) return state;
-      const prepared = prepare(state, action.column);
+      if (!columnActionIsAllowed(state, action)) return state;
+      const prepared = prepareColumnAction(state, action);
       const current = prepared.columnViews[action.column];
       if (current?.mode !== 'words') return state;
 
@@ -253,8 +267,8 @@ export function boardReducer(state, action) {
     }
 
     case 'BACK': {
-      if (!isColumnInteractive(state, action.column)) return state;
-      const prepared = prepare(state, action.column);
+      if (!columnActionIsAllowed(state, action)) return state;
+      const prepared = prepareColumnAction(state, action);
       const current = prepared.columnViews[action.column];
       const history = current?.history ?? [];
 
@@ -284,9 +298,12 @@ export function boardReducer(state, action) {
     }
 
     case 'SET_PAGE': {
-      if (!isColumnInteractive(state, action.column)) return state;
+      if (!columnActionIsAllowed(state, action)) return state;
       const nextState = {
         ...state,
+        activeColumn: action.allowAnyColumn
+          ? action.column
+          : state.activeColumn,
         columnViews: {
           ...state.columnViews,
           [action.column]: {
@@ -299,11 +316,11 @@ export function boardReducer(state, action) {
     }
 
     case 'SELECT_WORD': {
-      if (!isColumnInteractive(state, action.column) || action.word.targetBucketId) {
+      if (!columnActionIsAllowed(state, action) || action.word.targetBucketId) {
         return state;
       }
 
-      const prepared = prepare(state, action.column);
+      const prepared = prepareColumnAction(state, action);
       const word = action.word;
       const behavior = getStageBehavior(prepared.stage);
 

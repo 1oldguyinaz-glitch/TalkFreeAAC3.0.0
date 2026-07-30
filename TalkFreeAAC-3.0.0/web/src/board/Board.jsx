@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from 'react';
 import { useBoardMachine } from './useBoardMachine.js';
 import { useBoardCatalog } from '../data/useBoardCatalog.js';
 import { getCatalogProfile } from '../data/profileCatalogs.js';
@@ -8,6 +14,7 @@ import { SentenceBar } from './SentenceBar.jsx';
 import { BoardColumn } from './BoardColumn.jsx';
 import { BoardSettings } from './BoardSettings.jsx';
 import { ColumnViewToggle } from './ColumnViewToggle.jsx';
+import { ExitLock } from './ExitLock.jsx';
 import {
   COLUMN_VIEW_MODES,
   visibleColumnDefinitions
@@ -33,9 +40,16 @@ export function Board() {
   const { catalog, directoriesReady, error, loadColumnWords } = useBoardCatalog();
   const [interactionError, setInteractionError] = useState('');
   const [columnViewMode, setColumnViewMode] = useState(COLUMN_VIEW_MODES.SINGLE);
+  const [exitLockEnabled, setExitLockEnabled] = useState(false);
+  const [boardScrollState, setBoardScrollState] = useState({
+    hasOverflow: false,
+    canScrollLeft: false,
+    canScrollRight: false
+  });
   const latestBucketRequestIdRef = useRef(0);
   const currentRequestContextRef = useRef('');
   const activeColumnSectionRef = useRef(null);
+  const boardViewportRef = useRef(null);
   const previousFocusKeyRef = useRef('');
 
   const profile = useMemo(
@@ -45,14 +59,71 @@ export function Board() {
   const usesDedicatedCatalog = profile.source === 'dedicated';
   const displayedCatalog = profile.catalog ?? catalog;
   const singleColumnMode = columnViewMode === COLUMN_VIEW_MODES.SINGLE;
+  const allowAnyVisibleColumn = !singleColumnMode;
   const displayedColumnDefinitions = visibleColumnDefinitions(
     columnViewMode,
     state.stage,
     state.activeColumn
   );
-  const requestContextKey = bucketRequestContextKey(state);
+  const requestContextKey = `${
+    bucketRequestContextKey(state)
+  }|view:${columnViewMode}`;
   currentRequestContextRef.current = requestContextKey;
   const focusKey = activeViewFocusKey(state);
+
+  const updateBoardScrollState = useCallback(() => {
+    const viewport = boardViewportRef.current;
+    if (!viewport) return;
+
+    const maximumScrollLeft = Math.max(
+      0,
+      viewport.scrollWidth - viewport.clientWidth
+    );
+    const edgeTolerance = 2;
+    setBoardScrollState({
+      hasOverflow: maximumScrollLeft > edgeTolerance,
+      canScrollLeft: viewport.scrollLeft > edgeTolerance,
+      canScrollRight:
+        viewport.scrollLeft < maximumScrollLeft - edgeTolerance
+    });
+  }, []);
+
+  const scrollBoard = useCallback((direction) => {
+    const viewport = boardViewportRef.current;
+    if (!viewport) return;
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined'
+      && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    viewport.scrollBy({
+      left: direction * Math.max(304, viewport.clientWidth * 0.82),
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  }, []);
+
+  useEffect(() => {
+    const viewport = boardViewportRef.current;
+    if (!viewport) return undefined;
+
+    viewport.scrollLeft = 0;
+    const animationFrame = window.requestAnimationFrame(updateBoardScrollState);
+    const resizeObserver = typeof ResizeObserver === 'undefined'
+      ? null
+      : new ResizeObserver(updateBoardScrollState);
+    resizeObserver?.observe(viewport);
+    const grid = viewport.firstElementChild;
+    if (grid) resizeObserver?.observe(grid);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      resizeObserver?.disconnect();
+    };
+  }, [
+    columnViewMode,
+    displayedColumnDefinitions.length,
+    state.stage,
+    updateBoardScrollState
+  ]);
 
   useEffect(() => {
     const previousFocusKey = previousFocusKeyRef.current;
@@ -76,6 +147,7 @@ export function Board() {
   const context = useMemo(() => ({
     stage: state.stage,
     ageBand: state.ageBand,
+    allowAnyColumn: allowAnyVisibleColumn,
     previousToken,
     pendingVerb: state.pendingVerb,
     sentence: state.sentence,
@@ -83,6 +155,7 @@ export function Board() {
   }), [
     state.stage,
     state.ageBand,
+    allowAnyVisibleColumn,
     previousToken,
     state.pendingVerb,
     state.sentence,
@@ -101,7 +174,12 @@ export function Board() {
 
         if (usesDedicatedCatalog) {
           const firstPage = firstVisibleWordPage(bucket.words ?? [], context);
-          actions.openBucket(column, bucket, firstPage);
+          actions.openBucket(
+            column,
+            bucket,
+            firstPage,
+            allowAnyVisibleColumn
+          );
           return;
         }
 
@@ -119,7 +197,12 @@ export function Board() {
           (candidate) => candidate.id === bucket.id
         ) ?? bucket;
         const firstPage = firstVisibleWordPage(refreshedBucket.words ?? [], context);
-        actions.openBucket(column, refreshedBucket, firstPage);
+        actions.openBucket(
+          column,
+          refreshedBucket,
+          firstPage,
+          allowAnyVisibleColumn
+        );
       } catch (loadError) {
         if (bucketRequestIsCurrent({
           requestId,
@@ -130,9 +213,30 @@ export function Board() {
           setInteractionError(loadError.message);
         }
       }
-    }
+    },
+    openNestedBucket: (column, item) => actions.openNestedBucket(
+      column,
+      item,
+      allowAnyVisibleColumn
+    ),
+    back: (column) => actions.back(column, allowAnyVisibleColumn),
+    backToBuckets: (column) => actions.backToBuckets(
+      column,
+      allowAnyVisibleColumn
+    ),
+    setPage: (column, page) => actions.setPage(
+      column,
+      page,
+      allowAnyVisibleColumn
+    ),
+    selectWord: (column, word) => actions.selectWord(
+      column,
+      word,
+      allowAnyVisibleColumn
+    )
   }), [
     actions,
+    allowAnyVisibleColumn,
     context,
     loadColumnWords,
     requestContextKey,
@@ -180,9 +284,11 @@ export function Board() {
             stage={state.stage}
             ageBand={state.ageBand}
             contentSettings={state.contentSettings}
+            exitLockEnabled={exitLockEnabled}
             onStageChange={actions.setStage}
             onAgeBandChange={actions.setAgeBand}
             onContentSettingChange={actions.setContentSetting}
+            onExitLockChange={setExitLockEnabled}
           />
         </div>
       </header>
@@ -191,8 +297,41 @@ export function Board() {
         <p className="catalogErrorBanner" role="alert">{interactionError}</p>
       ) : null}
 
+      {!singleColumnMode && boardScrollState.hasOverflow ? (
+        <nav
+          className="boardScrollControls"
+          aria-label="Advanced All Columns navigation"
+        >
+          <button
+            type="button"
+            aria-controls="axis-columns-viewport"
+            disabled={!boardScrollState.canScrollLeft}
+            onClick={() => scrollBoard(-1)}
+          >
+            <span aria-hidden="true">←</span>
+            <span>Earlier columns</span>
+          </button>
+          <p aria-live="polite">
+            All choices stay full-size and clickable. Swipe the board or use the arrows.
+          </p>
+          <button
+            type="button"
+            aria-controls="axis-columns-viewport"
+            disabled={!boardScrollState.canScrollRight}
+            onClick={() => scrollBoard(1)}
+          >
+            <span>Later columns</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </nav>
+      ) : null}
+
       <div
+        id="axis-columns-viewport"
+        ref={boardViewportRef}
         className="boardViewport"
+        onScroll={updateBoardScrollState}
+        tabIndex={!singleColumnMode && boardScrollState.hasOverflow ? 0 : undefined}
         aria-label={singleColumnMode
           ? `Active grammatical column ${state.activeColumn}`
           : `All ${displayedColumnDefinitions.length} AXIS columns for Stage ${state.stage}`}
@@ -240,6 +379,11 @@ export function Board() {
       <p className="screenReaderStatus" aria-live="assertive">
         {state.lastAnnouncement}
       </p>
+
+      <ExitLock
+        enabled={exitLockEnabled}
+        onUnlock={() => setExitLockEnabled(false)}
+      />
     </main>
   );
 }

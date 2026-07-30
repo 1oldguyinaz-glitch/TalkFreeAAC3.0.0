@@ -13,9 +13,11 @@ export function BoardSettings({
   stage,
   ageBand,
   contentSettings,
+  exitLockEnabled,
   onStageChange,
   onAgeBandChange,
-  onContentSettingChange
+  onContentSettingChange,
+  onExitLockChange
 }) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
@@ -170,6 +172,22 @@ export function BoardSettings({
                 <span>
                   <strong>Private-parts vocabulary</strong>
                   <small>Safety gate for explicit anatomy words and topics.</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset className="contentSettingsGroup">
+              <legend>Caregiver controls</legend>
+
+              <label className="settingToggle">
+                <input
+                  type="checkbox"
+                  checked={exitLockEnabled}
+                  onChange={(event) => onExitLockChange(event.target.checked)}
+                />
+                <span>
+                  <strong>Exit lock</strong>
+                  <small>Blocks accidental page exits until a caregiver long-press unlocks it.</small>
                 </span>
               </label>
             </fieldset>

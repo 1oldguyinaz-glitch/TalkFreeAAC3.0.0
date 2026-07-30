@@ -18,17 +18,43 @@ export function useBoardMachine(initialStage = 1, initialAgeBand = DEFAULT_AGE_B
       enabled,
       label
     }),
-    openBucket: (column, bucket, page = 1) => dispatch({ type: 'OPEN_BUCKET', column, bucketId: bucket.id, bucketLabel: bucket.label, page }),
-    openNestedBucket: (column, item) => dispatch({
+    openBucket: (column, bucket, page = 1, allowAnyColumn = false) => dispatch({
+      type: 'OPEN_BUCKET',
+      column,
+      bucketId: bucket.id,
+      bucketLabel: bucket.label,
+      page,
+      allowAnyColumn
+    }),
+    openNestedBucket: (column, item, allowAnyColumn = false) => dispatch({
       type: 'OPEN_NESTED_BUCKET',
       column,
       bucketId: item.targetBucketId,
-      bucketLabel: item.label
+      bucketLabel: item.label,
+      allowAnyColumn
     }),
-    back: (column) => dispatch({ type: 'BACK', column }),
-    backToBuckets: (column) => dispatch({ type: 'BACK', column }),
-    setPage: (column, page) => dispatch({ type: 'SET_PAGE', column, page }),
-    selectWord: (column, word) => dispatch({ type: 'SELECT_WORD', column, word }),
+    back: (column, allowAnyColumn = false) => dispatch({
+      type: 'BACK',
+      column,
+      allowAnyColumn
+    }),
+    backToBuckets: (column, allowAnyColumn = false) => dispatch({
+      type: 'BACK',
+      column,
+      allowAnyColumn
+    }),
+    setPage: (column, page, allowAnyColumn = false) => dispatch({
+      type: 'SET_PAGE',
+      column,
+      page,
+      allowAnyColumn
+    }),
+    selectWord: (column, word, allowAnyColumn = false) => dispatch({
+      type: 'SELECT_WORD',
+      column,
+      word,
+      allowAnyColumn
+    }),
     selectGrammar: (variant) => dispatch({ type: 'SELECT_GRAMMAR', variant }),
     interrupt: (interrupt) => dispatch({ type: 'INTERRUPT', interrupt }),
     undo: () => dispatch({ type: 'UNDO' }),

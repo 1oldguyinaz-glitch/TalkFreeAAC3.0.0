@@ -85,8 +85,14 @@ export function BoardColumn({
   const column = definition.id;
   const behavior = getStageBehavior(state.stage);
   const recommended = state.activeColumn === column;
-  const enabled = behavior.interactionMode === 'soft_guide' || recommended;
-  const shouldDim = behavior.dimInactiveColumns && !recommended;
+  const enabled =
+    !singleColumnMode
+    || behavior.interactionMode === 'soft_guide'
+    || recommended;
+  const shouldDim =
+    singleColumnMode
+    && behavior.dimInactiveColumns
+    && !recommended;
   const className = [
     'boardColumn',
     singleColumnMode ? 'boardColumnSingle' : '',
@@ -158,7 +164,7 @@ export function BoardColumn({
           <FixedSlotGrid
             items={pageData.items}
             slotCount={slotCount}
-            fitToContainer
+            fitToContainer={singleColumnMode}
             renderItem={(word) => (
               word.targetBucketId ? (
                 <button
@@ -244,7 +250,7 @@ export function BoardColumn({
         <FixedSlotGrid
           items={pageData.items}
           slotCount={slotCount}
-          fitToContainer
+          fitToContainer={singleColumnMode}
           renderItem={(bucket) => (
             <button
               type="button"

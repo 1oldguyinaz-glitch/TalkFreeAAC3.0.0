@@ -31,6 +31,8 @@ export function itemIsCongruent(item, context) {
     return false;
   }
 
+  if (context.allowAnyColumn) return true;
+
   const allowedPrevious =
     item.visibleAfterColumnsByStage?.[String(context.stage)]
     ?? item.visibleAfterColumnsByStage?.[context.stage];

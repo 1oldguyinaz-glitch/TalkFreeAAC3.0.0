@@ -101,6 +101,36 @@ test('Stage 4 keeps only its active AXIS column interactive', () => {
   assert.deepEqual(ignored, state);
 });
 
+test('advanced all-columns mode can activate and open any visible column', () => {
+  const initial = createInitialBoardState(4);
+  const food = BOARD_CATALOG[6].buckets.find((item) => item.id === 'c6_food');
+  const opened = boardReducer(initial, {
+    type: 'OPEN_BUCKET',
+    column: 6,
+    bucketId: food.id,
+    bucketLabel: food.label,
+    allowAnyColumn: true
+  });
+
+  assert.equal(opened.activeColumn, 6);
+  assert.equal(opened.columnViews[6].mode, 'words');
+  assert.equal(opened.columnViews[6].bucketId, 'c6_food');
+});
+
+test('advanced all-columns mode can select a word outside the guided column', () => {
+  const initial = createInitialBoardState(4);
+  const apple = findWord(6, 'c6_food', 'apple');
+  const selected = boardReducer(initial, {
+    type: 'SELECT_WORD',
+    column: 6,
+    word: apple,
+    allowAnyColumn: true
+  });
+
+  assert.equal(selected.sentence.at(-1).text, 'apple');
+  assert.equal(selected.activeColumn, 1);
+});
+
 test('Stage 4 grammar selection overwrites the pending verb instead of appending a duplicate', () => {
   let state = createInitialBoardState(4);
   state = openBucket(state, 1, 'c1_people');
