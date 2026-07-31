@@ -81,4 +81,8 @@ test('all-columns mode fits fixed slots into the available board height', () => 
     css,
     /\.boardShellAllColumns \.boardColumn \.columnBody,[\s\S]*display:\s*grid[\s\S]*grid-template-rows:\s*minmax\(0,\s*1fr\) auto/
   );
+  assert.match(
+    css,
+    /\.boardShellAllColumns \.boardColumn \.columnBodyBuckets[\s\S]*grid-row:\s*2 \/ -1/
+  );
 });
