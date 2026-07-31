@@ -29,7 +29,7 @@ test('all-columns mode preserves usable controls and enables every visible colum
   assert.match(column, /!singleColumnMode[\s\S]*behavior\.interactionMode/);
   assert.match(column, /fitToContainer=\{singleColumnMode\}/);
   assert.match(css, /--all-column-min-width:\s*clamp\(10rem/);
-  assert.match(css, /grid-template-columns:\s*repeat\([\s\S]*var\(--visible-columns\)/);
+  assert.match(css, /grid-template-columns:\s*repeat\(var\(--visible-columns\),\s*minmax\(0,\s*1fr\)\)/);
   assert.match(css, /\.boardShellAllColumns \.boardColumn \.bucketButton,[\s\S]*min-width:\s*0/);
   assert.match(css, /\.boardShellAllColumns \.boardColumn \.wordButton[\s\S]*min-height:\s*0/);
 });
@@ -67,7 +67,7 @@ test('all-columns mode fits fixed slots into the available board height', () => 
   assert.match(grid, /data-slot-rows=\{slotRows\}/);
   assert.match(
     css,
-    /\.boardShellAllColumns \.boardViewport[\s\S]*overflow-y:\s*hidden/
+    /\.boardShellAllColumns \.boardViewport[\s\S]*overflow:\s*hidden/
   );
   assert.match(
     css,
@@ -76,5 +76,9 @@ test('all-columns mode fits fixed slots into the available board height', () => 
   assert.match(
     css,
     /\.boardShellAllColumns \.stageColumnsGrid[\s\S]*height:\s*100%[\s\S]*min-height:\s*0/
+  );
+  assert.match(
+    css,
+    /\.boardShellAllColumns \.boardColumn \.columnBody,[\s\S]*display:\s*grid[\s\S]*grid-template-rows:\s*minmax\(0,\s*1fr\) auto/
   );
 });

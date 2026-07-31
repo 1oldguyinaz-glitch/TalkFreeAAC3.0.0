@@ -2168,3 +2168,32 @@ body {
     min-height: 2rem;
   }
 }
+
+/* TalkFreeAAC 3.0.8 — fit Advanced All Columns to the viewport.
+   The advanced view is a complete board view, not a horizontal carousel:
+   every visible AXIS column shares the available width and each fixed-slot
+   grid owns the remaining height of its column. */
+.boardShellAllColumns .boardViewport {
+  overflow: hidden;
+}
+
+.boardShellAllColumns .stageColumnsGrid {
+  grid-template-columns: repeat(var(--visible-columns), minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+}
+
+.boardShellAllColumns .boardColumn .columnBody,
+.boardShellAllColumns .boardColumn .grammarBody {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-content: stretch;
+}
+
+.boardShellAllColumns .boardColumn .fixedSlotGrid {
+  align-self: stretch;
+  flex: 1 1 0%;
+  height: auto;
+  min-height: 0;
+  align-content: stretch;
+}
