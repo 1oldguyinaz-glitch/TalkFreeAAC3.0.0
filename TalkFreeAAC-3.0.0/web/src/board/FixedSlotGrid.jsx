@@ -15,6 +15,7 @@ export function FixedSlotGrid({
     [slotCount]
   );
   const [fittedGrid, setFittedGrid] = useState(fallbackGrid);
+  const slotRows = Math.max(1, Math.ceil((Number(slotCount) || 1) / 2));
 
   useEffect(() => {
     if (!fitToContainer || !gridRef.current) return undefined;
@@ -47,12 +48,15 @@ export function FixedSlotGrid({
     return () => observer.disconnect();
   }, [fitToContainer, slotCount]);
 
-  const style = fitToContainer
-    ? {
-        '--fit-columns': fittedGrid.columns,
-        '--fit-rows': fittedGrid.rows
-      }
-    : undefined;
+  const style = {
+    '--slot-rows': slotRows,
+    ...(fitToContainer
+      ? {
+          '--fit-columns': fittedGrid.columns,
+          '--fit-rows': fittedGrid.rows
+        }
+      : {})
+  };
 
   return (
     <div
@@ -63,6 +67,7 @@ export function FixedSlotGrid({
           : 'fixedSlotGrid'
       }
       data-slot-count={slotCount}
+      data-slot-rows={slotRows}
       data-fit-columns={fitToContainer ? fittedGrid.columns : undefined}
       data-fit-rows={fitToContainer ? fittedGrid.rows : undefined}
       style={style}

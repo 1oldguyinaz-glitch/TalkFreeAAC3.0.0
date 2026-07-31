@@ -28,9 +28,10 @@ test('all-columns mode preserves usable controls and enables every visible colum
   assert.match(board, /allowAnyVisibleColumn/);
   assert.match(column, /!singleColumnMode[\s\S]*behavior\.interactionMode/);
   assert.match(column, /fitToContainer=\{singleColumnMode\}/);
-  assert.match(css, /minmax\(19rem,\s*1fr\)/);
-  assert.match(css, /min-width:\s*7\.5rem/);
-  assert.match(css, /min-height:\s*4\.5rem/);
+  assert.match(css, /--all-column-min-width:\s*clamp\(10rem/);
+  assert.match(css, /grid-template-columns:\s*repeat\([\s\S]*var\(--visible-columns\)/);
+  assert.match(css, /\.boardShellAllColumns \.boardColumn \.bucketButton,[\s\S]*min-width:\s*0/);
+  assert.match(css, /\.boardShellAllColumns \.boardColumn \.wordButton[\s\S]*min-height:\s*0/);
 });
 
 test('overflowing advanced stages expose accessible horizontal navigation', () => {
@@ -46,7 +47,7 @@ test('overflowing advanced stages expose accessible horizontal navigation', () =
   assert.match(css, /\.boardScrollControls button[\s\S]*min-height:\s*3rem/);
 });
 
-test('all-columns labels wrap at word boundaries without shrinking touch targets', () => {
+test('all-columns labels wrap at word boundaries as cards resize', () => {
   const css = readFileSync(join(root, 'src', 'board', 'board.css'), 'utf8');
 
   assert.match(
@@ -58,16 +59,22 @@ test('all-columns labels wrap at word boundaries without shrinking touch targets
   assert.match(css, /text-wrap:\s*balance/);
 });
 
-test('all-columns mode scrolls the board instead of clipping lower choices', () => {
+test('all-columns mode fits fixed slots into the available board height', () => {
+  const grid = readFileSync(join(root, 'src', 'board', 'FixedSlotGrid.jsx'), 'utf8');
   const css = readFileSync(join(root, 'src', 'board', 'board.css'), 'utf8');
 
+  assert.match(grid, /const slotRows = Math\.max\(1, Math\.ceil\(/);
+  assert.match(grid, /data-slot-rows=\{slotRows\}/);
   assert.match(
     css,
-    /\.boardShellAllColumns \.stageColumnsGrid \.boardColumn[\s\S]*min-height:\s*38rem/
+    /\.boardShellAllColumns \.boardViewport[\s\S]*overflow-y:\s*hidden/
   );
   assert.match(
     css,
-    /\.boardShellAllColumns \.boardColumn \.columnBody,[\s\S]*overflow:\s*visible/
+    /\.boardShellAllColumns \.boardColumn \.fixedSlotGrid[\s\S]*grid-template-rows:\s*repeat\(var\(--slot-rows, 6\)/
   );
-  assert.match(css, /\.stageColumnsGrid\s*\{[\s\S]*min-height:\s*100%/);
+  assert.match(
+    css,
+    /\.boardShellAllColumns \.stageColumnsGrid[\s\S]*height:\s*100%[\s\S]*min-height:\s*0/
+  );
 });
